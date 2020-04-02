@@ -15,7 +15,7 @@
 |reset_password_token|string|null: false|
 |reset_password_sent_at|datetime|null: false|
 |remember_created_at|datetime|null: false|
-|self_introduction|text|
+|self_introduction|text||
 |sales|integer||
 |point|integer||
 |icon|text||
