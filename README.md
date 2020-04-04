@@ -34,6 +34,7 @@ add_index :phone_number, unique: true
 add_index :password, unique: true
 add_index :reset_password_token, unique: true
 ### 名前には制限をつけました
+
 ## Itemsテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -52,6 +53,7 @@ add_index :reset_password_token, unique: true
 - has_many :likes
 - has_many :items_statuses
 - has_many :item_images
+
 - belong_to :brand
 - belong_to :user
 - belong_to :categroy
@@ -68,6 +70,7 @@ accepts_nested_attributes_for :item_images
 ## likesテーブル
 |Column|Type|Options|
 |------|----|-------|
+
 |user|references|null: false, foreign_key: true| 
 |item|references|null: false, foreign_key: true|
 ### Association
@@ -82,16 +85,19 @@ accepts_nested_attributes_for :item_images
 ### Association
 - belongs_to :item
 - belongs_to :user
+
 ## Addressesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user|references|null: false,foreign_key: true|
+
 |postal_code|integer|null: false|
 |prefectures|string|null: false|
 |municipality|string|null: false|
 |building|string|null: false|
 ### Association
 - belongs_to :user
+
 ## Credit_cardsテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -100,6 +106,7 @@ accepts_nested_attributes_for :item_images
 |card_id|integer|null: false|
 ### Association
 - belongs_to :user
+
 # Evaluationsテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -107,14 +114,17 @@ accepts_nested_attributes_for :item_images
 |evaluation|text|null: false|
 ### Association
 - belongs_to :user
+
 ## Categoriesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |category_name|string|null :false|
 |ancestry|string|null :false|
+
 ### Association
 - has_many :items
 - has_ancestry
+
 ## Item_imagesテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -122,6 +132,7 @@ accepts_nested_attributes_for :item_images
 |item|integer|null :false, foreign_key|
 ### Association
 - belong_to :item
+
 ## Brandsテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -131,3 +142,4 @@ accepts_nested_attributes_for :item_images
 - add_index :name
 ### Association
 - has_many :items
+
