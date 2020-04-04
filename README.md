@@ -39,7 +39,7 @@ add_index :reset_password_token, unique: true
 |user|references|null: false, foreign_key: true|
 |item_name|string(50)|null: false|
 |price|integer|null: false|
-|category|string|null: false|
+|category|references|null: false, foreign_key: true|
 |status|string|null: false|
 |size|string||
 |delivery_fee|string|null: false|
@@ -51,7 +51,7 @@ add_index :reset_password_token, unique: true
 - has_many :likes
 - has_many :items_statuses
 - has_many :item_images
-- has_many :brands
+- belong_to :brand
 - belong_to :user
 - belong_to :categroy
 accepts_nested_attributes_for :item_images
@@ -69,7 +69,6 @@ accepts_nested_attributes_for :item_images
 |------|----|-------|
 |user|references|null: false, foreign_key: true| 
 |item|references|null: false, foreign_key: true|
-|like|integer|
 ### Association
 - belongs_to :item
 - belongs_to :user
@@ -110,7 +109,6 @@ accepts_nested_attributes_for :item_images
 ## Categoriesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|item|references|null: false,foreign_key: true|
 |category_name|string|null :false|
 |ancestry|string|null :false|
 ### Association
@@ -131,4 +129,4 @@ accepts_nested_attributes_for :item_images
 ### add_index
 - add_index :name
 ### Association
-- belongs_to :item
+- has_many :items
