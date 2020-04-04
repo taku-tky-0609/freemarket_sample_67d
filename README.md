@@ -1,5 +1,6 @@
 # freemarket_sample_67d DB設計
 ## Usersテーブル
+
 |Column|Type|Options|
 |------|----|-------|
 |nickname|varchar(30)|null: false|
