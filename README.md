@@ -1,28 +1,3 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
 # freemarket_sample_67d DB設計
 ## Usersテーブル
 |Column|Type|Options|
@@ -61,11 +36,11 @@ add_index :reset_password_token, unique: true
 
 ## Itemsテーブル
 |Column|Type|Options|
-|---------|------|---------|
-|user_id|references|null: false|foreign_key: true｜
+|------|----|-------|
+|user|references|null: false, foreign_key: true|
 |item_name|string(50)|null: false|
 |price|integer|null: false|
-|category|string|null: false|
+|category|references|null: false, foreign_key: true|
 |status|string|null: false|
 |size|string||
 |delivery_fee|string|null: false|
@@ -77,15 +52,16 @@ add_index :reset_password_token, unique: true
 - has_many :likes
 - has_many :items_statuses
 - has_many :item_images
-- has_many :brands
+
+- belong_to :brand
 - belong_to :user
 - belong_to :categroy
-​
+accepts_nested_attributes_for :item_images
 ## Items_commentsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false|
-|item_id|integer|null: false|
+|user|references|null: false, foreign_key: true|
+|item|references|null: false, foreign_key: true|
 |item_comment|text|null: false|
 ### Association
 - belongs_to :item
@@ -93,18 +69,17 @@ add_index :reset_password_token, unique: true
 ## likesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false|
-|item_id|integer|null: false|
-|like|integer|
+
+|user|references|null: false, foreign_key: true| 
+|item|references|null: false, foreign_key: true|
 ### Association
 - belongs_to :item
 - belongs_to :user
-
 ## Items_statusesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false|
-|item_id|integer|null: false|
+|user|references|null: false, foreign_key: true|
+|item|references|null: false, foreign_key: true|
 |status|string|null: false|
 ### Association
 - belongs_to :item
@@ -113,7 +88,8 @@ add_index :reset_password_token, unique: true
 ## Addressesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|references|null: false,foreign_key: true|　←referencesつけたら_id必要なし？
+|user|references|null: false,foreign_key: true|
+
 |postal_code|integer|null: false|
 |prefectures|string|null: false|
 |municipality|string|null: false|
@@ -133,8 +109,8 @@ add_index :reset_password_token, unique: true
 # Evaluationsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|evaluation|text|null: false|
 |user|integer|null :false, foreign_key: true|
+|evaluation|text|null: false|
 ### Association
 - belongs_to :user
 
@@ -143,7 +119,7 @@ add_index :reset_password_token, unique: true
 |------|----|-------|
 |category_name|string|null :false|
 |ancestry|string|null :false|
-|item|references|null: false,foreign_key: true|
+
 ### Association
 - has_many :items
 - has_ancestry
@@ -159,9 +135,10 @@ add_index :reset_password_token, unique: true
 ## Brandsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null :false|
 |item|integer|null :false, foreign_key|
-# add_index
-- add_index :brands, :name
+|name|string|null :false|
+### add_index
+- add_index :name
 ### Association
-- belongs_to :item
+- has_many :items
+
