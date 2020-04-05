@@ -1,9 +1,9 @@
 # freemarket_sample_67d DB設計
-## Usersテーブル
+## Usersテーブルo
 
 |Column|Type|Options|
 |------|----|-------|
-|nickname|varchar(30)|null: false|
+|nickname|varchar(30)|null: false|  stringに直しました
 |email|string|null: false|
 |last_name|varchar(50)|null: false|
 |first_name|varchar(50)|null: false|
@@ -28,11 +28,11 @@ has_one :credit_card
 has_many :addresses
 accepts_nested_attributes_for :addresses
 ## add_index
-add_index :email, unique: true
-add_index :nickname, unique: true
-add_index :phone_number, unique: true
-add_index :password, unique: true
-add_index :reset_password_token, unique: true
+# add_index :email, unique: true
+# add_index :nickname, unique: true
+# add_index :phone_number, unique: true
+# add_index :password, unique: true
+# add_index :reset_password_token, unique: true
 ### 名前には制限をつけました
 
 ## Itemsテーブル
@@ -58,7 +58,7 @@ add_index :reset_password_token, unique: true
 - belong_to :user
 - belong_to :categroy
 accepts_nested_attributes_for :item_images
-## Items_commentsテーブル
+## Items_commentsテーブル0
 |Column|Type|Options|
 |------|----|-------|
 |user|references|null: false, foreign_key: true|
