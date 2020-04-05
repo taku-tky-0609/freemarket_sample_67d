@@ -4,13 +4,13 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
   def change
     create_table :users do |t|
       ## Database authenticatable
-      t.varchar(30) :nickname        null: false
-      t.varchar(50) :last_name       null: false
-      t.varchar(50) :first_name      null: false
-      t.varchar(50) :last_name_kana  null: false
-      t.varchar(50) :first_name_kana null: false
-      t.string :address              null: false
-      t.integer(32) :phone_number    null: false
+      t.varchar(30) :nickname,        null: false
+      t.varchar(50) :last_name,       null: false
+      t.varchar(50) :first_name,      null: false
+      t.varchar(50) :last_name_kana,  null: false
+      t.varchar(50) :first_name_kana, null: false
+      t.string :address,              null: false
+      t.integer(32) :phone_number,    null: false
       t.text :self_introduction
       t.integer :sales
       t.integer :point
