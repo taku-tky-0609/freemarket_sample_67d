@@ -6,16 +6,16 @@
       %li.header__main-header--search-box__input 
         %input(type="text" placeholder="キーワードから探す")
       %li.header__main-header--search-box__submit
-        %img{ src: "/assets/icon-search 1.png"}
+        %input( type="image" src="/assets/icon-search 1.png" )
 
   .header__lists
     .header__lists--left
-      %li.lheader__ists--left__cotedory
-        カテゴリー
+      %li.header__lists--left__category
+        %a{:href => '#'}  カテゴリー
       %li.header__lists--left__brand
-        ブランド
+        %a{:href => '#'}  ブランド
     .header__lists--right
       %li.header__lists--right__login
-        ログイン
+        %a{:href => '#'}ログイン
       %li.header__lists--right__new-create
-        新規会員登録
+        %a{:href => '#'}新規会員登録
