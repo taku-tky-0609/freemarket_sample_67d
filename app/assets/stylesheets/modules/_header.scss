@@ -14,7 +14,7 @@ a:link, a:visited, a:hover, a:active {
 .header{
   padding: 15px 60px;
   max-width: 1160px;
-  height: 82px;
+  scroll-padding-top: 82px;
   margin: 0 auto;
   &__main-header{
     display: flex;
