@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   get 'items_comments/create'
   devise_for :users
   root 'items#index'
+  root to: "home#index"
+  
 end
