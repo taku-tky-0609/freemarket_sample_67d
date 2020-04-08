@@ -6,5 +6,6 @@ Rails.application.routes.draw do
   get 'items_comments/create'
   devise_for :users
   root 'items#index'
-  resources :users, only: [:edit, :update]
+  root to: "home#index"
+  
 end
