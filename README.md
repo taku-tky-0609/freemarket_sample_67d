@@ -1,16 +1,16 @@
 # freemarket_sample_67d DB設計
-## Usersテーブル
+## Usersテーブルo
 
 |Column|Type|Options|
 |------|----|-------|
-|nickname|varchar(30)|null: false|
+|nickname|string|null: false|  
 |email|string|null: false|
-|last_name|varchar(50)|null: false|
-|first_name|varchar(50)|null: false|
-|last_name_kana|varchar(50)|null: false|
-|first_name_kana|varchar(50)|null: false|
+|last_name|string|null: false|
+|first_name|string|null: false|
+|last_name_kana|string|null: false|
+|first_name_kana|string|null: false|
 |address|string|null: false|
-|phone_number|integer(32)|null: false|
+|phone_number|integer|null: false|
 |password|string|null: false|
 |reset_password_token|string|null: false|
 |reset_password_sent_at|datetime|null: false|
@@ -28,20 +28,20 @@ has_one :credit_card
 has_many :addresses
 accepts_nested_attributes_for :addresses
 ## add_index
-add_index :email, unique: true
-add_index :nickname, unique: true
-add_index :phone_number, unique: true
-add_index :password, unique: true
-add_index :reset_password_token, unique: true
+# add_index :email, unique: true
+# add_index :nickname, unique: true
+# add_index :phone_number, unique: true
+# add_index :password, unique: true
+# add_index :reset_password_token, unique: true
 ### 名前には制限をつけました
 
 ## Itemsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user|references|null: false, foreign_key: true|
-|item_name|string(50)|null: false|
+|user|references|null: false|
+|item_name|string|null: false|
 |price|integer|null: false|
-|category|references|null: false, foreign_key: true|
+|category|references|null: false|
 |status|string|null: false|
 |size|string||
 |delivery_fee|string|null: false|
@@ -58,11 +58,11 @@ add_index :reset_password_token, unique: true
 - belong_to :user
 - belong_to :categroy
 accepts_nested_attributes_for :item_images
-## Items_commentsテーブル
+## Items_commentsテーブル0
 |Column|Type|Options|
 |------|----|-------|
-|user|references|null: false, foreign_key: true|
-|item|references|null: false, foreign_key: true|
+|user|references|null: false|
+|item|references|null: false|
 |item_comment|text|null: false|
 ### Association
 - belongs_to :item
@@ -71,16 +71,16 @@ accepts_nested_attributes_for :item_images
 |Column|Type|Options|
 |------|----|-------|
 
-|user|references|null: false, foreign_key: true| 
-|item|references|null: false, foreign_key: true|
+|user|references|null: false| 
+|item|references|null: false|
 ### Association
 - belongs_to :item
 - belongs_to :user
 ## Items_statusesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user|references|null: false, foreign_key: true|
-|item|references|null: false, foreign_key: true|
+|user|references|null: false|
+|item|references|null: false|
 |status|string|null: false|
 ### Association
 - belongs_to :item
@@ -89,7 +89,7 @@ accepts_nested_attributes_for :item_images
 ## Addressesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user|references|null: false,foreign_key: true|
+|user|references|null: false|
 
 |postal_code|integer|null: false|
 |prefectures|string|null: false|
@@ -101,7 +101,7 @@ accepts_nested_attributes_for :item_images
 ## Credit_cardsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user|references|null: false,foreign_key: true|
+|user|references|null: false|
 |costomer_id|integer|null: false|
 |card_id|integer|null: false|
 ### Association
@@ -110,7 +110,7 @@ accepts_nested_attributes_for :item_images
 # Evaluationsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user|integer|null :false, foreign_key: true|
+|user|integer|null :false|
 |evaluation|text|null: false|
 ### Association
 - belongs_to :user
@@ -129,14 +129,14 @@ accepts_nested_attributes_for :item_images
 |Column|Type|Options|
 |------|----|-------|
 |image|string|null:false|
-|item|integer|null :false, foreign_key|
+|item|integer|null :false|
 ### Association
 - belong_to :item
 
 ## Brandsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|item|integer|null :false, foreign_key|
+|item|integer|null :false|
 |name|string|null :false|
 ### add_index
 - add_index :name
