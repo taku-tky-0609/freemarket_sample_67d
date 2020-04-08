@@ -1,0 +1,109 @@
+%h2 会員情報実装中
+= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+  = render "devise/shared/error_messages", resource: resource
+  
+  .field
+    = f.label :name
+    %span 必須 
+    %br/
+    = f.text_field :nickname, :placeholder => "例)オーノー...ようこ"
+
+  .field
+    = f.label :email
+    %span 必須 
+    %br/
+    = f.email_field :email, autofocus: true, :placeholder => "PC・携帯どちらでも可"
+  .field
+    = f.label :password
+    %span 必須
+    -# - if @minimum_password_length
+    -#   %em
+    -#     (#{@minimum_password_length} characters minimum)
+    %br/
+  .toggle
+  %input#password2.field.js-password{:autocomplete => "off", :placeholder => "パスワードを入力", :required => "required", :type => "password", :value => ""}/
+  .btn
+    %input#eye.btn-input.js-password-toggle{:type => "checkbox"}/
+    %label.btn-label.js-password-label{:for => "eye"}
+      %i.fas.fa-eye
+
+
+  -# .field
+  -#   = f.label :password_confirmation
+  -#   %span 必須
+  -#   %br/
+  -#   = f.password_field :password_confirmation, autocomplete: "new-password"
+  
+  %h2 本人確認
+  %p 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
+  .field
+    = f.label :name
+    %span 必須 
+    %br/
+    = f.text_field :last_name, autofocus: true, :placeholder => "例)小菅", :size => "10"
+    = f.text_field :first_name, autofocus: true, :placeholder => "例)圭介", :size => "10"
+  .field
+    = f.label :name_kana
+    %span 必須 
+    %br/
+    = f.text_field :last_name_kana, autofocus: true, :placeholder => "例)シロイシ", :size => "10"
+    = f.text_field :first_name_kana, autofocus: true, :placeholder => "例)トシナリ", :size => "10"
+  .field
+    = f.label :name_kana
+    %span 必須 
+    %br/
+    = f.text_field :last_name_kana, autofocus: true, :placeholder => "例)シロイシ", :size => "10"
+    = f.text_field :first_name_kana, autofocus: true, :placeholder => "例)トシナリ", :size => "10"
+  .field
+    = f.label :phone_number
+    %span 必須 
+    %br/
+    = f.telephone_field	 :last_name_kana, autofocus: true, :placeholder => "-は入れないで下さい"
+  .field 
+    = f.label :address
+    %br/
+    = f.fields_for :addresses, @user.addresses.build do |a|
+      = f.label :postal_code
+      %span 必須 
+      %br/
+      = a.text_field :postal_code, :placeholder => "464-9999", :size => "10"
+      %br/
+      = f.label :prefectures
+      %span 必須 
+      %br/
+      = a.text_field :prefectures, :size => "8"
+      %br/
+      = f.label :municipality
+      %span 必須 
+      %br/
+      = a.text_field :municipality, :placeholder => "例)南アルプス市天然水", :size => "30"
+      %br/
+      = f.label :house_number
+      %span 必須 
+      %br/
+      -# = a.text_field :house_number, :placeholder => "1-2-3"
+      %br/
+      = f.label :building
+      %span 必須 
+      %br/
+      = a.text_field :building, :placeholder => "例)ほうれん荘"      
+  .actions
+    = f.submit "登録"
+= render "devise/shared/links"
+
+
+:javascript
+  const passwordToggle = document.querySelector('.js-password-toggle');
+  passwordToggle.addEventListener('change', function () {
+    const password = document.querySelector('.js-password'),
+          passwordLabel = document.querySelector('.js-password-label');
+    if (password.type === 'password') {
+      password.type = 'text';
+      passwordLabel.innerHTML = '<i class="fas fa-eye-slash"></i>';
+    } else {
+      password.type = 'password';
+      passwordLabel.innerHTML = '<i class="fas fa-eye"></i>';
+    }
+    password.focus();
+  });
+
