@@ -1,0 +1,71 @@
+* {
+  box-sizing: border-box;
+  list-style: none;
+}
+
+@mixin hoge {
+  text-decoration: none;
+}
+
+.header{
+  padding: 15px 60px;
+  max-width: 1160px;
+  scroll-padding-top: 82px;
+  margin: 0 auto;
+  &__main-header{
+    display: flex;
+    &--icon{
+      margin-right: 30px;
+      padding-bottom: 10px;
+      img{
+        width: 140px;
+      }
+    }
+    &--search-box{
+      margin-left: auto;
+      width: 100%;
+      display: flex;
+      padding-top: 5px;
+      &__input{
+        width: calc(100% - 26px);
+        input{
+          width: 100%;
+          height: 40px;
+        }
+      }
+      &__submit{
+        input{
+          width: 36px;
+          height: 40px;
+          background-color:#3CCACE;
+        }
+      }
+    }
+  }
+  &__lists{
+    display: flex;
+    font-size: 14px;
+    justify-content: space-between;
+    &--left{
+      display: flex;
+      position: relative;
+        &__category a{
+          @include hoge;
+        }
+        &__brand a{
+          padding: 0 0 0 32px;
+          @include hoge;
+        }
+    }
+    &--right {
+        display: flex;
+        &__login a{
+          @include hoge;
+        }
+        &__new-create a{
+          padding: 0 0 0 32px;
+          @include hoge;
+        }
+    }
+  }
+}
