@@ -11,5 +11,5 @@ Rails.application.routes.draw do
   # get 'credit_cards/index'
   # get 'categories/index'
   # get 'items_comments/create'
-  
 end
+
