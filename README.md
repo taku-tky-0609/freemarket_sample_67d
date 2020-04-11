@@ -1,5 +1,5 @@
 # freemarket_sample_67d DB設計
-## Usersテーブルo
+## Usersテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -9,10 +9,10 @@
 |first_name|string|null: false|
 |last_name_kana|string|null: false|
 |first_name_kana|string|null: false|
-|address|string|null: false|
+|address|string|null: false|　←　いる？
 |phone_number|integer|null: false|
 |password|string|null: false|
-|reset_password_token|string|null: false|
+|reset_password_token|string|null: false|　←　なんだっけ？
 |reset_password_sent_at|datetime|null: false|
 |remember_created_at|datetime|null: false|
 |self_introduction|text||
@@ -90,7 +90,6 @@ accepts_nested_attributes_for :item_images
 |Column|Type|Options|
 |------|----|-------|
 |user|references|null: false|
-
 |postal_code|integer|null: false|
 |prefectures|string|null: false|
 |municipality|string|null: false|
