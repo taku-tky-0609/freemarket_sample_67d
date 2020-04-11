@@ -8,7 +8,4 @@ Rails.application.routes.draw do
   # get 'categories/index'
   # get 'items_comments/create'
   
-  
-  
-  
 end
