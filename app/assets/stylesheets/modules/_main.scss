@@ -3,7 +3,7 @@ a {
 }
 
 .topInformation {
-  background-image: url("bg-mainVisual-pict_pc.jpg");
+  background-image: image-url("bg-mainVisual-pict_pc.jpg");
   background-size: cover;
   background-position: center;
   display: flex;
@@ -77,7 +77,7 @@ a {
   }
 }
 .secondInformation {
-  background-image: url("bg-topMiddleDl-pict.jpg");
+  background-image: image-url("bg-topMiddleDl-pict.jpg");
   background-size: cover;
   background-position: center;
   display: flex;

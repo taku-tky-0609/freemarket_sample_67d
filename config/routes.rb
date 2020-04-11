@@ -4,8 +4,6 @@ Rails.application.routes.draw do
   root to: 'home#index'
   
   
-
-  # root to: "home#index"
   # get 'addresses/show'
   # get 'brands/show'
   # get 'credit_cards/index'
