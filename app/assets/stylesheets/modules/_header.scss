@@ -66,6 +66,13 @@
           padding: 0 0 0 32px;
           @include hoge;
         }
+        &__mypage a{
+          @include hoge;
+        }
+        &__logout a{
+          padding: 0 0 0 32px;
+          @include hoge;
+        }
     }
   }
 }
