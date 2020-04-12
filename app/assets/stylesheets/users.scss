@@ -8,7 +8,7 @@
     display: flex;
     flex-direction: column;
     margin-right: 40px;
-    .sidebar__contents-title {
+    .sidebar__contents-title, .sidebar__contents-setting {
       &:hover{
         color:#000;
         background-color: rgb(231, 228, 228);
@@ -23,6 +23,9 @@
       margin-bottom: 2px;
       background-color:white;
       box-shadow: 0 1px 1px 0 rgba(185, 185, 185, 0.2);
+    }
+    h1 {
+      margin: 20px 0 3px 0;
     }
   }
   .center__content {

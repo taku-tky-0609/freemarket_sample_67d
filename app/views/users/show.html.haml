@@ -2,13 +2,5 @@
 -# %p Find me in app/views/users/show.html.haml
 .wrapper
   = render 'items/header'
-  .center
-    .center__sidebar
-      - @contents.each do |content|
-        .sidebar__contents-title
-          = content 
-    .center__content
-      .center__top
-        = image_tag 'https://pbs.twimg.com/media/EVJrKuiU0AIy-Qp?format=jpg&name=large', class: 'user-icon'
-      .center__text
+  = render 'side'
   = render 'items/footer'

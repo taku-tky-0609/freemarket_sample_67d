@@ -1,0 +1,13 @@
+.center
+  .center__sidebar
+    - @contents.each do |content|
+      .sidebar__contents-title
+        = content 
+    %h1 設定
+    - @settings.each do |set|
+      .sidebar__contents-setting
+        = set
+  .center__content
+    .center__top
+      = image_tag 'https://pbs.twimg.com/media/EVJrKuiU0AIy-Qp?format=jpg&name=large', class: 'user-icon'
+    .center__text
