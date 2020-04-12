@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'items#index'
-  root to: "home#index"
-
-  resources :users, only: :show
+  root to: 'home#index'
+  
+  
   # get 'addresses/show'
   # get 'brands/show'
   # get 'credit_cards/index'
