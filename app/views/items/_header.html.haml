@@ -16,11 +16,16 @@
       %li.header__lists--left__brand
         = link_to "#" do
           ブランド
-    .header__lists--left
-      %li
+    
+    .header__lists--right
+    - if user_signed_in?
+      %li.header__lists--right__mypage
+        = link_to   rails_service_blob_path, method: :delete do
+          マイページ
+      %li.header__lists--right__logout
         = link_to  destroy_user_session_path, method: :delete do
           ログアウト
-    .header__lists--right
+    - else
       %li.header__lists--right__login
         = link_to  new_user_session_path do
           ログイン
