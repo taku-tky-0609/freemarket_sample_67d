@@ -3,5 +3,6 @@ class UsersController < ApplicationController
   end
 
   def show
+    @contents = ['お知らせ',"いいね一覧","出品する","下書き一覧","出品した商品–出品中","出品した商品–取引中","売却済み","購入した商品","評価一覧","売り上げ","ガイド","お問い合わせ"]
   end
 end

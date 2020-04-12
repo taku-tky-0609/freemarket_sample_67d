@@ -1,3 +1,35 @@
-// Place all the styles related to the users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.center {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(245, 240, 240);
+  padding: 40px;
+  width: 100%;
+  .center__sidebar {
+    display: flex;
+    flex-direction: column;
+    margin-right: 40px;
+    .sidebar__contents-title {
+      &:hover{
+        color:#000;
+        background-color: rgb(231, 228, 228);
+        cursor: pointer;
+      }
+      color: #555;
+      display: inline-block;
+      width: 280px;
+      height: 40px;
+      line-height: 40px;
+      padding-left: 20px;
+      margin-bottom: 2px;
+      background-color:white;
+      box-shadow: 0 1px 1px 0 rgba(185, 185, 185, 0.2);
+    }
+  }
+  .center__content {
+    height: 100%;
+    .center__top, img {
+      height: 155px;
+      width: 100%;
+    }
+  }
+}
