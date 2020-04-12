@@ -118,7 +118,6 @@ ActiveRecord::Schema.define(version: 2020_04_12_080814) do
     t.integer "sales"
     t.integer "point"
     t.text "icon"
-    t.string "house_number", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
