@@ -1,0 +1,16 @@
+.login-page {
+  background-color: #ffffff;
+  text-align: center;
+  padding: 30px 0 220px;
+  img{
+    width: 140px;
+  }
+  &__main{
+    padding-top: 30px;
+    max-width: none;
+    width: 456px;
+    background-color: #3CCACE;
+    margin: 0 auto;
+    height: 100%;
+  }
+}
