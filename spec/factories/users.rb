@@ -11,7 +11,7 @@ FactoryBot.define do
     phone_number           {Faker::PhoneNumber.phone_number}
     password               {password}
     reset_password_token   {password}
-    reset_password_sent_at {password}
+    reset_password_sent_at {Faker::Time.between(from: DateTime.now - 1, to: DateTime.now)}
     remember_created_at    {Faker::Time.between(from: DateTime.now - 1, to: DateTime.now)}
     self_introduction      {Faker::Lorem.word}
     sales                  {Faker::Number.number}
