@@ -18,9 +18,9 @@ ActiveRecord::Schema.define(version: 2020_04_09_141033) do
     t.string "prefectures", null: false
     t.string "municipality", null: false
     t.string "building", null: false
-    t.string "house_number", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "house_number"
     t.index ["user_id"], name: "index_addresses_on_user_id"
   end
 
@@ -113,7 +113,6 @@ ActiveRecord::Schema.define(version: 2020_04_09_141033) do
     t.string "first_name", null: false
     t.string "last_name_kana", null: false
     t.string "first_name_kana", null: false
-    t.string "address", null: false
     t.integer "phone_number", null: false
     t.text "self_introduction"
     t.integer "sales"
