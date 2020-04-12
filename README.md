@@ -8,10 +8,10 @@
 |first_name|string|null: false|
 |last_name_kana|string|null: false|
 |first_name_kana|string|null: false|
-|address|string|null: false|
+|address|string|null: false|　←　いる？
 |phone_number|integer|null: false|
 |password|string|null: false|
-|reset_password_token|string|null: false|
+|reset_password_token|string|null: false|　←　なんだっけ？
 |reset_password_sent_at|datetime|null: false|
 |remember_created_at|datetime|null: false|
 |self_introduction|text||
