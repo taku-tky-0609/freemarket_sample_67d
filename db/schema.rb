@@ -18,9 +18,9 @@ ActiveRecord::Schema.define(version: 2020_04_12_080814) do
     t.string "prefectures", null: false
     t.string "municipality", null: false
     t.string "building", null: false
-    t.string "house_number", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "house_number"
     t.index ["user_id"], name: "index_addresses_on_user_id"
   end
 
@@ -118,7 +118,6 @@ ActiveRecord::Schema.define(version: 2020_04_12_080814) do
     t.integer "sales"
     t.integer "point"
     t.text "icon"
-    t.string "house_number", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
