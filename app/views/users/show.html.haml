@@ -1,2 +1,13 @@
-%h1 Users#show
-%p Find me in app/views/users/show.html.haml
+
+-# %h1 Users#show
+-# %p Find me in app/views/users/show.html.haml
+
+= render 'items/header'
+.mypagetop
+  = render 'side'
+  .center__content
+    .center__top
+      = image_tag 'https://pbs.twimg.com/media/EVJrKuiU0AIy-Qp?format=jpg&name=large', class: 'user-icon'
+    .center__text
+= render 'items/footer'
+
