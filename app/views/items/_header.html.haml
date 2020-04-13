@@ -19,7 +19,7 @@
     -if user_signed_in?
       .header__lists--right
         %li.header__lists--right__mypage
-          = link_to "#" do
+          = link_to user_path(current_user) do
             マイページ
         %li.header__lists--right__logout
           = link_to  destroy_user_session_path, method: :delete do
