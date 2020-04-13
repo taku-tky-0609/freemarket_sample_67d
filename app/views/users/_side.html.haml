@@ -1,0 +1,9 @@
+.center__sidebar
+  - @contents.each do |content|
+    .sidebar__contents-title
+      = content 
+  %h1 設定
+  - @settings.each do |set|
+    .sidebar__contents-setting
+      = set
+        
