@@ -1,3 +1,13 @@
-// Place all the styles related to the users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.mypagetop {
+  background-color: rgb(245, 240, 240);
+  display: flex;
+  justify-content: space-between;
+  padding: 40px;
+  .center__content {
+    height: 100%;
+    .center__top, img {
+      height: 155px;
+      width: 100%;
+    }
+  }
+}
