@@ -3,4 +3,11 @@
   display: flex;
   justify-content: space-between;
   padding: 40px;
+  .center__content {
+    height: 100%;
+    .center__top, img {
+      height: 155px;
+      width: 100%;
+    }
+  }
 }
