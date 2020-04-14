@@ -1,9 +1,11 @@
 .center__sidebar
   - @contents.each do |content|
-    .sidebar__contents-title
-      = content 
+    = link_to content[:link] do
+      .sidebar__contents-title
+        = content[:content]
   %h1 設定
   - @settings.each do |set|
-    .sidebar__contents-setting
-      = set
+    = link_to set[:link] do
+      .sidebar__contents-setting
+        = set[:content]
         
