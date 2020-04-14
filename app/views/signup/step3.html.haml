@@ -1,0 +1,6 @@
+= form_for @user, url: step4_signup_index_path, method: :get, html: {class: 'second-wrapper__box'} do |f|
+  = f.text_field :address, textarea: '例) 東京都'
+  = f.text_field :phone_number, placeholder: '例) 080-'
+  = f.submit "次に進む"
+ 
+ 
