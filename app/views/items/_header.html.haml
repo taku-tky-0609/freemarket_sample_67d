@@ -16,15 +16,19 @@
       %li.header__lists--left__brand
         = link_to "#" do
           ブランド
-    .header__lists--left
-      %li
-        = link_to  destroy_user_session_path, method: :delete do
-          ログアウト
-    .header__lists--right
-      %li.header__lists--right__login
-        = link_to  new_user_session_path do
-          ログイン
-     
-      %li.header__lists--right__new-create
-        = link_to  new_user_registration_path do
-          新規会員登録
+    -if user_signed_in?
+      .header__lists--right
+        %li.header__lists--right__mypage
+          = link_to user_path(current_user) do
+            マイページ
+        %li.header__lists--right__logout
+          = link_to  destroy_user_session_path, method: :delete do
+            ログアウト
+    -else
+      .header__lists--right
+        %li.header__lists--right__login
+          = link_to  new_user_session_path do
+            ログイン
+        %li.header__lists--right__new-create
+          = link_to  new_user_registration_path do
+            新規会員登録
