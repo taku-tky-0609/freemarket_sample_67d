@@ -113,13 +113,11 @@ ActiveRecord::Schema.define(version: 2020_04_15_152659) do
     t.string "first_name", null: false
     t.string "last_name_kana", null: false
     t.string "first_name_kana", null: false
-    t.string "address", null: false
     t.string "phone_number", null: false
     t.text "self_introduction"
     t.integer "sales"
     t.integer "point"
     t.text "icon"
-    t.string "house_number", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -127,6 +125,7 @@ ActiveRecord::Schema.define(version: 2020_04_15_152659) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "address"
     t.bigint "address_id"
     t.index ["address_id"], name: "index_users_on_address_id"
     t.index ["email"], name: "index_users_on_email", unique: true
