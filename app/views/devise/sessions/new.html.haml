@@ -2,7 +2,7 @@
   %img{ src: "/images/logo.png"}
   .login-page__main
     .login-page__main--sign-up
-      %p アカウントをお持ちでない方はこちら
+      %p.to--registraion アカウントをお持ちでない方はこちら
       - if devise_mapping.registerable? && controller_name != 'registrations'
       .login-page__main--sign-up__icon
         = link_to "新規登録", new_registration_path(resource_name)
@@ -10,12 +10,7 @@
     .login-page__main--login
       = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
         .field
-          = f.label :メールアドレス
-          %br/
           = f.email_field :email, autofocus: true, autocomplete: "email", :placeholder => "メールアドレス"
-        .field
-          = f.label :パスワード
-          %br/
           = f.password_field :password, autocomplete: "current-password", :placeholder => "パスワード"
         - if devise_mapping.rememberable?
           .field_create

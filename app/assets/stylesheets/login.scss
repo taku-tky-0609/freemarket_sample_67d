@@ -18,7 +18,14 @@
     margin: 0 auto;
     &--sign-up{
       width: 100%;
-      p{
+      padding-bottom: 30px;
+      border-bottom: solid 0.8px rgb(230, 230, 230);
+      .to--registraion {
+        color: #696969;
+        font-size: 10px;
+        text-align: center;
+        line-height: 16px;
+        padding-top: 0px;
         padding-bottom: 10px;
       }
       &__icon{
@@ -26,38 +33,49 @@
         margin: 0 auto;
         background-color: #3CCACE;
         height: 30px;
+        font-size: 20px;
         a{
           color: #f5f5f5;;
         }
       }
     }
     &--login{
-      padding: 32px 64px;
+      padding: 32px 64px 0px;
       padding-left: 40px;
       .field{
         padding: 24px;
+        
         input{
           height: 48px;
           width: 328px;
+          margin-bottom: 20px;
         }
       }
       .field_create{
         padding-bottom: 70px;
+        color: #696969;
       }
       .actions{
-        width: 368px;
-        padding: 15px 10px;
+        width: 328px;
+        margin: 0 auto;
         background-color: #3CCACE;
+        font-size: 20px;
         input{
           background-color: #3CCACE;
           width: 328px;
           border: none;
           outline: none;
           color: #f5f5f5;
+          height: 30px;
         }
       }
       a{
-        color: black;
+        display: block;
+        color: #696969;
+        text-align: left;
+        font-size: 10px;
+        padding-top: 15px;
+        margin-left: 10px;
       }
     }
   }
@@ -69,12 +87,11 @@
     img{
       width: 100%;
       vertical-align: bottom;
-      background-color: #3CCACE;
     }
   }
   p{
-    font-size: 14px;
+    font-size: 10px;
     text-align: center;
-    line-height: 16px;
+    line-height: 10px;
   }
 } 
