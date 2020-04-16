@@ -128,7 +128,7 @@ ActiveRecord::Schema.define(version: 2020_04_16_141034) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "address_id"
-    t.date "birthday"
+    t.date "birthday", null: false
     t.index ["address_id"], name: "index_users_on_address_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
