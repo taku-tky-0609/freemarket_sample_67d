@@ -21,6 +21,7 @@ ja:
         municipality: "市町村"
         house_number: "番地"
         building: "建物名"
+        birthday: "誕生日"
     models:
       user: "ユーザ"
   devise:
