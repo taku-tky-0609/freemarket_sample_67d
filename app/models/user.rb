@@ -9,6 +9,6 @@ class User < ApplicationRecord
   has_many :likes
   has_many :items_statuses
   has_one :credit_card
-  has_many :addresses
-  accepts_nested_attributes_for :addresses
+  has_one :address
+  accepts_nested_attributes_for :address
 end
