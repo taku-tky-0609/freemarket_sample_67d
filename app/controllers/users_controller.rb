@@ -14,18 +14,6 @@ class UsersController < ApplicationController
   end
 
   def show
-    @contents = []
-    contents = [      "お知らせ",              "いいね一覧", "出品する","下書き一覧","出品した商品–出品中","出品した商品–取引中","売却済み","購入した商品","評価一覧","売り上げ","ガイド","お問い合わせ"]
-    contents_links = [user_path(current_user), root_path, "",       "",        "",                "",                "",]
-    contents.each.with_index(0) do |content,i|
-      @contents << {content: content, link: contents_links[i]}
-    end
-    @settings = []
-    settings = ["プロフィール","発送元・お届け先住所変更","メール・パスワード","本人情報","電話番号の確認","ログアウト"]
-    settings_links = [ '#',"#","#","#","#",  destroy_user_session_path ]
-    settings.each.with_index(0) do |setting, d|
-      @settings << {content: setting, link: settings_links[d]}
-    end
   end
 
   private
