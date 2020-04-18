@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: {
+    registrations: 'users/registrations',
+  }
+  devise_scope :user do
+    get 'addresses', to: 'users/registrations#new_address'
+    post 'addresses', to: 'users/registrations#create_address'
+  end
   root 'items#index'
   root to: 'home#index'
   resources :users, only: :show
@@ -13,6 +19,7 @@ Rails.application.routes.draw do
       get 'done' # 登録完了後のページ
     end
   end
+  
   # get 'addresses/show'
   # get 'brands/show'
   # get 'credit_cards/index'

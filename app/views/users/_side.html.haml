@@ -1,11 +1,52 @@
 .center__sidebar
-  - @contents.each do |content|
-    = link_to content[:link] do
-      .sidebar__contents-title
-        = content[:content]
+  .sidebar__contents-title
+    %li.sidebar__contents-title
+      = link_to "#" do
+        お知らせ
+    %li.sidebar__contents-title
+      = link_to "#" do
+        いいね一覧
+    %li.sidebar__contents-title
+      = link_to "#" do
+        出品する
+    %li.sidebar__contents-title
+      = link_to "#" do
+        下書き一覧
+    %li.sidebar__contents-title
+      = link_to "#" do
+        出品した商品ー出品中
+    %li.sidebar__contents-title
+      = link_to "#" do
+        売却済み
+    %li.sidebar__contents-title
+      = link_to "#" do
+        購入した商品
+    %li.sidebar__contents-title
+      = link_to "#" do
+        評価一覧
+    %li.sidebar__contents-title
+      = link_to "#" do
+        売り上げ
+    %li.sidebar__contents-title
+      = link_to "#" do
+        お問い合わせ
   %h1 設定
-  - @settings.each do |set|
-    = link_to set[:link] do
-      .sidebar__contents-setting
-        = set[:content]
-        
+  .sidebar__contents-setting
+    %li.sidebar__contents-title
+      = link_to "#" do
+        プロフィール
+    %li.sidebar__contents-title
+      = link_to "#" do
+        発送元・お届け先住所変更
+    %li.sidebar__contents-title
+      = link_to "#" do
+        メール・パスワード
+    %li.sidebar__contents-title
+      = link_to "#" do
+        本人情報
+    %li.sidebar__contents-title
+      = link_to "#" do
+        電話番号の確認
+    %li.sidebar__contents-title
+      = link_to  destroy_user_session_path, method: :delete do
+        ログアウト

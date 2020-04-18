@@ -18,9 +18,9 @@ ActiveRecord::Schema.define(version: 2020_04_16_141034) do
     t.string "prefectures", null: false
     t.string "municipality", null: false
     t.string "building"
-    t.string "house_number", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "house_number"
     t.index ["user_id"], name: "index_addresses_on_user_id"
   end
 
