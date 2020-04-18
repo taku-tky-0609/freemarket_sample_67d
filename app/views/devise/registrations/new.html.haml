@@ -1,7 +1,7 @@
 %h2 会員情報実装中
 -# = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-= form_for(@user, url: registration_path(resource_name)) do |f|
-  = render "devise/shared/error_messages", resource: resource
+= form_for(@user, url: user_registration_path) do |f|
+  = render "devise/shared/error_messages", resource: @user
   
   .field
     = f.label :nickname
@@ -98,26 +98,28 @@
   -#     %span 必須 
   -#     %br/
   -#     = a.text_field :building, :placeholder => "例)ほうれん荘"      
-  = f.fields_for :address do |i|
-    .form-group
-      = i.label :postal_code, "郵便番号"
-      %br
-      = i.text_field :postal_code, :placeholder => "464-9999"
-      %br
-      = i.label :prefecture, "都道府県"
-      %br
-      = i.text_field :prefecture
-      %br
-      = i.label :municipality, "市区町村"
-      %br
-      = i.text_field :municipality, :placeholder => "例)南アルプス市天然水"
-      %br
-      = i.label :house_number, "番地"
-      %br
-      = i.text_field :house_number, :placeholder => "1-2-3"
+  -# = f.fields_for :address do |i|
+  -#   .form-group
+  -#     = i.label :postal_code, "郵便番号"
+  -#     %br
+  -#     = i.text_field :postal_code, :placeholder => "464-9999"
+  -#     %br
+  -#     = i.label :prefecture, "都道府県"
+  -#     %br
+  -#     = i.text_field :prefecture
+  -#     %br
+  -#     = i.label :municipality, "市区町村"
+  -#     %br
+  -#     = i.text_field :municipality, :placeholder => "例)南アルプス市天然水"
+  -#     %br
+  -#     = i.label :house_number, "番地"
+  -#     %br
+  -#     = i.text_field :house_number, :placeholder => "1-2-3"
   .actions
-    = f.submit "登録"
+    = f.submit "次へ"
 = render "devise/shared/links"
+  
+    
 
 
 -# :javascript
