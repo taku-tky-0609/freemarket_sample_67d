@@ -13,6 +13,7 @@ Rails.application.routes.draw do
       get 'done' # 登録完了後のページ
     end
   end
+  
   # get 'addresses/show'
   # get 'brands/show'
   # get 'credit_cards/index'
