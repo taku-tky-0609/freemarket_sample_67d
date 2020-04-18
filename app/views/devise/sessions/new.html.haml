@@ -1,26 +1,26 @@
-%h2 FURIMA
-%p アカウントをお持ちでない方はこちら
-- if devise_mapping.registerable? && controller_name != 'registrations'
-= link_to "新規登録", new_registration_path(resource_name)
-  -# %br/
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .field
-    = f.label :メールアドレス
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email", :placeholder => "メールアドレス"
-  .field
-    = f.label :パスワード
-    %br/
-    = f.password_field :password, autocomplete: "current-password", :placeholder => "パスワード"
-  - if devise_mapping.rememberable?
-    .field
-      = f.check_box :remember_me
-      = f.label :パスワードを保存
-  .actions
-    = f.submit "ログイン"
-  - if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations'
-    = link_to "パスワードをお忘れの方", new_password_path(resource_name)
-    %br/
--# = render "devise/shared/links"
-
-
+.login-page
+  %img{ src: "/images/logo.png"}
+  .login-page__main
+    .login-page__main--sign-up
+      %p.to--registraion アカウントをお持ちでない方はこちら
+      - if devise_mapping.registerable? && controller_name != 'registrations'
+      .login-page__main--sign-up__icon
+        = link_to "新規登録", new_registration_path(resource_name)
+          -# %br/
+    .login-page__main--login
+      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+        .field
+          = f.email_field :email, autofocus: true, autocomplete: "email", :placeholder => "メールアドレス"
+          = f.password_field :password, autocomplete: "current-password", :placeholder => "パスワード"
+        - if devise_mapping.rememberable?
+          .field_create
+            = f.check_box :remember_me
+            = f.label :パスワードを保存
+        .actions
+          = f.submit "ログイン"
+        - if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations'
+          = link_to "パスワードをお忘れの方", new_password_path(resource_name), class: "password-forget"
+          %br/
+  .footer__companylogo
+    %img{ src: "/images/logo-white.png", alt: "会社ロゴ" }
+  %p © FURIMA 

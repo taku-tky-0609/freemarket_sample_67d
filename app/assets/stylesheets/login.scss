@@ -1,0 +1,97 @@
+* {
+  box-sizing: border-box;
+  list-style: none;
+}
+
+.login-page {
+  background-color: #f5f5f5;
+  text-align: center;
+  padding: 30px 0 100px;
+  img{
+    width: 140px;
+  }
+  &__main{
+    padding-top: 30px;
+    max-width: none;
+    width: 456px;
+    background-color: #fff;
+    margin: 0 auto;
+    &--sign-up{
+      width: 100%;
+      padding-bottom: 30px;
+      border-bottom: solid 0.8px rgb(230, 230, 230);
+      .to--registraion {
+        color: #696969;
+        font-size: 10px;
+        text-align: center;
+        line-height: 16px;
+        padding-top: 0px;
+        padding-bottom: 10px;
+      }
+      &__icon{
+        width: 328px;
+        margin: 0 auto;
+        background-color: #3CCACE;
+        height: 30px;
+        font-size: 20px;
+        a{
+          color: #f5f5f5;;
+        }
+      }
+    }
+    &--login{
+      padding: 32px 64px 0px;
+      padding-left: 40px;
+      .field{
+        padding: 24px;
+        
+        input{
+          height: 48px;
+          width: 328px;
+          margin-bottom: 20px;
+        }
+      }
+      .field_create{
+        padding-bottom: 70px;
+        color: #696969;
+      }
+      .actions{
+        width: 328px;
+        margin: 0 auto;
+        background-color: #3CCACE;
+        font-size: 20px;
+        input{
+          background-color: #3CCACE;
+          width: 328px;
+          border: none;
+          outline: none;
+          color: #f5f5f5;
+          height: 30px;
+        }
+      }
+      a{
+        display: block;
+        color: #696969;
+        text-align: left;
+        font-size: 10px;
+        padding-top: 15px;
+        margin-left: 10px;
+      }
+    }
+  }
+  .footer__companylogo{
+    max-width: 160px;
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 33px;
+    img{
+      width: 100%;
+      vertical-align: bottom;
+    }
+  }
+  p{
+    font-size: 10px;
+    text-align: center;
+    line-height: 10px;
+  }
+} 
