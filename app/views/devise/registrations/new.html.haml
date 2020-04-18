@@ -73,6 +73,12 @@
   -# .field 
   -#   = f.label :address
   -#   %br/
+  .field
+    = f.label :birthday
+    %span 必須 
+    %br/
+    = f.text_field :birthday, :placeholder => "例)"
+    
   -#   = f.fields_for :addresses, @user.addresses.build do |a|
   -#     = f.label :postal_code
   -#     %span 必須 
