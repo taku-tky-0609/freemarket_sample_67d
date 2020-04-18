@@ -1,14 +1,33 @@
 ja:
   activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              taken: "は既に使用されています。"
+              blank: "が入力されていません。"
+              too_short: "は%{count}文字以上に設定して下さい。"
+              too_long: "は%{count}文字以下に設定して下さい。"
+              invalid: "は有効でありません。"
+            password:
+              taken: "は既に使用されています。"
+              blank: "が入力されていません。"
+              too_short: "は%{count}文字以上に設定して下さい。"
+              too_long: "は%{count}文字以下に設定して下さい。"
+              invalid: "は英字と数字両方を含むパスワードを設定してください"
+              confirmation: "が内容とあっていません。"
+            password_confirmation:
+              too_short: "は%{count}文字以上に設定して下さい。"
     attributes:
       user:
         nickname: "ニックネーム"
         name: "お名前"
         last_name: "苗字"
         first_name: "名前"
-        name_kana: "お名前カナ"
-        last_name_kana: "ミョウジ"
-        first_name_kana: "ナマエ"
+        name_kana: "お名前（カタカナ）"
+        last_name_kana: "お名前カナ（苗字）"
+        first_name_kana: "お名前カナ（名前）"
         current_password: "現在のパスワード"
         email: "メールアドレス"
         password: "パスワード"
@@ -21,9 +40,10 @@ ja:
         municipality: "市町村"
         house_number: "番地"
         building: "建物名"
-        birthday: "生年月日（西暦）"
-    models:
-      user: "ユーザ"
+        birthday: "誕生日"
+        phone_number: "電話番号" 
+      address:
+        postal_code: "郵便番号"
   devise:
     confirmations:
       new:
@@ -80,3 +100,4 @@ ja:
     unlocks:
       new:
         resend_unlock_instructions: "アカウントの凍結解除方法を再送する"
+  
