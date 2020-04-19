@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get 'card/new'
-  get 'card/show'
   devise_for :users, controllers: {
     registrations: 'users/registrations',
   }
@@ -8,26 +6,26 @@ Rails.application.routes.draw do
     get 'addresses', to: 'users/registrations#new_address'
     post 'addresses', to: 'users/registrations#create_address'
   end
+
   root 'items#index'
-  root to: 'home#index'
   resources :users, only: :show
-  resources :credit_cards, only: [:new, :show] do
+  resources :cards, only: [:new, :show] do
     collection do
-      post 'show', to: 'card#show'
-      post 'pay', to: 'card#pay'
-      post 'delete', to: 'card#delete'
+      post 'show', to: 'cards#show'
+      post 'pay', to: 'cards#pay'
+      post 'delete', to: 'cards#delete'
     end
   end
 
-  resources :signup do
-    collection do
-      get 'step1'
-      post 'step2'
-      get 'step3'
-      get 'step4'
-      get 'done' # 登録完了後のページ
-    end
-  end
+  # resources :signup do
+  #   collection do
+  #     get 'step1'
+  #     post 'step2'
+  #     get 'step3'
+  #     get 'step4'
+  #     get 'done' # 登録完了後のページ
+  #   end
+  # end
   
   # get 'addresses/show'
   # get 'brands/show'

@@ -1,16 +1,17 @@
-class CardController < ApplicationController
- 
-  require "payjp"
+class CardsController < ApplicationController
+
+  require "payjp" #payjpの呼び出し
 
   def new
-    card = Card.where(user_id: current_user.id)
-    redirect_to action: "show" if card.exists?
+    card = Card.where(user_id: current_user.id) #cardテーブル上でid検索
+    redirect_to action: "show" if card.exists? #existsはデータが存在するか検索
   end
 
   def pay #payjpとCardのデータベース作成を実施します。
-    Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
-    if params['payjp-token'].blank?
-      redirect_to action: "new"
+    # Payjp.api_key = ENV["PAYJP_SECRET_KEY #秘密鍵との紐付け
+    Payjp.api_key = "sk_test_05e67d2d7366d55decab8c22" #秘密鍵との紐付け
+    if params['payjp-token'].blank? # jsで作成したpayjpTokenがちゃんと入っているか？
+      redirect_to action: "new" # トークンが空なら戻す
     else
       customer = Payjp::Customer.create(
       description: '登録テスト', #なくてもOK
@@ -44,7 +45,8 @@ class CardController < ApplicationController
     if card.blank?
       redirect_to action: "new" 
     else
-      Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+      # Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+      Payjp.api_key = "sk_test_05e67d2d7366d55decab8c22"
       customer = Payjp::Customer.retrieve(card.customer_id)
       @default_card_information = customer.cards.retrieve(card.card_id)
     end
