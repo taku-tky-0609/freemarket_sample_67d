@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   root 'items#index'
   root to: 'home#index'
   resources :users, only: :show
+  resources :credit_cards
 
   resources :signup do
     collection do
