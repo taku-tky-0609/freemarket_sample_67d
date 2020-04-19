@@ -81,4 +81,4 @@ gem 'devise-i18n-views'
 gem 'devise'
 gem 'pry-rails'
 gem 'payjp'
-gem "jquery-rails"
+gem 'jquery-rails'
