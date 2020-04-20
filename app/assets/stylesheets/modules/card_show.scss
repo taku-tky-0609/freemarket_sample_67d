@@ -1,0 +1,50 @@
+.mypagetop {
+  &__cardshow {
+    margin-right: 200px;
+    padding: 50px;
+    width: 60%;
+    height: 500px;
+    background-color: white;
+    h1 {
+      font-size: 30px;
+      font-weight: bold;
+      text-align: center;
+      padding: 20px;
+    }
+    &__wrapper {
+      font-size: 20px;
+      padding: 10px;
+      border-bottom: gray solid 1px;
+      width: 70%;
+      margin: auto;
+      display: flex;
+      &__title{
+        width: 30%;
+      }
+      &__number {
+        width: 70%;
+      }
+    }
+    &__submitArea{
+      display: flex;
+      justify-content: center;
+      margin: 20px;
+      button {
+        display: inline-block;
+        // background-color: #dcdcdc;
+        background-color: #3CCACE;
+        margin: 10px;
+        font-size: 20px;
+        width: 200px;
+        height: 50px;
+        border-radius: 5px;
+        &:hover{
+          color:#000;
+          // background-color: rgb(231, 228, 228);
+          background-color: rgb(90, 213, 218);
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

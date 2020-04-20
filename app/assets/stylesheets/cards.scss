@@ -1,3 +1,7 @@
-// Place all the styles related to the cards controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.mypagetop {
+  &__cardshow {
+    width: 1000px;
+    height: 100%;
+    background-color: blue($color: #000000);
+  }
+}
