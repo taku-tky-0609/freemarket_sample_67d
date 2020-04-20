@@ -5,6 +5,7 @@ ja:
         user:
           attributes:
             nickname:
+              taken: "は既に使用されています。"
               blank: "が入力されていません。"
             email:
               taken: "は既に使用されています。"
