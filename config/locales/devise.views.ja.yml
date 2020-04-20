@@ -19,15 +19,18 @@ ja:
               confirmation: "が内容とあっていません。"
             password_confirmation:
               too_short: "は%{count}文字以上に設定して下さい。"
+              blank: "が入力されていません。"
+            phone_number: 
+              too_short: "は%{count}文字以上に設定して下さい。"
     attributes:
       user:
         nickname: "ニックネーム"
         name: "お名前"
-        last_name: "苗字"
-        first_name: "名前"
+        last_name: "お名前（苗字）"
+        first_name: "お名前（名前）"
         name_kana: "お名前（カタカナ）"
-        last_name_kana: "お名前カナ（苗字）"
-        first_name_kana: "お名前カナ（名前）"
+        last_name_kana: "お名前 フリガナ（苗字）"
+        first_name_kana: "お名前 フリガナ（名前）"
         current_password: "現在のパスワード"
         email: "メールアドレス"
         password: "パスワード"
