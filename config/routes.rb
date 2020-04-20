@@ -17,6 +17,7 @@ Rails.application.routes.draw do
     end
   end
 
+
   # resources :signup do
   #   collection do
   #     get 'step1'

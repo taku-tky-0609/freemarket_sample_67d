@@ -34,6 +34,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
     sign_in(:user, @user)
   end
 
+  def create_credit
+  end
+
   protected
 
   def address_params
