@@ -33,7 +33,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     @user.save
     session["devise.regist_data"]["user"].clear
     sign_in(:user, @user)
-    @credit_cards = @user.build_credit_card
+    @credit_cards = @user.build_credit
     render :new_credit_cards
   end
 
