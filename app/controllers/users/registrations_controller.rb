@@ -17,6 +17,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     session["devise.regist_data"] = {user: @user.attributes}
     session["devise.regist_data"][:user]["password"] = params[:user][:password]
     @address = @user.build_address
+
     render :new_address
   end
 
@@ -38,19 +39,19 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
 
   def create_credit_cards
-   
-    @user = User.new(session["devise.regist_data"]["user"])
-    @address = Address.new(session["devise.regist_data"]["address"])
-    @credit_cards = Credit_cards.new(credit_cards_params)
+    # @user = User.new(session["devise.regist_data"]["user"])
+    # @address = Address.new(session["devise.regist_data"]["address"])
+    @credit_cards = CreditCard.new(credit_cards_params)
     unless @credit_cards.valid?
       flash.now[:alert] = @credit_cards.errors.full_messages
       render :new_credit_cards and return
     end
-    @user.build_credit_cards(@credit_cards.attributes)
-    @user.save
-    session["devise.regist_data"]["user"].clear
-    sign_in(:user, @user)
-    @credit_cards = @user.build_credit_card
+    # @user.build_credit_cards(@credit_cards.attributes)
+    # @user.save
+    @credit_cards.save
+    # session["devise.regist_data"]["user"].clear
+    # sign_in(:user, @user)
+    # @credit_cards = @user.build_credit_card
     render :create_address
   end
 
@@ -61,7 +62,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def credit_cards_params
-    params.require(:credit_cards).permit(:user, :costomer_id, :card_id)
+    params.require(:credit_card).permit(:costomer_id, :card_id).merge(user_id: current_user.id)
   end
   # GET /resource/sign_up
   # def new
