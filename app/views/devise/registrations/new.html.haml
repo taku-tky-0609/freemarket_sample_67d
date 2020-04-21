@@ -14,34 +14,34 @@
             %br/
             = f.text_field :nickname, :placeholder => "例)オーノー...ようこ"
 
-  .fieldpost_params
-    = f.label :email
-    %span 必須 
-    %br/
-    = f.text_field :email, autofocus: true, :placeholder => "PC・携帯どちらでも可"
-  .field
-    = f.label :password
-    %span 必須 
-    %br/
-    = f.password_field :password, autocomplete: "off"
-  .field
-    = f.label :password_confirmation
-    %span 必須 
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "off"
-  -# .field
-  -#   = f.label :password
-  -#   %span 必須
-    -# - if @minimum_password_length
-    -#   %em
-    -#     (#{@minimum_password_length} characters minimum)
-    -# %br/
-  -# .toggle
-  -# %input#password2.field.js-password{:autocomplete => "off", :placeholder => "パスワードを入力", :required => "required", :type => "password", :value => ""}/
-  -# .btn
-  -#   %input#eye.btn-input.js-password-toggle{:type => "checkbox"}/
-  -#   %label.btn-label.js-password-label{:for => "eye"}
-  -#     %i.fas.fa-eye
+          .fieldpost_params
+            = f.label :email
+            %span 必須 
+            %br/
+            = f.text_field :email, autofocus: true, :placeholder => "PC・携帯どちらでも可"
+          .field
+            = f.label :password
+            %span 必須 
+            %br/
+            = f.password_field :password, autocomplete: "off"
+          .field
+            = f.label :password_confirmation
+            %span 必須 
+            %br/
+            = f.password_field :password_confirmation, autocomplete: "off"
+          -# .field
+          -#   = f.label :password
+          -#   %span 必須
+            -# - if @minimum_password_length
+            -#   %em
+            -#     (#{@minimum_password_length} characters minimum)
+            -# %br/
+          -# .toggle
+          -# %input#password2.field.js-password{:autocomplete => "off", :placeholder => "パスワードを入力", :required => "required", :type => "password", :value => ""}/
+          -# .btn
+          -#   %input#eye.btn-input.js-password-toggle{:type => "checkbox"}/
+          -#   %label.btn-label.js-password-label{:for => "eye"}
+          -#     %i.fas.fa-eye
 
 
           -# .field
