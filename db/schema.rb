@@ -10,11 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_15_152659) do
+
+ActiveRecord::Schema.define(version: 2020_04_20_112629) do
+
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.integer "postal_code", null: false
+    t.string "postal_code", null: false
     t.string "prefectures", null: false
     t.string "municipality", null: false
     t.string "building"
@@ -31,20 +33,19 @@ ActiveRecord::Schema.define(version: 2020_04_15_152659) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.string "customer_id", null: false
+    t.string "card_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "categoris", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "category_name", null: false
     t.string "ancestry", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "credit_cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.integer "costomer_id", null: false
-    t.integer "card_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_credit_cards_on_user_id"
   end
 
   create_table "evaluations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

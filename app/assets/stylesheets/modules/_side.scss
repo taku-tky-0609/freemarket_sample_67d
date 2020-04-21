@@ -4,7 +4,7 @@
   margin-right: 40px;
   .sidebar__contents-title, .sidebar__contents-setting {
     width: 300px;
-    li.sidebar__contents-title, li.sidebar__contents-setting {
+    li.sidebar__contents-title, li.sidebar__contents-setting, li {
       &:hover{
         color:#000;
         background-color: rgb(231, 228, 228);
@@ -19,6 +19,7 @@
       margin-bottom: 2px;
       background-color:white;
       box-shadow: 0 1px 1px 0 rgba(185, 185, 185, 0.2);
+      text-decoration: none;
     }
   }
   h1 {
