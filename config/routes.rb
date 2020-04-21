@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   devise_scope :user do
     get 'addresses', to: 'users/registrations#new_address'
     post 'addresses', to: 'users/registrations#create_address'
-    post 'card',to: 'users/registrations#create_credit_cards'
+    # post 'card',to: 'users/registrations#create_credit_cards' ← 追加実装
   root 'items#index'
   resources :users, only: :show
     
