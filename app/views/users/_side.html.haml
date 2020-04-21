@@ -39,7 +39,7 @@
       = link_to "#" do
         発送元・お届け先住所変更
     %li.sidebar__contents-title
-      = link_to new_card_path do
+      = link_to new_credit_card_path do
         支払い方法
     %li.sidebar__contents-title
       = link_to "#" do
@@ -51,5 +51,5 @@
       = link_to "#" do
         電話番号の確認
     %li.sidebar__contents-title
-      = link_to  destroy_user_session_path, method: :delete do
+      = link_to logout_path, method: :Post do
         ログアウト

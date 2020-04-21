@@ -8,7 +8,16 @@ Rails.application.routes.draw do
     post 'card',to: 'users/registrations#create_credit_cards'
   root 'items#index'
   resources :users, only: :show
-  
+    
+  post "logout" => "users#logout"
+  resources :credit_cards, only: [:new, :show] do
+    collection do
+      post 'show', to: 'credit_cards#show'
+      post 'pay', to: 'credit_cards#pay'
+      post 'delete', to: 'credit_cards#delete'
+    end
+  end
+
   # resources :signup do
   #   collection do
   #     get 'step1'

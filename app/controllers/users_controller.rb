@@ -16,6 +16,12 @@ class UsersController < ApplicationController
   def show
   end
 
+  def logout
+    session[:user_id] = nil
+    # flash[:notice] = "ログアウトしました"
+    # redirect_to("/login")
+  end
+
   private
 
   def user_params
