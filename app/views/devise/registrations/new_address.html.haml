@@ -1,32 +1,38 @@
-%h2 会員情報実装中
-= form_for @address, url: addresses_path, method: :post, html: {class: 'first-main__box'} do |f|
+.single
+  .single__header
+    %img{ src: "/images/logo.png"}
+  = form_for @address, url: addresses_path, method: :post, html: {class: 'first-main__box'} do |f|
+  
+    .text
+      %h2.hed 会員情報入力
+      .text__main--center
+        .text__contents
+          .field
+            = f.label :postal_code, "郵便番号"
+            %br
+            = f.text_field :postal_code, :placeholder => "464-9999"
+            %br
+            = f.label :prefectures, "都道府県"
+            %br
+            = f.text_field :prefectures
+            %br
+            = f.label :municipality, "市区町村"
+            %br
+            = f.text_field :municipality, :placeholder => "例南アルプス市天然水"
+            %br
+            = f.label :house_number, "番地"
+            %br
+            = f.text_field :house_number, :placeholder => "1-2-3"
+            %br
+            = f.label :building, "建物名"
+            %br
+            = f.text_field :building, :placeholder => "東京タワー"
+          .actions
+            = f.submit "次に進む"
 
-  .form-group
-    = f.label :postal_code, "郵便番号"
-    %br
-    = f.text_field :postal_code, :placeholder => "464-9999"
-    %br
-    = f.label :prefectures, "都道府県"
-    %br
-    = f.text_field :prefectures
-    %br
-    = f.label :municipality, "市区町村"
-    %br
-    = f.text_field :municipality, :placeholder => "例南アルプス市天然水"
-    %br
-    = f.label :house_number, "番地"
-    %br
-    = f.text_field :house_number, :placeholder => "1-2-3"
-    %br
-    = f.label :building, "建物名"
-    %br
-    = f.text_field :building, :placeholder => "東京タワー"
-  .actions
-    = f.submit "次に進む"
 
+        -# = form_for(@address, url: registration_path(resource_name)) do |f
+        -# = render "devise/shared/error_messages", resource: @address
 
--# = form_for(@address, url: registration_path(resource_name)) do |f
--# = render "devise/shared/error_messages", resource: @address
-
--# = form_for(@address, url: registration_path(resource_name)) do |f|
--#   = render “devise/shared/error_messages”, resource: @address
+        -# = form_for(@address, url: registration_path(resource_name)) do |f|
+        -#   = render “devise/shared/error_messages”, resource: @address
