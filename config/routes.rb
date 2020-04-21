@@ -5,10 +5,10 @@ Rails.application.routes.draw do
   devise_scope :user do
     get 'addresses', to: 'users/registrations#new_address'
     post 'addresses', to: 'users/registrations#create_address'
-  end
-
+    post 'card',to: 'users/registrations#create_credit_cards'
   root 'items#index'
   resources :users, only: :show
+    
   post "logout" => "users#logout"
   resources :credit_cards, only: [:new, :show] do
     collection do
@@ -17,7 +17,6 @@ Rails.application.routes.draw do
       post 'delete', to: 'credit_cards#delete'
     end
   end
-
 
   # resources :signup do
   #   collection do
@@ -28,11 +27,12 @@ Rails.application.routes.draw do
   #     get 'done' # 登録完了後のページ
   #   end
   # end
-  
+  # 
   # get 'addresses/show'
   # get 'brands/show'
   # get 'credit_cards/index'
   # get 'categories/index'
   # get 'items_comments/create'
+  end
 end
 
