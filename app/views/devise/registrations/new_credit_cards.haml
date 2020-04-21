@@ -1,0 +1,18 @@
+%h2 会員情報実装中
+= form_for @credit_cards, url: card_path, method: :post, html: {class: 'first-main__box'} do |f|
+  .form-group
+    = f.label :user, "やかし"
+    %br
+    = f.text_field :user, :placeholder => "u"
+    %br
+    = f.label :costomer_id, "111"
+    %br
+    = f.text_field :costomer_id
+    %br
+    = f.label :card_id, "222"
+    %br
+    = f.text_field :card_id
+  
+  .actions
+    = f.submit "次に進む"
+
