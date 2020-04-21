@@ -1,0 +1,7 @@
+= render 'items/header'
+.mypagetop
+  = render 'users/side'
+  .logoutArea
+    = link_to  destroy_user_session_path, method: :delete do
+      %button ログアウト
+= render 'items/footer'

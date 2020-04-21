@@ -9,11 +9,12 @@ Rails.application.routes.draw do
 
   root 'items#index'
   resources :users, only: :show
-  resources :cards, only: [:new, :show] do
+  post "logout" => "users#logout"
+  resources :credit_cards, only: [:new, :show] do
     collection do
-      post 'show', to: 'cards#show'
-      post 'pay', to: 'cards#pay'
-      post 'delete', to: 'cards#delete'
+      post 'show', to: 'credit_cards#show'
+      post 'pay', to: 'credit_cards#pay'
+      post 'delete', to: 'credit_cards#delete'
     end
   end
 

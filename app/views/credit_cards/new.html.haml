@@ -1,10 +1,10 @@
-= render 'items/header'
+=render 'items/header'
 .mypagetop
   = render 'users/side'
   .cardNewArea
     .cardNewArea__title
       クレジットカード情報入力
-    = form_tag(pay_cards_path, method: :post, id: 'charge-form',  name: "inputForm" , class: "cardNewArea__form") do
+    = form_tag(pay_credit_cards_path, method: :post, id: 'charge-form',  name: "inputForm" , class: "cardNewArea__form") do
       .cardNewArea__form__cardNumber
         .cardNewArea__form__cardNumber__title
           %h2 カード番号
