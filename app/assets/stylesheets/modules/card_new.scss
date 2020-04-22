@@ -1,0 +1,135 @@
+.cardNewArea {
+  margin-right: 200px;
+  padding: 50px;
+  width: 60%;
+  height: 700px;
+  background-color: white;
+  &__title {
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    padding: 20px;
+  }
+  &__form {
+    font-size: 20px;
+    padding: 10px;
+    width: 70%;
+    margin: auto;
+    &__cardNumber {
+      &__title {
+        display: flex;
+        margin-bottom: 10px;
+        h3 {
+          margin-left: 5px;
+          padding:0 5px 0;
+          background-color: red;
+          border-radius: 3px;
+          color: white;
+          font-size: 15px;
+          line-height: 30px;
+        }
+      }
+      &__input {
+        height: 50px;
+        padding: 10px;
+        border-radius: 3px;
+        width: 90%;
+      }
+    }
+    &__image {
+      background-image: image-url("bg-cardNew.png");
+      background-size: cover;
+      width: 70%;
+      height: 30px;
+      margin: 5px 0 10px;
+    }
+    &__cardExpiration {
+      &__title {
+        display: flex;
+        margin:10px 0 10px;
+        h3 {
+          margin-left: 5px;
+          padding:0 5px 0;
+          background-color: red;
+          border-radius: 3px;
+          color: white;
+          font-size: 15px;
+          line-height: 30px;
+        }
+      }
+      &__input {
+        display: flex;
+        width: 100%;
+        &__month{
+          width: 35%;
+          select {
+            height: 50px;
+            padding: 10px;
+            border-radius: 3px;
+            width: 50%;
+          }
+          span {
+            margin: 0 10px 0;
+          }
+        }
+        &__year{
+          width: 35%;
+          select {
+            height: 50px;
+            padding: 10px;
+            border-radius: 3px;
+            width: 50%;
+          }
+          span {
+            margin: 0 10px 0;
+          }
+        }
+      }
+    }
+    &__cardSecurity {
+      &__title {
+        display: flex;
+        margin: 10px 0 10px;
+        h3 {
+          margin-left: 5px;
+          padding:0 5px 0;
+          background-color: red;
+          border-radius: 3px;
+          color: white;
+          font-size: 15px;
+          line-height: 30px;
+        }
+      }
+      &__number {
+        display: flex;
+        width: 100%;
+        &__cvc{
+          width: 90%;
+          height: 50px;
+          padding: 10px;
+          border-radius: 3px;
+        }
+      } 
+    }
+    &__submit {
+      display: inline-block;
+      margin: 20px 0 10px;
+      width: 90%;
+      &__btn{
+        -webkit-appearance: none;
+        height: 100%;
+        font-size: 20px;
+        line-height: 20px;
+        width: 100%;
+        padding: 10px;
+        background-color: #3CCACE;
+        border-radius: 3px;
+        &:hover{
+          color:#000;
+          background-color: rgb(90, 213, 218);
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
