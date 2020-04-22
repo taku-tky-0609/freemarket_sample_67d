@@ -5,11 +5,19 @@ Rails.application.routes.draw do
   devise_scope :user do
     get 'addresses', to: 'users/registrations#new_address'
     post 'addresses', to: 'users/registrations#create_address'
-    post 'card',to: 'users/registrations#create_credit_cards'
+    # post 'card',to: 'users/registrations#create_credit_cards' ← 追加実装
   root 'items#index'
-  root to: 'home#index'
   resources :users, only: :show
-  
+    
+  post "logout" => "users#logout"
+  resources :credit_cards, only: [:new, :show] do
+    collection do
+      post 'show', to: 'credit_cards#show'
+      post 'pay', to: 'credit_cards#pay'
+      post 'delete', to: 'credit_cards#delete'
+    end
+  end
+
   # resources :signup do
   #   collection do
   #     get 'step1'
