@@ -1,5 +1,4 @@
 %h2 会員情報実装中
--# = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
 = form_for(@user, url: user_registration_path) do |f|
   = render "devise/shared/error_messages", resource: @user
   
