@@ -111,6 +111,19 @@ describe User do
         user.valid?
         expect(user.errors[:reset_password_sent_at]).to include("can't be blank")
       end
+      
+      it " passwordが7文字以上であれば登録できること " do
+        user = build(:user, password: "1234567", password_confirmation: "1234567")
+        user.valid?
+        expect(user).to be_valid
+      end
+  
+      it " passwordが6文字以下であれば登録できないこと " do
+        user = build(:user, password: "123456", password_confirmation: "123456")
+        user.valid?
+        expect(user.errors[:password]).to include("is too short (minimum is 7 characters)")
+      end
+
     end
     
     context 'can not save unique test' do

@@ -1,23 +1,23 @@
 class CreditCardsController < ApplicationController
 
-  require "payjp" #payjpの呼び出し
+  require "payjp"
 
   def new
-    card = CreditCard.where(user_id: current_user.id) #cardテーブル上でid検索
-    redirect_to action: "show" if card.exists? #existsはデータが存在するか検索
+    card = CreditCard.find_by(user_id: current_user.id)
+    redirect_to action: "show" unless card.nil?
   end
 
-  def pay #payjpとCardのデータベース作成を実施します。
-    Payjp.api_key = Rails.application.credentials.dig(:payjp, :PAYJP_SECRET_KEY) #秘密鍵との紐付け
-    if params['payjp-token'].blank? # jsで作成したpayjpTokenがちゃんと入っているか？
-      redirect_to action: "new" # トークンが空なら戻す
+  def pay
+    Payjp.api_key = Rails.application.credentials.dig(:payjp, :PAYJP_SECRET_KEY)
+    if params['payjp-token'].blank?
+      redirect_to action: "new" 
     else
       customer = Payjp::Customer.create(
-      description: '登録テスト', #なくてもOK
-      email: current_user.email, #なくてもOK
+      description: '登録テスト',
+      email: current_user.email,
       card: params['payjp-token'],
       metadata: {user_id: current_user.id}
-      ) #念の為metadataにuser_idを入れましたがなくてもOK
+      ) 
       @card = CreditCard.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
       if @card.save
         redirect_to action: "show"
@@ -27,9 +27,9 @@ class CreditCardsController < ApplicationController
     end
   end
 
-  def delete #PayjpとCardデータベースを削除します
-    card = CreditCard.where(user_id: current_user.id).first
-    if card.blank?
+  def delete
+    card = CreditCard.find_by(user_id: current_user.id)
+    if card.nil?
     else
       Payjp.api_key = Rails.application.credentials.dig(:payjp, :PAYJP_SECRET_KEY)
       customer = Payjp::Customer.retrieve(card.customer_id)
@@ -39,9 +39,9 @@ class CreditCardsController < ApplicationController
       redirect_to action: "new"
   end
 
-  def show #Cardのデータpayjpに送り情報を取り出します
-    card = CreditCard.where(user_id: current_user.id).first
-    if card.blank?
+  def show 
+    card = CreditCard.find_by(user_id: current_user.id)
+    if card.nil?
       redirect_to action: "new" 
     else
       Payjp.api_key = Rails.application.credentials.dig(:payjp, :PAYJP_SECRET_KEY)
