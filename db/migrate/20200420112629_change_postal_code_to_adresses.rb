@@ -7,3 +7,4 @@ class ChangePostalCodeToAdresses < ActiveRecord::Migration[5.2]
     change_column :addresses, :postal_code, :integer
   end
 end
+
