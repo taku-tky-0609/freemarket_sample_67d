@@ -38,6 +38,7 @@ ja:
             phone_number:
               blank: "が入力されていません。"
               too_short: "は%{count}文字以上に設定して下さい。"
+              taken: "は既に使用されています。"
             birthday:
               blank: "が入力されていません。"
         address:
