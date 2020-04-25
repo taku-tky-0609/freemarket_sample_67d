@@ -51,7 +51,7 @@ a {
       }
       &__number {
         position: absolute;
-        background-color: #3CCACE;
+        background-color: $furima_theme_color;
         height: 70px;
         width: 70px;
         border-radius: 3px;
@@ -67,7 +67,7 @@ a {
         font-size: 32px;
         font-weight: bolder;
         & span {
-          color: #3CCACE;
+          color: $furima_theme_color;
         }
       }
       &__explanation {
@@ -147,7 +147,7 @@ a {
     &__subtitle {
       font-size: 30px;
       font-weight: bolder;
-      color: #3CCACE;
+      color: $furima_theme_color;
     }
     &__box {
       height: 450px;
