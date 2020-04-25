@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     # post 'card',to: 'users/registrations#create_credit_cards' ← 追加実装
   root 'items#index'
   resources :users, only: :show
+  resources :items
     
   post "logout" => "users#logout"
   resources :credit_cards, only: [:new, :show] do
