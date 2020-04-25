@@ -4,7 +4,7 @@
   .single__main--form
     %h2.hed 会員情報入力
     .single__main--center
-      = form_for(@user, url: user_registration_path) do |f|
+      = form_for(@user, :builder => FormHelper::FormWithErrorMessageBuilder, url: user_registration_path) do |f|
         = render "devise/shared/error_messages", resource: @user
         .filed__contents
           .field
@@ -50,7 +50,7 @@
             = f.label :birthday
             %span 必須 
             %br/
-            = f.text_field :birthday, :placeholder => "例)"
+            = f.text_field :birthday, :placeholder => "例) 2020/04/12"
           .actions
             = f.submit "次へ進む"
   .foter

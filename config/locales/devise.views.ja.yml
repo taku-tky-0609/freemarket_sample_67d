@@ -55,11 +55,11 @@ ja:
       user:
         nickname: "ニックネーム"
         name: "お名前"
-        last_name: "お名前（苗字）"
-        first_name: "お名前（名前）"
+        last_name: "お名前"
+        first_name: "お名前"
         name_kana: "お名前（カタカナ）"
-        last_name_kana: "お名前 フリガナ（苗字）"
-        first_name_kana: "お名前 フリガナ（名前）"
+        last_name_kana: "お名前 フリガナ"
+        first_name_kana: "お名前 フリガナ"
         current_password: "現在のパスワード"
         email: "メールアドレス"
         password: "パスワード"
@@ -135,4 +135,3 @@ ja:
     unlocks:
       new:
         resend_unlock_instructions: "アカウントの凍結解除方法を再送する"
-  
