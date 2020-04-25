@@ -6,11 +6,12 @@
   .sidebar__contents-title, .sidebar__contents-setting {
     width: 300px;
     li.sidebar__contents-title, li.sidebar__contents-setting, li {
-      &:hover{
-        color:#000;
-        background-color: rgb(231, 228, 228);
-        cursor: pointer;
-      }
+      // &:hover{
+      //   color:#000;
+      //   background-color: rgb(231, 228, 228);
+      //   cursor: pointer;
+      // }
+      @include link-color();
       color: #555;
       display: inline-block;
       width: 280px;
