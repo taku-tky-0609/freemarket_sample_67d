@@ -2,6 +2,6 @@
 .mypagetop
   = render 'users/side'
   .logoutArea
-    = link_to  destroy_user_session_path, method: :delete do
-      %button ログアウト
+    = link_to  destroy_user_session_path, class: "logoutArea__link", method: :delete do
+      %button{class: "logoutArea__link--button"} ログアウト
 = render 'items/footer'

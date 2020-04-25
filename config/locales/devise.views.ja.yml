@@ -24,7 +24,8 @@ ja:
               confirmation: "が入力して下さい"
               too_short: "は%{count}文字以上に設定して下さい。"
               blank: "が入力されていません。"
-            phone_number: 
+            phone_number:
+              too_long: "は%{count}文字以下に設定して下さい。"
               too_short: "は%{count}文字以上に設定して下さい。"
             last_name_kana: 
               blank: "が入力されていません。"
@@ -37,6 +38,7 @@ ja:
             phone_number:
               blank: "が入力されていません。"
               too_short: "は%{count}文字以上に設定して下さい。"
+              taken: "は既に使用されています。"
             birthday:
               blank: "が入力されていません。"
         address:
