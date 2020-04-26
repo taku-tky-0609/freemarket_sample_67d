@@ -30,8 +30,12 @@ module FormHelper
       input_field_with_error(attribute, options) do                             
          super                                                                   
       end                                                                       
-    end     
-    
+    end
+    def telephone_field(attribute, options={})                                       
+      input_field_with_error(attribute, options) do                             
+         super                                                                   
+      end                                                                       
+    end
     def password_field(attribute, options={})                                       
         input_field_with_error(attribute, options) do                             
        super                                                                   
