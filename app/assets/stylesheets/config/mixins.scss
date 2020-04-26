@@ -1,0 +1,6 @@
+@mixin link-color() {
+  a:link { color: #0000ff; } //… 未訪問のリンク
+  a:visited { color: #000080; } //… 訪問済みのリンク
+  a:hover { color: #ff0000; } //… ポイント時のリンク
+  a:active { color: #ff8000; } //… 選択中のリンク
+}

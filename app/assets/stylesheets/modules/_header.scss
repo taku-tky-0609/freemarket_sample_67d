@@ -49,29 +49,19 @@
     &--left{
       display: flex;
       position: relative;
-        &__category a{
-          @include hoge;
-        }
+      @include link-color();
         &__brand a{
           padding: 0 0 0 32px;
-          @include hoge;
         }
     }
     &--right {
         display: flex;
-        &__login a{
-          @include hoge;
-        }
+        @include link-color();
         &__new-create a{
           padding: 0 0 0 32px;
-          @include hoge;
-        }
-        &__mypage a{
-          @include hoge;
         }
         &__logout a{
           padding: 0 0 0 32px;
-          @include hoge;
         }
     }
   }

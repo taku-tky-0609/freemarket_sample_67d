@@ -8,6 +8,22 @@
   .center__content
     .center__top
       = image_tag 'https://pbs.twimg.com/media/EVJrKuiU0AIy-Qp?format=jpg&name=large', class: 'user-icon'
-    .center__title お知らせ・やることリスト
-    .center__items 購入した商品
+    .mypage--tags
+      .mypage--tags__title
+        .notice
+          %h1 お知らせ
+          .notice__list
+            %h1 　お知らせはありません
+        .todo
+          %h1 やることリスト
+          .todol__ist
+    .purchase--tags 
+      .purchase--tags__title 
+        .transactions
+          購入した商品
+          .transactions__list
+            %h1 　商品情報はありません
+        .pastTransactions
+          過去の取引
+          .pastTransactions__list
 = render 'items/footer'

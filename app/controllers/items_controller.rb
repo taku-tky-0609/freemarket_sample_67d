@@ -7,4 +7,7 @@ class ItemsController < ApplicationController
 
   def crate
   end
+  
+  def show
+  end
 end

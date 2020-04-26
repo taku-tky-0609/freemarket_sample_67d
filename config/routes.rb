@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   root 'items#index'
   resources :items
   resources :users, only: :show
+  resources :items
     
   post "logout" => "users#logout"
   resources :credit_cards, only: [:new, :show] do
