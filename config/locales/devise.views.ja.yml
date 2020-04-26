@@ -24,9 +24,6 @@ ja:
               confirmation: "が入力して下さい"
               too_short: "は%{count}文字以上に設定して下さい。"
               blank: "が入力されていません。"
-            phone_number:
-              too_long: "は%{count}文字以下に設定して下さい。"
-              too_short: "は%{count}文字以上に設定して下さい。"
             last_name_kana: 
               blank: "が入力されていません。"
             first_name_kana:
@@ -36,6 +33,7 @@ ja:
             first_name:
               blank: "が入力されていません。"
             phone_number:
+              too_long: "は%{count}文字以下に設定して下さい。"
               blank: "が入力されていません。"
               too_short: "は%{count}文字以上に設定して下さい。"
               taken: "は既に使用されています。"
@@ -55,11 +53,11 @@ ja:
       user:
         nickname: "ニックネーム"
         name: "お名前"
-        last_name: "お名前（苗字）"
-        first_name: "お名前（名前）"
+        last_name: "お名前"
+        first_name: "お名前"
         name_kana: "お名前（カタカナ）"
-        last_name_kana: "お名前 フリガナ（苗字）"
-        first_name_kana: "お名前 フリガナ（名前）"
+        last_name_kana: "お名前 フリガナ"
+        first_name_kana: "お名前 フリガナ"
         current_password: "現在のパスワード"
         email: "メールアドレス"
         password: "パスワード"
@@ -135,4 +133,3 @@ ja:
     unlocks:
       new:
         resend_unlock_instructions: "アカウントの凍結解除方法を再送する"
-  
