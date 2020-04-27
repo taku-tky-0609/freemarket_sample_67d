@@ -1,7 +1,7 @@
 .single
   .single__header
     %img{ src: "/images/logo.png"}
-  = form_for @address, url: addresses_path, method: :post, html: {class: 'first-main__box'} do |f|
+  = form_for @address, :builder => FormHelper::FormWithErrorMessageBuilder, url: addresses_path, method: :post, html: {class: 'first-main__box'} do |f|
   
     .text
       %h2.hed 会員情報入力
@@ -14,7 +14,7 @@
             %br
             = f.label :prefectures, "都道府県"
             %br
-            = f.text_field :prefectures
+            = f.select :prefectures, User.prefectures.keys, {prompt: '選択してください'}, class: 'prefecture'
             %br
             = f.label :municipality, "市区町村"
             %br
