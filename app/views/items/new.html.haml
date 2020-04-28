@@ -5,124 +5,139 @@
 
   .body
     .body_1
-      .body_2
-        .top
-          %h1.top_text 出品画像
-          %h2.top_text_2 必須
-        %p.top_text_details 最大10枚までアップロードできます
-        .style_form
-          %br/
-          .gazou
-            %p.sc-jGxEUC.eErKZK
-            ドラッグアンドドロップ
-            %br>/
-            またはクリックしてファイルをアップロード
+      = form_with(model: @item, local: true) do |form|
+        .body_2
+          .top
+            %h1.top_text 出品画像
+            %h2.top_text_2 必須
+          %p.top_text_details 最大10枚までアップロードできます
+          .style_form
+            %br/
+            .gazou
+              %p.sc-jGxEUC.eErKZK
+              ドラッグアンドドロップ
+              %br>/
+              またはクリックしてファイルをアップロード
         
-      .body_3
-        .top2
-          .top2_3
-            %h1.Product_name 商品名
-            %h2.Product_name_2 必須
-          %input.product{:autocomplete => "off", :name => "name", :placeholder => "40文字まで", :type => "text", :value => ""}/
-        .top3
-          .top3_3
-            %h1.Product_description 商品の説明
-            %h2.Product_description_2 必須
-          %textarea.style_textarea{:name => "description", :placeholder => "商品の説明（必須 1,000文字以内）\n（色、素材、重さ、定価、注意点など）\n\n例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。\n          ", :rows => "7"}
+        .body_3
+          .top2
+            .top2_3
+              %h1.Product_name 商品名
+              %h2.Product_name_2 必須
+            -# = form.label :product
+            -# = form.text_field :class => 'product'=> "40文字まで"
+            = form.text_field :text, class: "product", placeholder: "40文字まで"
+            /placeholder: "40文字"
+            -# %input.product{:autocomplete => "off", :name => "name", :placeholder => "40文字まで", :type => "text", :value => ""}/
+          .top3
+            .top3_3
+              %h1.Product_description 商品の説明
+              %h2.Product_description_2 必須
+            = form.text_area :text, class: "style_textarea", placeholder: "商品の説明（必須 1,000文字以内）\n（色、素材、重さ、定価、注意点など）\n\n例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。\n          ", :rows => "7"
+            -# %textarea.style_textarea{:name => "description", :placeholder => "商品の説明（必須 1,000文字以内）\n（色、素材、重さ、定価、注意点など）\n\n例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。\n          ", :rows => "7"}
 
-      .body_4
-        .top4
-          .top4_1
-            %h1.Product_details 商品の詳細
-          .top4_2
-            %h1.category カテゴリー
-            %h2.category_2 必須
-          %input.category_3{:autocomplete => "off", :name => "name", :placeholder => "選択してください", :type => "text", :value => ""}/  
-          .top4_3
-            %h1.brand ブランド
-            %h2.brand_2 任意
-          %input.brand_3{:autocomplete => "off", :name => "name", :placeholder => "例）シャネル", :type => "text", :value => ""}/  
-          .top4_4
-            %h1.Product_status 商品の状態
-            %h2.Product_status_2 必須
-          %input.Product_status_3{:autocomplete => "off", :name => "name", :placeholder => "選択してください", :type => "text", :value => ""}/  
-      
-      .body_5
-        .body5_1
-          %h1.regarding_delivery 配送について
-        .body5_2
-          %h1.shipping_fee_burden 配送料の負担
-          %h2.shipping_fee_burden_2 必須
-        %input.Product_status_3{:autocomplete => "off", :name => "name", :placeholder => "選択してください", :type => "text", :value => ""}/  
-        .body5_3
-          %h1.shipping_region 発送元の地域
-          %h2.shipping_region_2 必須
-        %input.Product_status_3{:autocomplete => "off", :name => "name", :placeholder => "選択してください", :type => "text", :value => ""}/  
+        .body_4
+          .top4
+            .top4_1
+              %h1.Product_details 商品の詳細
+            .top4_2
+              %h1.category カテゴリー
+              %h2.category_2 必須
+            = form.text_field :text, class: "category_3", placeholder: "選択してください"
+            -# %input.category_3{:autocomplete => "off", :name => "name", :placeholder => "", :type => "text", :value => ""}/  
+            .top4_3
+              %h1.brand ブランド
+              %h2.brand_2 任意
+            = form.text_field :text, class: "brand_3", placeholder: "例）シャネル"
+            -# %input.brand_3{:autocomplete => "off", :name => "name", :placeholder => "例）シャネル", :type => "text", :value => ""}/  
+            .top4_4
+              %h1.Product_status 商品の状態
+              %h2.Product_status_2 必須
+            = form.text_field :text, class: "Product_status_3", placeholder: "選択してください"
+            -# %input.Product_status_3{:autocomplete => "off", :name => "name", :placeholder => "選択してください", :type => "text", :value => ""}/  
+        
+        .body_5
+          .body5_1
+            %h1.regarding_delivery 配送について
+          .body5_2
+            %h1.shipping_fee_burden 配送料の負担
+            %h2.shipping_fee_burden_2 必須
+          = form.text_field :text, class: "Product_status_3", placeholder: "選択してください"
+          -# %input.Product_status_3{:autocomplete => "off", :name => "name", :placeholder => "選択してください", :type => "text", :value => ""}/  
+          .body5_3
+            %h1.shipping_region 発送元の地域
+            %h2.shipping_region_2 必須
+          = form.text_field :text, class: "Product_status_3", placeholder: "選択してください"
+          -# %input.Product_status_3{:autocomplete => "off", :name => "name", :placeholder => "選択してください", :type => "text", :value => ""}/  
 
-        .body5_4
-          %h1.days 発送までの日数
-          %h2.days_2 必須
-        %input.Product_status_3{:autocomplete => "off", :name => "name", :placeholder => "選択してください", :type => "text", :value => ""}/  
+          .body5_4
+            %h1.days 発送までの日数
+            %h2.days_2 必須
+          = form.text_field :text, class: "Product_status_3", placeholder: "選択してください"
+          -# %input.Product_status_3{:autocomplete => "off", :name => "name", :placeholder => "選択してください", :type => "text", :value => ""}/  
 
-      .body_6
-        .dody6_1
-          %h1.price 価格　（¥300〜9,999,999）
-          .dody6_2
-            .body6_3
-              %h1.selling_price 販売価格
-              %h2.selling_price_2 必須
-            .body6_10
-              %span.okane ¥
-              %input.selling_price_3{:autocomplete => "off", :name => "price", :placeholder => "0", :type => "number", :value => ""}/
+        .body_6
+          .dody6_1
+            %h1.price 価格　（¥300〜9,999,999）
+            .dody6_2
+              .body6_3
+                %h1.selling_price 販売価格
+                %h2.selling_price_2 必須
+              .body6_10
+                %span.okane ¥
+                = form.number_field :text, class: "selling_price_3", placeholder: "0"
+                -# %input.selling_price_3{:autocomplete => "off", :name => "price", :placeholder => "0", :type => "number", :value => ""}/
+                
+
+            %h1.sales_commission 販売手数料 (10%)
+        .body_7
+          .body7_1
+            %h1.sales_profit 販売利益
+
+          .body7_2
+            .body7_3
+              = form.submit :text, class: "style_button1", value: "送信する"
+              = form.submit :text, class: "style_button2", value: "下書きに保存"
+              -# %button.style_button1{:tabindex => "0", :type => "submit"} 出品する
+              -# %button.style_button2{:tabindex => "0", :type => "button"} 下書きに保存
+              .sakana= link_to "戻る", root_path
+
+
+          %p.setu
+            禁止されている
+            %a.setu1{:href => "#", :rel => "#", :target => "_blank"}> 行為
+            および
+            %a.setu2{:href => "#", :rel => "#", :target => "_blank"}> 出品物
+            を必ずご確認ください。
+            %a.setu3{:href => "#", :rel => "#", :target => "_blank"}> 偽ブランド品
+            や
+            %a.setu4{:href => "#", :rel => "#", :target => "_blank"}> 盗品物
+            などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして
+            %a.setu5{:href => "#", :rel => "#", :target => "_blank"}> 加盟店規約
+            に同意したことになります。
+
+    .buttonn4  
+      .sc-kDhYZr.gwHGkM
+      .sc-sPYgB.gbluiW
+        %ul.furima
+          %li.furima1
+            %a.furima1_2{:href => "/jp/privacy/"} プライバシーポリシー
+          %li.furima2
+            %a.furima2-2{:href => "/jp/tos/"} フリマ利用規約
+          %li.furima3
+            %a.furima3-3{:href => "/jp/tokutei/"} 特定商取引に関する表記
+      %a.furima4{:href => "/jp/"}
+        %img.hea{ src: "/images/logo-white.png"}
+      %p.furima6 © Furima, Inc.
+
+
+
+
+
+
+        
               
-
-          %h1.sales_commission 販売手数料 (10%)
-      .body_7
-        .body7_1
-          %h1.sales_profit 販売利益
-
-        .body7_2
-          .body7_3
-            %button.style_button1{:tabindex => "0", :type => "submit"} 出品する
-            %button.style_button2{:tabindex => "0", :type => "button"} 下書きに保存
-            .sakana= link_to "戻る", root_path
-
-
-        %p.setu
-          禁止されている
-          %a.setu1{:href => "#", :rel => "#", :target => "_blank"}> 行為
-          および
-          %a.setu2{:href => "#", :rel => "#", :target => "_blank"}> 出品物
-          を必ずご確認ください。
-          %a.setu3{:href => "#", :rel => "#", :target => "_blank"}> 偽ブランド品
-          や
-          %a.setu4{:href => "#", :rel => "#", :target => "_blank"}> 盗品物
-          などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして
-          %a.setu5{:href => "#", :rel => "#", :target => "_blank"}> 加盟店規約
-          に同意したことになります。
-
-  .buttonn4  
-    .sc-kDhYZr.gwHGkM
-    .sc-sPYgB.gbluiW
-      %ul.furima
-        %li.furima1
-          %a.furima1_2{:href => "/jp/privacy/"} プライバシーポリシー
-        %li.furima2
-          %a.furima2-2{:href => "/jp/tos/"} フリマ利用規約
-        %li.furima3
-          %a.furima3-3{:href => "/jp/tokutei/"} 特定商取引に関する表記
-    %a.furima4{:href => "/jp/"}
-      %img.hea{ src: "/images/logo-white.png"}
-    %p.furima6 © Furima, Inc.
-
-
-
-
-
-
-       
             
-          
-    
+      
 
-    
+      
