@@ -8,5 +8,5 @@ class Item < ApplicationRecord
   belongs_to :user
   belongs_to :categroy
   accepts_nested_attributes_for :item_images
-
+  belongs_to_active_hash :prefecture, :delivery_fee, :delivery_method, :estimated_delivery
 end
