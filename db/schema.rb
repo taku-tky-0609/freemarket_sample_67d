@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_26_165328) do
+ActiveRecord::Schema.define(version: 2020_04_29_153217) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
@@ -31,6 +31,14 @@ ActiveRecord::Schema.define(version: 2020_04_26_165328) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.string "customer_id", null: false
+    t.string "card_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "categoris", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "category_name", null: false
     t.string "ancestry", null: false
@@ -44,6 +52,14 @@ ActiveRecord::Schema.define(version: 2020_04_26_165328) do
     t.integer "user_id", null: false
     t.string "customer_id", null: false
     t.string "card_id", null: false
+  end
+
+  create_table "credits", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.string "customer_id", null: false
+    t.string "card_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "evaluations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -65,12 +81,12 @@ ActiveRecord::Schema.define(version: 2020_04_26_165328) do
     t.string "item_name", null: false
     t.integer "price", null: false
     t.bigint "category_id", null: false
-    t.string "status", null: false
+    t.integer "status_id", null: false
     t.string "size", null: false
-    t.string "delivery_method"
-    t.string "delivery_fee", null: false
-    t.string "delivery_area", null: false
-    t.datetime "estimated_delivery", null: false
+    t.integer "delivery_method_id"
+    t.integer "delivery_fee_id", null: false
+    t.integer "delivery_area_id", null: false
+    t.integer "estimated_delivery_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["category_id"], name: "index_items_on_category_id"
