@@ -1,80 +1,78 @@
-.hoge
-  .first
+.itemsNewContainer
+  .itemsNewContainer__title
     %img.head{ src: "/images/logo.png"}
-
-
-  .body
-    .body_1
+  .itemsNewContainer__body
+    .itemsNewContainer__body__form
       = form_with(model: @item, local: true) do |form|
-        .body_2
-          .top
-            %h1.top_text 出品画像
-            %h2.top_text_2 必須
+        .image
+          .image__top.titleContainer
+            %h1.titleContainer__title 出品画像
+            %h2.titleContainer__required 必須
           %p.top_text_details 最大10枚までアップロードできます
-          .style_form
-            %br/
-            .gazou
-              %p.sc-jGxEUC.eErKZK
-              ドラッグアンドドロップ
-              %br>/
-              またはクリックしてファイルをアップロード
-        
-        .body_3
-          .top2
-            .top2_3
-              %h1.Product_name 商品名
-              %h2.Product_name_2 必須
-            -# = form.label :product
-            -# = form.text_field :class => 'product'=> "40文字まで"
-            = form.text_field :text, class: "product", placeholder: "40文字まで"
-            /placeholder: "40文字"
-            -# %input.product{:autocomplete => "off", :name => "name", :placeholder => "40文字まで", :type => "text", :value => ""}/
-          .top3
-            .top3_3
-              %h1.Product_description 商品の説明
-              %h2.Product_description_2 必須
-            = form.text_area :text, class: "style_textarea", placeholder: "商品の説明（必須 1,000文字以内）\n（色、素材、重さ、定価、注意点など）\n\n例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。\n          ", :rows => "7"
-            -# %textarea.style_textarea{:name => "description", :placeholder => "商品の説明（必須 1,000文字以内）\n（色、素材、重さ、定価、注意点など）\n\n例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。\n          ", :rows => "7"}
+         
+          = form.fields_for :item_images do |image|
+            = image.file_field :image, class: "style_form"
+            %pre.visible-pc ドラッグアンドドロップまたはクリックしてファイルをアップロード
+         
+          = form.fields_for :item_images do |image|
+            = image.file_field :image, class: "style_form"
+            %pre.visible-pc ドラッグアンドドロップまたはクリックしてファイルをアップロード
 
-        .body_4
-          .top4
-            .top4_1
-              %h1.Product_details 商品の詳細
-            .top4_2
-              %h1.category カテゴリー
-              %h2.category_2 必須
-            = form.text_field :text, class: "category_3", placeholder: "選択してください"
-            -# %input.category_3{:autocomplete => "off", :name => "name", :placeholder => "", :type => "text", :value => ""}/  
-            .top4_3
-              %h1.brand ブランド
-              %h2.brand_2 任意
-            = form.text_field :text, class: "brand_3", placeholder: "例）シャネル"
-            -# %input.brand_3{:autocomplete => "off", :name => "name", :placeholder => "例）シャネル", :type => "text", :value => ""}/  
-            .top4_4
-              %h1.Product_status 商品の状態
-              %h2.Product_status_2 必須
-            = form.text_field :text, class: "Product_status_3", placeholder: "選択してください"
-            -# %input.Product_status_3{:autocomplete => "off", :name => "name", :placeholder => "選択してください", :type => "text", :value => ""}/  
+          -# .style_form
+          -#   %br/
+          -#   .gazou
+          -#     %p.sc-jGxEUC.eErKZK
+          -#     ドラッグアンドドロップ
+          -#     %br>/
+          -#     またはクリックしてファイルをアップロード
         
-        .body_5
-          .body5_1
-            %h1.regarding_delivery 配送について
-          .body5_2
-            %h1.shipping_fee_burden 配送料の負担
-            %h2.shipping_fee_burden_2 必須
-          = form.text_field :text, class: "Product_status_3", placeholder: "選択してください"
-          -# %input.Product_status_3{:autocomplete => "off", :name => "name", :placeholder => "選択してください", :type => "text", :value => ""}/  
-          .body5_3
-            %h1.shipping_region 発送元の地域
-            %h2.shipping_region_2 必須
-          = form.text_field :text, class: "Product_status_3", placeholder: "選択してください"
-          -# %input.Product_status_3{:autocomplete => "off", :name => "name", :placeholder => "選択してください", :type => "text", :value => ""}/  
+        .product
+          .product__name.titleContainer
+            %h1.titleContainer__title 商品名
+            %h2.titleContainer__required 必須
+          = form.text_field :item_name, class: "texts", placeholder: "40文字まで"
+          .product__explanation.titleContainer
+            %h1.titleContainer__title 商品の説明
+            %h2.titleContainer__required 必須
+          = form.text_area :text, class: "product__explanation__text", placeholder: "商品の説明（必須 1,000文字以内）\n（色、素材、重さ、定価、注意点など）\n\n例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。\n          ", :rows => "7"
 
-          .body5_4
-            %h1.days 発送までの日数
-            %h2.days_2 必須
-          = form.text_field :text, class: "Product_status_3", placeholder: "選択してください"
-          -# %input.Product_status_3{:autocomplete => "off", :name => "name", :placeholder => "選択してください", :type => "text", :value => ""}/  
+        .details
+          .details__title
+            商品の詳細
+          .categories.titleContainer
+            %h1.titleContainer__title カテゴリー
+            %h2.titleContainer__required 必須
+          = form.text_field :category_id, class: "texts", placeholder: "選択してください"
+          .brand.titleContainer
+            %h1.titleContainer__title ブランド
+            %h2.titleContainer__required 任意
+          = form.text_field :text, class: "texts", placeholder: "例）シャネル"
+          .status.titleContainer
+            %h1.titleContainer__title 商品の状態
+            %h2.titleContainer__required 必須
+          = form.collection_select :status_id, Status.all, :id, :name, prompt: '選択してください', class: 'selects'
+          .size.titleContainer
+            %h1.titleContainer__title 商品のサイズ
+            %h2.titleContainer__any 任意
+          = form.text_field :size, class: "texts"
+        .delivery
+          %h1.title 配送について
+          .deliveryMethod.titleContainer
+            %h1.titleContainer__title 配送方法
+            %h2.titleContainer__required 必須
+          = form.collection_select :delivery_method_id, DeliveryMethod.all, :id, :name, prompt: '選択してください', class: ''
+          .deliveryFee.titleContainer
+            %h1.titleContainer__title 配送料の負担
+            %h2.titleContainer__required 必須
+          = form.collection_select :delivery_fee_id, DeliveryFee.all, :id, :name, prompt: '選択してください', class: ''
+          .deliveryArea.titleContainer
+            %h1.titleContainer__title 発送元の地域
+            %h2.titleContainer__required 必須
+          = form.collection_select :delivery_area_id, Prefecture.all, :id, :name, prompt: '選択してください', class: ''
+          .estimatedDelivery.titleContainer
+            %h1.titleContainer__title 発送までの日数
+            %h2.titleContainer__required 必須
+          = form.collection_select :estimated_delivery_id, EstimatedDelivery.all, :id, :name, prompt: '選択してください', class: ''
 
         .body_6
           .dody6_1
@@ -82,12 +80,10 @@
             .dody6_2
               .body6_3
                 %h1.selling_price 販売価格
-                %h2.selling_price_2 必須
+                %h2.required 必須
               .body6_10
                 %span.okane ¥
-                = form.number_field :text, class: "selling_price_3", placeholder: "0"
-                -# %input.selling_price_3{:autocomplete => "off", :name => "price", :placeholder => "0", :type => "number", :value => ""}/
-                
+                = form.number_field :price, class: "selling_price_3", placeholder: "0"                
 
             %h1.sales_commission 販売手数料 (10%)
         .body_7
@@ -98,8 +94,6 @@
             .body7_3
               = form.submit :text, class: "style_button1", value: "送信する"
               = form.submit :text, class: "style_button2", value: "下書きに保存"
-              -# %button.style_button1{:tabindex => "0", :type => "submit"} 出品する
-              -# %button.style_button2{:tabindex => "0", :type => "button"} 下書きに保存
               .sakana= link_to "戻る", root_path
 
 
@@ -129,15 +123,3 @@
       %a.furima4{:href => "/jp/"}
         %img.hea{ src: "/images/logo-white.png"}
       %p.furima6 © Furima, Inc.
-
-
-
-
-
-
-        
-              
-            
-      
-
-      
