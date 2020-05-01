@@ -1,23 +1,38 @@
 .hoge
   .first
     %img.head{ src: "/images/logo.png"}
-
-
   .body
     .body_1
       = form_with(model: @item, local: true) do |form|
         .body_2
+
+
+
+
           .top
             %h1.top_text 出品画像
             %h2.top_text_2 必須
           %p.top_text_details 最大10枚までアップロードできます
-          .style_form
-            %br/
-            .gazou
-              %p.sc-jGxEUC.eErKZK
-              ドラッグアンドドロップ
-              %br>/
-              またはクリックしてファイルをアップロード
+         
+          = form.fields_for :item_images do |image|
+            = image.file_field :image, class: "style_form"
+            %pre.visible-pc ドラッグアンドドロップまたはクリックしてファイルをアップロード
+         
+          = form.fields_for :item_images do |image|
+            = image.file_field :image, class: "style_form"
+            %pre.visible-pc ドラッグアンドドロップまたはクリックしてファイルをアップロード
+
+          -# .style_form
+          -#   %br/
+          -#   .gazou
+          -#     %p.sc-jGxEUC.eErKZK
+          -#     ドラッグアンドドロップ
+          -#     %br>/
+          -#     またはクリックしてファイルをアップロード
+        
+
+
+
         
         .body_3
           .top2
