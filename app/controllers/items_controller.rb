@@ -6,7 +6,18 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
     @item.item_images.build
+    @categori_parent_array = ["---"]
+    @categori_parent_array = Categori.where(ancestry: nil)
   end
+
+  def get_category_children
+    @categori_children = Categori.find(params[:parent_id]).children
+  end
+
+  def get_category_grandchildren
+    @categori_grandchildren = Categoi.find(params[:child_id]).children
+  end
+
 
   def create
     Item.create(item_params)
