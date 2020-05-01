@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 2020_04_26_165328) do
   end
 
   create_table "categoris", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "category_name", null: false
+    t.string "name", null: false
     t.string "ancestry", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

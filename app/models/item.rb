@@ -6,7 +6,7 @@ class Item < ApplicationRecord
   
   belongs_to :brand
   belongs_to :user
-  belongs_to :categroy
+  belongs_to :categori
   accepts_nested_attributes_for :item_images
 
 end
