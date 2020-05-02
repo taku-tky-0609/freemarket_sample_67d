@@ -6,13 +6,14 @@ class ItemsController < ApplicationController
     @item = Item.new
     @item.item_images.build
   end
-
+  
   def create
     Item.create(item_params)
     redirect_to root_path
   end
   
   def show
+    @items = Item.includes(:user).order("created_at DESC")
   end
 
   private
