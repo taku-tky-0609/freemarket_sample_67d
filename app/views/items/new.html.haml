@@ -3,7 +3,7 @@
     %img.head{ src: "/images/logo.png"}
   .itemsNewContainer__body
     .itemsNewContainer__body__form
-      = form_with(model: @item, local: true) do |form|
+      = form_with(model: @item, local: true, :builder => FormHelper::FormWithErrorMessageBuilder) do |form|
         .image
           .image__top.titleContainer
             %h1.titleContainer__title 出品画像
@@ -31,10 +31,10 @@
             %h1.titleContainer__title 商品名
             %h2.titleContainer__required 必須
           = form.text_field :item_name, class: "texts", placeholder: "40文字まで"
-          .product__explanation.titleContainer
-            %h1.titleContainer__title 商品の説明
-            %h2.titleContainer__required 必須
-          = form.text_area :text, class: "product__explanation__text", placeholder: "商品の説明（必須 1,000文字以内）\n（色、素材、重さ、定価、注意点など）\n\n例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。\n          ", :rows => "7"
+          -# .product__explanation.titleContainer
+          -#   %h1.titleContainer__title 商品の説明
+          -#   %h2.titleContainer__required 必須
+          -# = form.text_area :text, class: "product__explanation__text", placeholder: "商品の説明（必須 1,000文字以内）\n（色、素材、重さ、定価、注意点など）\n\n例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。\n          ", :rows => "7"
 
         .details
           .details__title
@@ -43,10 +43,10 @@
             %h1.titleContainer__title カテゴリー
             %h2.titleContainer__required 必須
           = form.text_field :category_id, class: "texts", placeholder: "選択してください"
-          .brand.titleContainer
-            %h1.titleContainer__title ブランド
-            %h2.titleContainer__required 任意
-          = form.text_field :text, class: "texts", placeholder: "例）シャネル"
+          -# .brand.titleContainer
+          -#   %h1.titleContainer__title ブランド
+          -#   %h2.titleContainer__any 任意
+          -# = form.text_field :text, class: "texts", placeholder: "例）シャネル"
           .status.titleContainer
             %h1.titleContainer__title 商品の状態
             %h2.titleContainer__required 必須

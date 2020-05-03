@@ -8,7 +8,14 @@ class ItemsController < ApplicationController
   end
   
   def create
-    Item.create(item_params)
+    # Item.create(item_params)
+    @item = Item.new(item_params)
+    unless @item.valid?
+      flash.now[:alert] = @item.errors.full_messages
+      # helper Form
+      render :new and return
+    end
+
     redirect_to root_path
   end
   

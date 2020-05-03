@@ -1,15 +1,20 @@
 FactoryBot.define do
 
   factory :item do
-    user_id            {100}
-    # item_name          {""}
-    price              {"1000"}
-    # category           {""}
-    # status             {""}
-    # size               {""}
-    # delivery_fee       {""}
-    # delivery_method    {""}
-    # delivery_area      {""}
-    # estimated_delivery {""}
+    id           {Faker::Number.between(from: 1, to: 100)}
+    user_id           {Faker::Number.between(from: 1, to: 100)}
+    item_name             {Faker::JapaneseMedia::OnePiece.character}
+    price                 {Faker::Number.number(digits: 8)}
+    category_id           {Faker::Number.between(from: 1, to: 100)}
+    # category_id           {Faker::String.random(length: [1, 6])}
+    status_id             {Faker::Number.between(from: 1, to: 100)}
+    size                  {Faker::String.random(length: [1, 6])}
+    delivery_fee_id       {Faker::Number.between(from: 1, to: 100)}
+    delivery_method_id    {Faker::Number.between(from: 1, to: 100)}
+    delivery_area_id      {Faker::Number.between(from: 1, to: 100)}
+    estimated_delivery_id {Faker::Number.between(from: 1, to: 100)}
+    # image                  {Faker::String.random(length: [1, 6])}
+    # created_at           {Faker::Number.between(from: 1, to: 100)}
+    # updared_at           {Faker::Number.between(from: 1, to: 100)}
   end
 end

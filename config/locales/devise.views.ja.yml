@@ -59,13 +59,23 @@ ja:
                 blank: "が入力されていません。"
         item:
           attributes:
-              prefectures:
+              item_name:
                 blank: "が入力されていません。"
-              postal_code:
+              price:
                 blank: "が入力されていません。"
-              municipality:
+              category_id:
                 blank: "が入力されていません。"
-              house_number:
+              status_id:
+                blank: "が入力されていません。"
+              size:
+                blank: "が入力されていません。"
+              delivery_method_id:
+                blank: "が入力されていません。"
+              delivery_fee_id:
+                blank: "が入力されていません。"
+              delivery_area_id:
+                blank: "が入力されていません。"
+              estimated_delivery_id:
                 blank: "が入力されていません。"
     attributes:
       user:
@@ -95,6 +105,16 @@ ja:
         prefectures: "都道府県"
         municipality: "市区町村"
         house_number: "番地"
+      item:
+        item_name: "商品名"
+        price: "販売価格"
+        category_id: "カテゴリー"
+        status_id: "商品の状態"
+        size: "商品のサイズ"
+        delivery_method_id: "配送方法"
+        delivery_fee_id: "配送料の負担"
+        delivery_area_id: "発送元の地域"
+        estimated_delivery_id: "発送までの日数"
   devise:
     confirmations:
       new:
