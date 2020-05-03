@@ -42,11 +42,12 @@
           .categories.titleContainer
             %h1.titleContainer__title カテゴリー
             %h2.titleContainer__required 必須
-          = form.text_field :category_id, class: "texts", placeholder: "選択してください"
-          -# .brand.titleContainer
-          -#   %h1.titleContainer__title ブランド
-          -#   %h2.titleContainer__any 任意
-          -# = form.text_field :text, class: "texts", placeholder: "例）シャネル"
+          = form.collection_select :categori_id, @categori_parent_array, :id, :name, { prompt: "---" }, { class: "categori_select-box", id: "categori_select" }
+          -# = form.text_field :category_id, class: "texts", placeholder: "選択してください"
+          .brand.titleContainer
+            %h1.titleContainer__title ブランド
+            %h2.titleContainer__required 任意
+          = form.text_field :text, class: "texts", placeholder: "例）シャネル"
           .status.titleContainer
             %h1.titleContainer__title 商品の状態
             %h2.titleContainer__required 必須

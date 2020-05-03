@@ -6,7 +6,7 @@ class Item < ApplicationRecord
   
   # belongs_to :brand
   belongs_to :user
-  # belongs_to :categroy
+  belongs_to :categori
   accepts_nested_attributes_for :item_images
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :prefecture
