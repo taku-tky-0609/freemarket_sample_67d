@@ -31,5 +31,5 @@ class User < ApplicationRecord
   validates :last_name, presence: true, length: { maximum: 35 }, format: { with: /\A[ぁ-んァ-ン一-龥]/, message: "の入力は日本語でお願いします。"}
   validates :first_name, presence: true, length: { maximum: 35 }, format: { with: /\A[ぁ-んァ-ン一-龥]/, message: 'の入力は日本語でお願いします。'}
   validates :phone_number, presence: true, length: { in: 10..12  }, format: { with: /\A\d{10,11}\z/, message: '10-11桁でハイフン（-）を入れないで下さい。'}
-  validates :birthday, presence: true, format: { with: /\A(19[0-9]{2}|20[0-9]{2})\/([1-9])|(0[0-9]|1[0-2])\/(0[1-9]|[1-2][0-9]|3[0-1])\z/, message: 'は年/月/日で入力して下さい。 例 1999/02/31'}
+  # validates :birthday, presence: true, format: { with: /\A(19[0-9]{2}|20[0-9]{2})\/([1-9])|(0[0-9]|1[0-2])\/(0[1-9]|[1-2][0-9]|3[0-1])\z/, message: 'は年/月/日で入力して下さい。 例 1999/02/31'}
 end
