@@ -73,9 +73,21 @@ ja:
                 blank: "が入力されていません。"
               delivery_fee_id:
                 blank: "が入力されていません。"
-              delivery_area_id:
+              prefecture_id:
                 blank: "が入力されていません。"
               estimated_delivery_id:
+                blank: "が入力されていません。"
+              brand_id:
+                blank: "が入力されていません。"
+              category_id:
+                blank: "が入力されていません。"
+        brand:
+          attributes:
+              name:
+                blank: "が入力されていません。"
+        category:
+          attributes:
+              category_id:
                 blank: "が入力されていません。"
     attributes:
       user:
@@ -113,8 +125,14 @@ ja:
         size: "商品のサイズ"
         delivery_method_id: "配送方法"
         delivery_fee_id: "配送料の負担"
-        delivery_area_id: "発送元の地域"
+        prefecture: "発送元の地域"
         estimated_delivery_id: "発送までの日数"
+        brand: "ブランド"
+        category_id: "カテゴリー"
+      brand:
+        name: "ブランド"
+      category:
+        category_id: "カテゴリー"
   devise:
     confirmations:
       new:

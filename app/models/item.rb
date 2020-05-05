@@ -4,11 +4,12 @@ class Item < ApplicationRecord
   # has_many :items_statuses
   has_many :item_images
   
-  # belongs_to :brand
+  belongs_to :brand
   belongs_to :user
-  # belongs_to :categori
-  # accepts_nested_attributes_for :brand
+  belongs_to :category
   accepts_nested_attributes_for :item_images
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  accepts_nested_attributes_for :brand
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :prefecture
   belongs_to_active_hash :delivery_fee
@@ -22,6 +23,6 @@ class Item < ApplicationRecord
   validates :status_id, presence: true
   validates :delivery_method_id, presence: true
   validates :delivery_fee_id, presence: true
-  validates :delivery_area_id, presence: true
+  validates :prefecture_id, presence: true
   validates :estimated_delivery_id, presence: true
 end

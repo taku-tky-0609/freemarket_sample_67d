@@ -25,7 +25,7 @@
           %tr
             %th カテゴリー
             %td 
-              -# = @item.categori.category_name
+              = @item.category.category_name
               
               -# %= @items.name
             -# %td 
@@ -41,8 +41,8 @@
               -# #{@category_grand_child.name}
           %tr
             %th ブランド
-            %td brand.id
-            -# %td #{@brand.name}
+            %td 
+              = @item.brand.name
           %tr
             %th 商品の状態
             %td 
@@ -58,14 +58,14 @@
           %tr
             %th 配送元地域
             %td 
-              -# = @item.prefecture.name
+              = @item.prefecture.name
           %tr
             %th 発送日の目安
             %td 
               = @item.estimated_delivery.name
     .PriceContainer
       .ProductPrice
-        ¥10,000
+        = @item.price
       .ProductTax
         (税込)送料込み
     = link_to "#", class: "purchase" do
