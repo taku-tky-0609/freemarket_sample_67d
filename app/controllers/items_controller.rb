@@ -6,6 +6,7 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
     # @item.item_images.build
+    # @item.build_brand
     @categori_parent_array = ["---"]
     @categori_parent_array = Categori.where(ancestry: nil)
   end
@@ -27,12 +28,13 @@ class ItemsController < ApplicationController
       # helper Form
       render :new and return
     end
-
+    @item.save
     redirect_to root_path
   end
   
   def show
-    @items = Item.includes(:user).order("created_at DESC")
+    @item = Item.includes(:user, :categori)
+    @item = Item.find(params[:id])
   end
 
   private

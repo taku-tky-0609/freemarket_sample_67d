@@ -44,8 +44,8 @@ module FormHelper
       end                                                                       
     end     
 
-    # def collection_select(attribute, options={})                                       
-    #   input_field_with_error(attribute, options) do                             
+    # def collection_select(attribute, array, value, column, options={})                                       
+    #   input_field_with_error(attribute, array, value, column, options) do                             
     #      super                                                                   
     #   end                                                                       
     # end                                                                 
