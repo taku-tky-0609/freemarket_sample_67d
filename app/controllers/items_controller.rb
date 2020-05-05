@@ -5,7 +5,8 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
-    @item.item_images.build
+    # @item.item_images.build
+    # @item.build_brand
     @categori_parent_array = ["---"]
     @categori_parent_array = Categori.where(ancestry: nil)
   end
@@ -20,11 +21,20 @@ class ItemsController < ApplicationController
 
 
   def create
-    Item.create(item_params)
+    # Item.create(item_params)
+    @item = Item.new(item_params)
+    unless @item.valid?
+      flash.now[:alert] = @item.errors.full_messages
+      # helper Form
+      render :new and return
+    end
+    @item.save
     redirect_to root_path
   end
   
   def show
+    @item = Item.includes(:user, :categori)
+    @item = Item.find(params[:id])
   end
 
   private
