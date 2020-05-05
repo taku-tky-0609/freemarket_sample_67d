@@ -5,7 +5,7 @@
 # #
 # #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 # #   Character.create(name: 'Luke', movie: movies.first)
-# lady = Categori.create(category_name: "レディース")
+# lady = Category.create(category_name: "レディース")
 # lady_1 = lady.children.create(category_name: "トップス")
 # lady_1.children.create([{category_name: "Tシャツ/カットソー(半袖/袖なし)"},{category_name: "Tシャツ/カットソー(七分/長袖)"},{category_name: "シャツ/ブラウス(半袖/袖なし)"},{category_name: "シャツ/ブラウス(七分/長袖)"},{category_name: "ポロシャツ"},{category_name: "キャミソール"},{category_name: "タンクトップ"},{category_name: "ホルターネック"},{category_name: "ニット/セーター"},{category_name: "チュニック"},{category_name: "カーディガン/ボレロ"},{category_name: "アンサンブル"},{category_name: "ベスト/ジレ"},{category_name: "パーカー"},{category_name: "トレーナー/スウェット"},{category_name: "ベアトップ/チューブトップ"},{category_name: "ジャージ"},{category_name: "その他"}])
 # lady_2 = lady.children.create(category_name: "ジャケット/アウター")
