@@ -1,7 +1,7 @@
 FactoryBot.define do
 
   factory :item do 
-    # user_id               {Faker::Number.between(from: 1, to: 100)}
+    user_id               {Faker::Number.between(from: 1, to: 100)}
     item_name             {Faker::JapaneseMedia::OnePiece.character}
     price                 {Faker::Number.number(digits: 8)}
     category_id           {Faker::Number.between(from: 1, to: 100)}
@@ -12,5 +12,9 @@ FactoryBot.define do
     delivery_method_id    {Faker::Number.between(from: 1, to: 100)}
     prefecture_id         {Faker::Number.between(from: 1, to: 100)}
     estimated_delivery_id {Faker::Number.between(from: 1, to: 100)}
+
+    association :user
+    association :category
+    association :brand
   end
 end
