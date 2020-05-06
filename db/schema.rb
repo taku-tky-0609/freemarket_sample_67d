@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_03_173810) do
+ActiveRecord::Schema.define(version: 2020_05_05_134954) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -46,14 +46,21 @@ ActiveRecord::Schema.define(version: 2020_05_03_173810) do
   end
 
   create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "item", null: false
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "categoris", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name", null: false
+  create_table "cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.string "customer_id", null: false
+    t.string "card_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "category_name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "ancestry"
@@ -65,6 +72,14 @@ ActiveRecord::Schema.define(version: 2020_05_03_173810) do
     t.integer "user_id", null: false
     t.string "customer_id", null: false
     t.string "card_id", null: false
+  end
+
+  create_table "credits", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.string "customer_id", null: false
+    t.string "card_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "evaluations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -83,10 +98,12 @@ ActiveRecord::Schema.define(version: 2020_05_03_173810) do
     t.string "size", null: false
     t.integer "delivery_method_id"
     t.integer "delivery_fee_id", null: false
-    t.integer "delivery_area_id", null: false
     t.integer "estimated_delivery_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "brand_id"
+    t.integer "prefecture_id"
+    t.index ["brand_id"], name: "fk_rails_36708b3aa6"
     t.index ["category_id"], name: "index_items_on_category_id"
     t.index ["user_id"], name: "index_items_on_user_id"
   end
@@ -146,7 +163,6 @@ ActiveRecord::Schema.define(version: 2020_05_03_173810) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-
-  add_foreign_key "item_images", "items"
+  add_foreign_key "items", "brands"
   add_foreign_key "users", "addresses"
 end
