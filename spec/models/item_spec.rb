@@ -54,10 +54,10 @@ describe Item do
         expect(item.errors[:delivery_fee_id]).to include()
       end
         
-      it "delivery_area_idがない場合は登録できないこと" do
-        item = build(:item, delivery_area_id: "")
+      it "prefecture_idがない場合は登録できないこと" do
+        item = build(:item, prefecture_id: "")
         item.valid?
-        expect(item.errors[:delivery_area_id]).to include()
+        expect(item.errors[:prefecture_id]).to include()
       end
 
       it "estimated_delivery_idがない場合は登録できないこと" do

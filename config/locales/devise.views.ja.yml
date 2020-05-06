@@ -59,36 +59,49 @@ ja:
                 blank: "が入力されていません。"
         item:
           attributes:
-              item_name:
-                blank: "が入力されていません。"
-              price:
-                blank: "が入力されていません。"
-              category_id:
-                blank: "が入力されていません。"
-              status_id:
-                blank: "が入力されていません。"
-              size:
-                blank: "が入力されていません。"
-              delivery_method_id:
-                blank: "が入力されていません。"
-              delivery_fee_id:
-                blank: "が入力されていません。"
-              prefecture_id:
-                blank: "が入力されていません。"
-              estimated_delivery_id:
-                blank: "が入力されていません。"
-              brand_id:
-                blank: "が入力されていません。"
-              category_id:
-                blank: "が入力されていません。"
-        brand:
-          attributes:
-              name:
-                blank: "が入力されていません。"
-        category:
-          attributes:
-              category_id:
-                blank: "が入力されていません。"
+        #       item_name:
+        #         blank: "が入力されていません。"
+        #       price:
+        #         blank: "が入力されていません。"
+        #       category_id:
+        #         blank: "が入力されていません。"
+        #       status_id:
+        #         blank: "が入力されていません。"
+        #       size:
+        #         blank: "が入力されていません。"
+        #       delivery_method_id:
+        #         blank: "が入力されていません。"
+        #       delivery_fee_id:
+        #         blank: "が入力されていません。"
+        #       prefecture_id:
+        #         blank: "が入力されていません。"
+        #       estimated_delivery_id:
+        #         blank: "が入力されていません。"
+        #       items/brand:
+        #         brand_id:
+        #           blank:  "が入力されていません。"
+        #         name:
+        #           blank:  "が入力されていません。"
+        #       brand_id:
+        #         blank: "が入力されていません。"
+        #         invalid: ""
+        #       items/category:
+        #         category_id:
+        #           blank: "が入力されていません。"
+        # item/category:
+        #   attributes:
+        #     category_id:
+        #       blank: "が入力されていません。"
+        #     category:
+        #       blank: "が入力されていません。"
+        # brand:
+        #   attributes:
+        #       name:
+        #         blank: "が入力されていません。"
+        # category:
+        #   attributes:
+        #       category_id:
+        #         blank: "が入力されていません。"
     attributes:
       user:
         nickname: "ニックネーム"
@@ -118,21 +131,21 @@ ja:
         municipality: "市区町村"
         house_number: "番地"
       item:
-        item_name: "商品名"
-        price: "販売価格"
-        category_id: "カテゴリー"
-        status_id: "商品の状態"
-        size: "商品のサイズ"
-        delivery_method_id: "配送方法"
-        delivery_fee_id: "配送料の負担"
-        prefecture: "発送元の地域"
-        estimated_delivery_id: "発送までの日数"
-        brand: "ブランド"
-        category_id: "カテゴリー"
-      brand:
-        name: "ブランド"
-      category:
-        category_id: "カテゴリー"
+        # item_name: "商品名"
+        # price: "販売価格"
+        # category_id: "カテゴリー"
+        # status_id: "商品の状態"
+        # size: "商品のサイズ"
+        # delivery_method_id: "配送方法"
+        # delivery_fee_id: "配送料の負担"
+        # prefecture_id: "発送元の地域"
+        # estimated_delivery_id: "発送までの日数"
+        # brand: "ブランド"
+        # category: "カテゴリー"
+      # brand:
+      #   name: "ブランド"
+      # category:
+      #   category_id: "カテゴリー"
   devise:
     confirmations:
       new:
