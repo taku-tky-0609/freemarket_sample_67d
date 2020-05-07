@@ -11,10 +11,9 @@ module FormHelper
         error_contents = create_error_div(attribute, error_messages)            
       end
 
-      # 従来の入力フォーム と 生成されたエラーメッセージ を連結して返す                                                                                                                                                 
+      # 従来の入力フォーム と 生成されたエラーメッセージ を連結して返す                                                                                                                                                
       block.call + error_contents || ""                                         
-    end                                                                         
-                                                                                
+    end                                                                                                                               
     # エラーメッセージのHTMLタグを作成する
     def create_error_div(attribute, messages)    
       # content_tag でHTMLタグを生成                               
@@ -38,16 +37,16 @@ module FormHelper
       end                                                                       
     end
 
+    def collection_select(attribute, array, value, column, options={})                                       
+      input_field_with_error(attribute, options) do                             
+         super                                                                   
+      end                                                                       
+    end                                                                 
+ 
     def password_field(attribute, options={})                                       
       input_field_with_error(attribute, options) do                             
          super                                                                   
       end                                                                       
     end     
-
-    # def collection_select(attribute, array, value, column, options={})                                       
-    #   input_field_with_error(attribute, array, value, column, options) do                             
-    #      super                                                                   
-    #   end                                                                       
-    # end                                                                 
   end                                                                         
 end    
