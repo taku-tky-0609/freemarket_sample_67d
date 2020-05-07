@@ -3,12 +3,11 @@ ja:
   activerecord:
     models:
       item: "商品"
-      category: "カテゴリー"
     attributes:
       item:
         item_name: "商品名"
         price: "料金"
-        category: "カテゴリー"
+        category_id: "カテゴリー"
         status_id: "商品の状態"
         size: "商品のサイズ"
         delivery_method_id: "配送方法"
