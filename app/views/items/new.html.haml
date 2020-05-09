@@ -3,6 +3,7 @@
     %img.head{ src: "/images/logo.png"}
   .itemsNewContainer__body 
     = form_with(model: @item, local: true, :builder => FormHelper::FormWithErrorMessageBuilder) do |form|
+
       .itemsNewContainer__body__form
         .itemsNewContainer__body__upload
         %h3.titleContainer__title 
@@ -17,6 +18,7 @@
             = form.label  :images, class: "label-box" do
               .label-box__text-visible 
                 = form.file_field :images, multiple: true, direct_upload: true, class: "hidden-field", name: "item[images][]"
+
                 %span.text1 クリックしてファイルをアップロード
       
         .post__drop__box__container2           
