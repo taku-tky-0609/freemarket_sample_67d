@@ -9,7 +9,7 @@
             %h1.titleContainer__title 出品画像
             %h2.titleContainer__required 必須
           %p.top_text_details 最大10枚までアップロードできます
-          = form.file_field :images, multiple: true, class: "style_form"
+          = form.file_field :images, multiple: true, direct_upload: true,　class: "style_form"
           %pre.visible-pc ドラッグアンドドロップまたはクリックしてファイルをアップロード
           
           -# = form.fields_for :item_images do |image|
