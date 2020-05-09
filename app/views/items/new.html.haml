@@ -1,17 +1,42 @@
 .itemsNewContainer
   .itemsNewContainer__title
     %img.head{ src: "/images/logo.png"}
-  .itemsNewContainer__body
-    .itemsNewContainer__body__form
-      = form_with(model: @item, local: true, :builder => FormHelper::FormWithErrorMessageBuilder) do |form|
-        .image
-          .image__top.titleContainer
-            %h1.titleContainer__title 出品画像
-            %h2.titleContainer__required 必須
-          %p.top_text_details 最大10枚までアップロードできます
-          = form.file_field :images, multiple: true, direct_upload: true,  class: "style_form"
-          %pre.visible-pc ドラッグアンドドロップまたはクリックしてファイルをアップロード
-          
+  .itemsNewContainer__body 
+    = form_with(model: @item, local: true, :builder => FormHelper::FormWithErrorMessageBuilder) do |form|
+      .itemsNewContainer__body__form
+        .itemsNewContainer__body__upload
+        %h3.titleContainer__title 
+          出品画像
+          %span.titleContainer__required 必須
+        %p.top_text_details 最大10枚までアップロードできます
+        .post__drop__box__container 
+          .pre-content
+            
+          .label-content
+              
+            = form.label  :images, class: "label-box" do
+              .label-box__text-visible 
+                = form.file_field :images, multiple: true, direct_upload: true, class: "hidden-field", name: "item[images][]"
+                %span.text1 クリックしてファイルをアップロード
+      
+        .post__drop__box__container2           
+          .pre-content2  
+          .hidden-content          
+            = form.label  :images, class: "label-box2" do
+              .label-box__text-visible2
+                = form.file_field :images, multiple: true, class: "hidden-field2", name: "item[images][]"
+                %span.text2 クリックしてファイルをアップロード
+        
+                
+                  
+           
+              
+               
+                
+                  
+             
+            
+
           -# = form.fields_for :item_images do |image|
           -#   = image.file_field :image, class: "style_form"
           -#   %pre.visible-pc ドラッグアンドドロップまたはクリックしてファイルをアップロード
