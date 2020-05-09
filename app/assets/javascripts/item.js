@@ -60,7 +60,7 @@ $(function(){
 
     if ($(".item-pic").length > 4){
       //画像が五枚の場合はフォームを削除
-      $(".label-content").remove();
+      $(".label-content").hide();
       // cloned = $(".label-content").clone(ture);
       
       //新しいフォームを追加
