@@ -26,6 +26,8 @@ $(function(){
     // var img = new Image();
     
     reader.onload = function(e){
+
+      //画像のhtml要素を作成
       var preview = `<li class="item-pic">
                       
                         <img class="item-pic__image" src= ${e.target.result}>
@@ -40,24 +42,29 @@ $(function(){
       
       
       // `<li class= "item-pic"><img class="item-pic__image" src = ${e.target.result} ></li>`
-     
-      $('.pre-content').prepend(preview);
+
+     //画像をフォームの隣に出力
+     $('.pre-content').prepend(preview);
+
+    //フォームのリサイズ
       $(".label-content").resize('width', "calc(800px - ($('.item-pic').length * 20%" )
     
       // 画像が一つ以上ある場合ボックスの文字を写真マークに変更
     if ($(".item-pic").length > 1){
       
-      
+      //画像が一枚出力されたら、文字をカメラマークに変更
       $(".text1").replaceWith("<i class='fas fa-camera'></i>");
       
 
     }
 
     if ($(".item-pic").length > 4){
-      
+      //画像が五枚の場合はフォームを削除
       $(".label-content").remove();
       // cloned = $(".label-content").clone(ture);
-      $(".post__drop__box__container2").show();
+      
+      //新しいフォームを追加
+      // $(".post__drop__box__container2").show();
 
     }
 
