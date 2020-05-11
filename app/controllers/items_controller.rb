@@ -33,6 +33,10 @@ class ItemsController < ApplicationController
     redirect_to root_path
   end
   
+  def myList
+    @items = Item.includes(:user, :category).order("created_at DESC")
+  end
+
   def show
     @item = Item.includes(:user, :category)
     @item = Item.find(params[:id])
