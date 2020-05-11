@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   def index
-
+    @items = Item.includes(:user, :category).order("created_at DESC")
   end
 
   def new
