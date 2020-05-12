@@ -7,15 +7,10 @@
       -# = @item.item_name
     .ProductInformation
       .ProductImages
-        -# - @item.images do |img|
-        -#   = image_tag(img.image_url.url, size: '300x300', class: "" ,id: "main_#{i}")
-        = image_tag "cookie.png", class:"ProductImages__main"
+        - @item.images.each_with_index do |image,i|
+          %div{class: "ProductImages__#{++i}"}
+            = image_tag image
         .ProductImages__subContainer
-          -# - @product.images.each_with_index do |img, i|
-          -#   = image_tag(img.image_url.url, size: '60x60', "": "#{i}")
-          = image_tag "cookie.png", class:"subImage"
-          = image_tag "cookie2.png", class:"subImage"
-          = image_tag "cookie3.png", class:"subImage"
       .ProductSelections
         %table.ProductSelections__lists
           %tr
