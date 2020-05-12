@@ -88,7 +88,6 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background-color: red;
       color: white;
       font-size: 20px;
       font-weight: bold;
@@ -121,6 +120,18 @@
     }
   }
 }
+
+.moreList {
+  background-color: rgb(226, 221, 221);
+  padding-bottom: 20px;
+  &__container {
+    margin: auto;
+    width: 55%;
+    padding: 20px;
+    background-color: white;
+  }
+}
+
 .itemsComment {
   background-color: rgb(226, 221, 221);
   padding-bottom: 20px;
@@ -143,20 +154,23 @@
       padding: 5px;
       border: black solid 1px;
     }
-    .commentSubmit {
-      margin-top: 10px;
-      display: inline-block;
-      background-color: rgb(197, 197, 197);
-      color: white;
-      width: 100%;
-      height: 50px;
-      text-align: center;
-      line-height: 50px;
-    }
   }
 }
 
+.itemsShowBtn {
+  margin-top: 10px;
+  display: inline-block;
+  background-color: rgb(197, 197, 197);
+  color: white;
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+}
 
+.furimaBtn {
+  background-color: $furima_theme_color;
+}
 
 .ProductImages {
   &__0 {

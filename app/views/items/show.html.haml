@@ -63,7 +63,7 @@
         = @item.price
       .ProductTax
         (税込)送料込み
-    = link_to "#", class: "purchase" do
+    = link_to "#", class: "purchase furimaBtn" do
       購入画面に進む
     .ProductExplanation
       超くっきーランドで購入しました 
@@ -78,13 +78,19 @@
       = link_to "#", class: "initiative" do
         あんしん・あんぜんへの取り組み
 
+- if user_signed_in? && current_user.id == @item.user_id
+  .moreList
+    .moreList__container
+      = link_to '編集', edit_item_path(@item.id), method: :get, class: "itemsShowBtn furimaBtn"
+      = link_to '削除', "/items/#{@item.id}", method: :delete, class: "itemsShowBtn"
+
 .itemsComment
   .itemsComment__container
     .erxplanation
       相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
     .commentForm
       @commentが適宜されたらtext_fielbに変更
-    = link_to "#", class: "commentSubmit" do
+    = link_to "#", class: "itemsShowBtn furimaBtn" do
       コメントする
 
 

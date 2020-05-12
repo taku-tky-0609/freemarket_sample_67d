@@ -34,13 +34,32 @@ class ItemsController < ApplicationController
   end
   
   def myList
-    @items = Item.includes(:user, :category).order("created_at DESC")
+    # @items = Item.includes(:user, :category).order("created_at DESC")
+    @items = Item.where(user_id: current_user.id)
   end
 
   def show
     @item = Item.includes(:user, :category)
     @item = Item.find(params[:id])
   end
+
+  def edit
+  end
+  
+  def update
+    # @item = Item.find(params[:id])
+    # @item.update(item_params)
+    if @item.update(item_params)
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    item = Item.find(params[:id])
+    item.destroy
+    redirect_to root_path
+   end
 
   private
 
