@@ -38,18 +38,36 @@ class ItemsController < ApplicationController
     @items = Item.where(user_id: current_user.id)
   end
 
+  def pay
+    @item = Item.find(params[:id])
+    Payjp.api_key = Rails.application.credentials.dig(:payjp, :PAYJP_SECRET_KEY)
+    charge = Payjp::Charge.create(
+    amount: @item.price,
+    card: params['payjp-token'],
+    currency: 'jpy'
+    )
+    
+    @item.buyer_id = 0
+    @item.buyer_id = @item.buyer_id + current_user.id
+    @item.save
+
+    redirect_to root_path
+    
+  end
+
   def show
     @item = Item.includes(:user, :category)
     @item = Item.find(params[:id])
   end
-
+  
   def edit
+    @item = Item.find(params[:id])
   end
   
   def update
-    # @item = Item.find(params[:id])
-    # @item.update(item_params)
+    @item = Item.find(params[:id])
     if @item.update(item_params)
+      redirect_to root_path
     else
       render :edit
     end

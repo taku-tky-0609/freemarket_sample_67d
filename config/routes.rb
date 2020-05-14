@@ -13,6 +13,15 @@ Rails.application.routes.draw do
       get 'myList', to: 'items#myList'
     end
   end
+
+  resources :items do
+    collection do
+      get  'purchase/:id'=>  'items#purchase', as: 'purchase'
+      post 'pay/:id'=>   'items#pay', as: 'pay'#httpメソッドはpostなので注意
+      get  'done'=>      'items#done', as: 'done'
+    end
+  end
+
   resources :users, only: :show
   
     

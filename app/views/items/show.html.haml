@@ -2,14 +2,18 @@
 
 .itemsShow
   .itemsShow__container
+    -if @item.buyer_id.present?
+      .soldOutContainer
+      .soldOutComment
+        SOLD
     .ProductName
-      %h2 くっきー
-      -# = @item.item_name
+      = @item.item_name
     .ProductInformation
       .ProductImages
         - @item.images.each_with_index do |image,i|
           %div{class: "ProductImages__#{++i}"}
             = image_tag image
+
         .ProductImages__subContainer
       .ProductSelections
         %table.ProductSelections__lists
@@ -21,8 +25,7 @@
             %th カテゴリー
             %td 
               = @item.category.name
-              
-              -# %= @items.name
+
             -# %td 
               -# = link_to category_path(@category_parent), class: '' do
               -# #{@category_parent.name}
@@ -63,8 +66,12 @@
         = @item.price
       .ProductTax
         (税込)送料込み
-    = link_to "#", class: "purchase furimaBtn" do
-      購入画面に進む
+    -if user_signed_in? && @item.buyer_id == nil && @item.user_id != current_user.id
+      = form_tag(action: :pay, method: :post) do
+        %script.payjp-button{:src => "https://checkout.pay.jp", :type => "text/javascript" ,"data-text" => "購入する" ,"data-key" => "pk_test_32534f246a14649e6d9c3ac8"}
+    -# ↓入江さんの商品購入確認外面の実装が完了したら復帰
+    -# = link_to "#", class: "purchase furimaBtn" do
+    -#   購入画面に進む
     .ProductExplanation
       超くっきーランドで購入しました 
       %br ［縦14㎝×横8.5㎝　ファスナー10㎝］
@@ -92,7 +99,5 @@
       @commentが適宜されたらtext_fielbに変更
     = link_to "#", class: "itemsShowBtn furimaBtn" do
       コメントする
-
-
 
 = render 'items/footer'
