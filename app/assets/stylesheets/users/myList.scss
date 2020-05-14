@@ -17,6 +17,10 @@
       flex-flow: row wrap;
       justify-content: flex-start;
       padding: 1vw 10vw 1vw;
+      &__comment {
+        margin: 100px auto 100px;
+        font-size: 30px;
+      }
       .ProductContainer {
         background-color: white;
         margin: 3.2vw;

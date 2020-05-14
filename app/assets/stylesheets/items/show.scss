@@ -2,11 +2,27 @@
   display: flex;
   background-color: rgb(226, 221, 221);
   &__container {
+    position: relative;
     margin: 20px auto 20px;
     width: 55%;
-    // height: 1300px;
     padding: 20px;
     background-color: white;
+    .soldOutContainer {
+      position: absolute;
+      top: 0;
+      left: 0px;
+      border-bottom: 10vw solid transparent;
+      border-left: 10vw solid red;
+    }
+    .soldOutComment {
+      transform: rotate(-45deg);
+      position: absolute;
+      top: 24px;
+      left: 6px;
+      color: #ffffff;
+      font-weight: bold;
+      font-size: 28px;
+    }
     .ProductName {
       display: flex;
       justify-content: center;
@@ -88,7 +104,6 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background-color: red;
       color: white;
       font-size: 20px;
       font-weight: bold;
@@ -121,6 +136,18 @@
     }
   }
 }
+
+.moreList {
+  background-color: rgb(226, 221, 221);
+  padding-bottom: 20px;
+  &__container {
+    margin: auto;
+    width: 55%;
+    padding: 20px;
+    background-color: white;
+  }
+}
+
 .itemsComment {
   background-color: rgb(226, 221, 221);
   padding-bottom: 20px;
@@ -143,15 +170,77 @@
       padding: 5px;
       border: black solid 1px;
     }
-    .commentSubmit {
-      margin-top: 10px;
-      display: inline-block;
-      background-color: rgb(197, 197, 197);
-      color: white;
-      width: 100%;
-      height: 50px;
-      text-align: center;
-      line-height: 50px;
-    }
   }
 }
+
+.itemsShowBtn {
+  margin-top: 10px;
+  display: inline-block;
+  background-color: rgb(197, 197, 197);
+  color: white;
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+}
+
+.furimaBtn {
+  background-color: $furima_theme_color;
+}
+
+.ProductImages {
+  &__0 {
+    margin: auto;
+    width: 16vw;
+    height: calc(16vw * 1.1);
+  }  
+  &__1,&__2,&__3 {
+    display: inline-block;
+    margin-top: 5px;
+    width: 4.5vw;
+    height: calc(4.5vw * 1.1);
+  }
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+#payjp_checkout_box {
+  text-align: center;
+  input {
+    display: block;
+    width: 90%;
+    height: 50px;
+    margin: 20px auto 20px;
+    // color: white;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: $furima_theme_color;
+  }
+}
+
+
+// &__image {
+//   img {
+//     width: 100%;
+//     height: 200px;
+//   }
+//   position: relative;
+//   &--triangle {
+//     position: absolute;
+//     top: 0;
+//     left: 0px;
+//     border-bottom: 75px solid transparent;
+//     border-left: 75px solid red;
+//   }
+//   &__soldout {
+//     transform: rotate(-45deg);
+//     position: absolute;
+//     top: 14px;
+//     left: 2px;
+//     color: #ffffff;
+//     font-weight: bold;
+//     font-size: 17px;
+//   }
+// }
