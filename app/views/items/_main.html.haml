@@ -72,6 +72,10 @@
       - @items.each do |item|
         = link_to item_path(item.id), class:"ProductContainer" do
           = image_tag(url_for(item.images[0]), class:"pickupImage")
+          -if item.buyer_id.present?
+            .soldOutContainer
+            .soldOutComment
+              SOLD
           .detailsContainer
             .detailsContainer__left
               .detailsContainer__left__name
