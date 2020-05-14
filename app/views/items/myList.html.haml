@@ -1,0 +1,21 @@
+= render 'items/header'
+
+.myList
+  .myList__wrapper
+    .myList__wrapper__title 現在出品中の商品
+    .myList__wrapper__box 
+      - @items.each do |item|
+        = link_to item_path(item.id), class:"ProductContainer" do
+          = image_tag(url_for(item.images[0]), class:"pickupImage")
+          .detailsContainer
+            .detailsContainer__left
+              .detailsContainer__left__name
+                = item.item_name
+              .detailsContainer__left__price
+                = item.price
+              .detailsContainer__left__tax
+                （税込）
+            .detailsContainer__right
+              ★ ０
+
+= render 'items/footer'
