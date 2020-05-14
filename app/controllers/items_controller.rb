@@ -9,15 +9,23 @@ class ItemsController < ApplicationController
     @item.build_brand
     # @item.brand.build
     @category_parent_array = ["---"]
-    @category_parent_array = Category.where(ancestry: nil)
+    # @category_parent_array = Category.where(ancestry: nil)
+    Category.where(ancestry: nil).each do |parent|
+      @category_parent_array << parent.name
+    end
   end
 
   def get_category_children
+    
+    # @category_children = Category.find(params[:item_category_id])
+    # @category_children = Category.find_by(name: params[:item_category_id])
     @category_children = Category.find(params[:parent_id]).children
+    
   end
 
   def get_category_grandchildren
     @category_grandchildren = Category.find(params[:child_id]).children
+    
   end
 
 

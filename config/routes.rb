@@ -8,14 +8,15 @@ Rails.application.routes.draw do
     # post 'card',to: 'users/registrations#create_credit_cards' ← 追加実装
   root 'items#index'
   resources :items do
-    collection do
-      get 'myList', to: 'items#myList'
-    end
+  collection do
+    get 'get_category_children', defaults: { format: 'json' }
+    get 'get_category_grandchildren', defaults: { format: 'json' }
+    get 'myList', to: 'items#myList'
   end
 
   resources :users, only: :show
   
-    
+   
   post "logout" => "users#logout"
   resources :credit_cards, only: [:new, :show] do
     collection do
