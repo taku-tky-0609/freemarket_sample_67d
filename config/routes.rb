@@ -8,10 +8,12 @@ Rails.application.routes.draw do
     # post 'card',to: 'users/registrations#create_credit_cards' ← 追加実装
   root 'items#index'
   resources :items do
-  collection do
-    get 'get_category_children', defaults: { format: 'json' }
-    get 'get_category_grandchildren', defaults: { format: 'json' }
-    end
+  get '/items/:item_id/purchase', to: 'items#purchase'
+  # get '/patients/:id', to: 'patients#show', as: 'patient'
+    collection do
+      get 'get_category_children', defaults: { format: 'json' }
+      get 'get_category_grandchildren', defaults: { format: 'json' }
+      end
   end
 
   resources :users, only: :show

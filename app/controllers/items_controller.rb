@@ -45,6 +45,10 @@ class ItemsController < ApplicationController
     @item = Item.includes(:user, :category)
     @item = Item.find(params[:id])
   end
+  
+  def purchase
+    
+  end
 
   private
 
