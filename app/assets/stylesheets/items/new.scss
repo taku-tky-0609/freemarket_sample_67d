@@ -1,9 +1,7 @@
 // Place all the styles related to the items controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-* {
-  box-sizing: border-box;
-}
+
 .titleContainer {
   display: flex;
   align-items: center;
@@ -487,13 +485,11 @@
     width: 100%;
     background-color: white;
   }
-}
 
-
-.post__drop__box__container {
+  .post__drop__box__container {
     height: auto;
     padding: 40px;
-    .preview_area {
+    .prepend_area {
       width: 100%;
       display: flex;
       justify-content: space-between;
@@ -546,3 +542,4 @@
       }
     }
 } 
+}
