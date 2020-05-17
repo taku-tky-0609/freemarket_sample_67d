@@ -71,10 +71,11 @@
           .categories.titleContainer
             %h1.titleContainer__title カテゴリー
             %h2.titleContainer__required 必須
-          .newcate
+          
+          .newcate2
           = form.collection_select :category_id, Category.where(ancestry: nil), :id, :name, { prompt: "---" }
           -# = form.text_field :category_id, class: "texts", placeholder: "選択してください"
-          
+          .newcate
           .brand.titleContainer
             %h1.titleContainer__title ブランド
             %h2.titleContainer__any 任意
