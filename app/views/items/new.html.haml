@@ -11,15 +11,19 @@
           %span.titleContainer__required 必須
         %p.top_text_details 最大10枚までアップロードできます
         .post__drop__box__container 
-          .pre-content
-            
-          .label-content
-              
-            = form.label  :images, class: "label-box" do
-              .label-box__text-visible 
-                = form.file_field :images, multiple: true, direct_upload: true, class: "hidden-field", name: "item[images][]"
+          .prepend_area
+            .pre-content
+              %p クリックをしてアップロード
+              = form.file_field :images, id: "upload_file", class: "upload_files", data:{id: "1"}
+              = form.hidden_field :file, class: "item_images_hidden"            
+           
+           
+           
+            -# = form.label  :images, class: "label-box" do
+            -#   .label-box__text-visible 
+            -#     = form.file_field :images, multiple: true, direct_upload: true, class: "hidden-field", name: "item[images][]"
 
-                %span.text1 クリックしてファイルをアップロード
+            -#     %span.text1 クリックしてファイルをアップロード
       
         -# .post__drop__box__container2           
         -#   .pre-content2  
