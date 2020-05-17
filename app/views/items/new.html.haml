@@ -11,53 +11,11 @@
           %span.titleContainer__required 必須
         %p.top_text_details 最大10枚までアップロードできます
         .post__drop__box__container 
-          .prepend_area
+          .preview_area
             .pre-content
               %p クリックをしてアップロード
               = form.file_field :images, id: "upload_file", class: "upload_files", data:{id: "1"}
-              = form.hidden_field :file, class: "item_images_hidden"            
-           
-           
-           
-            -# = form.label  :images, class: "label-box" do
-            -#   .label-box__text-visible 
-            -#     = form.file_field :images, multiple: true, direct_upload: true, class: "hidden-field", name: "item[images][]"
-
-            -#     %span.text1 クリックしてファイルをアップロード
-      
-        -# .post__drop__box__container2           
-        -#   .pre-content2  
-        -#   .hidden-content          
-        -#     = form.label  :images, class: "label-box2" do
-        -#       .label-box__text-visible2
-        -#         = form.file_field :images, multiple: true, class: "hidden-field2", name: "item[images][]"
-        -#         %span.text2 クリックしてファイルをアップロード
-        
-                
-                  
-           
-              
-               
-                
-                  
-             
-            
-
-          -# = form.fields_for :item_images do |image|
-          -#   = image.file_field :image, class: "style_form"
-          -#   %pre.visible-pc ドラッグアンドドロップまたはクリックしてファイルをアップロード
-         
-          -# = form.fields_for :item_images do |image|
-          -#   = image.file_field :image, class: "style_form"
-          -#   %pre.visible-pc ドラッグアンドドロップまたはクリックしてファイルをアップロード
-
-          -# .style_form
-          -#   %br/
-          -#   .gazou
-          -#     %p.sc-jGxEUC.eErKZK
-          -#     ドラッグアンドドロップ
-          -#     %br>/
-          -#     またはクリックしてファイルをアップロード
+              = form.hidden_field :file, class: "item_images_hidden"           
         
         .product
           .product__name.titleContainer
