@@ -1,7 +1,9 @@
 // Place all the styles related to the items controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
+* {
+  box-sizing: border-box;
+}
 .titleContainer {
   display: flex;
   align-items: center;
@@ -485,61 +487,78 @@
     width: 100%;
     background-color: white;
   }
-
-  .post__drop__box__container {
-    height: auto;
-    padding: 40px;
-    .prepend_area {
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
+}
+.post__drop__box__container {
     
-      .select_image {
-        width: 100px;
-        #image_preview {
-          display: block;
-          width: 100px;
-          height: 120px;
-        }
-        p {
-          float: left;
-          height: 50px;
-          width: 50px;
-          text-align: center;
-          line-height: 50px;
-          background: #eee;
-          font-size: 14px;
-          border-radius: 50%;
-          a {
-            text-decoration: none;
-      
-            cursor: pointer;
-            &:hover {
-              opacity: 0.6;
-            }
-          }
-        }
-      }
-      .pre-content {
+    margin: 16px auto 0;
+    display: flex;
+   
+    .label-content{
+      display: flex;
       width: 100%;
-      height: 170px;
-      border: 1px dashed #ccc;
-      position: relative;
-      text-align: center;
-      p {
+      height: 165px;
+      border: 1px dotted;
+      
+      background-color: whitesmoke;
+      .label-box{
         width: 100%;
-        line-height: 170px;
-        text-align: center;
+        &__text-visible{
+          width: 100%;
+          height: 165px;
+          line-height: 165px;
+          text-align: center;
+          cursor: pointer;
       }
-      #upload_file {
-        opacity: 0;
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-       }
+        .hidden-field{
+          // display: none;
+        }
       }
     }
 } 
+.item-pic{
+  width: 124px;
+  height: 165px;
+  padding-right: 5px;
+  &__image{
+    height: 100%;
+    width: 100%;
+  }
+}
+
+
+.pre-content {
+  display: flex;
+  
+}
+.hidden-field{
+  visibility: hidden;;
+}
+.post__drop__box__container2{
+  display: none;
+
+  .hidden-content {
+    display: flex;
+    width: 100%;
+    height: 165px;
+    border: 1px dotted;
+    background-color: whitesmoke;
+    margin-top: 30px;
+    .label-box2{
+      width: 100%;
+      .label-box__text-visible2{
+        width: 100%;
+        height: 100%;
+        line-height: 165px;
+        text-align: center;
+      }
+    }
+  }
+}
+.select_image {
+  width: 100px;
+  #image_preview {
+    display: block;
+    width: 100px;
+    height: 120px;
+  }
 }
