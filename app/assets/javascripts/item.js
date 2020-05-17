@@ -9,11 +9,13 @@ $(function () {
     var reader = new FileReader();
     
     reader.onload = function(e){
-      $(target).closest('.prepend_area').prepend(`
-        <div class="select_image" data-id=${id-1}>
-          <img src=${e.target.result} id="image_preview">
-          <p><a href="#">編集</a></p>
-          <p><a class="remove_image">削除</a></p>
+      $(target).closest('.preview_area').prepend(`
+        <div class="select_image" data-id=${id-1} data-lightbox="abc">
+          <a href="${e.target.result}" data-lightbox="group">
+            <img src=${e.target.result} id="image_preview" width="300">
+          </a>
+            <p><a href="#">編集</a></p>
+            <p><a class="remove_image">削除</a></p>
         </div>
       `);
       var imagesLength = $('.select_image').length;

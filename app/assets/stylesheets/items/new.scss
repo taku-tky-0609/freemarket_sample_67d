@@ -493,7 +493,7 @@
 .post__drop__box__container {
     height: auto;
     padding: 40px;
-    .prepend_area {
+    .preview_area {
       width: 100%;
       display: flex;
       justify-content: space-between;
@@ -513,12 +513,12 @@
           line-height: 50px;
           background: #eee;
           font-size: 14px;
+          border-radius: 50%;
           a {
             text-decoration: none;
       
             cursor: pointer;
             &:hover {
-              text-decoration: underline;
               opacity: 0.6;
             }
           }
