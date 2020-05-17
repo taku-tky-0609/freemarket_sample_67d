@@ -107,4 +107,5 @@ class ItemsController < ApplicationController
     strong_param[:images]
   end
 
+
 end
