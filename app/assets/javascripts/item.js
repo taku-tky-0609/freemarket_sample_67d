@@ -43,7 +43,6 @@ $(function () {
     //   }
     // }
 
-    // )
 
     switch (imagesLength + 1 ) {
       
