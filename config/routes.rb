@@ -9,11 +9,11 @@ Rails.application.routes.draw do
   root 'items#index'
   get '/items/:item_id/purchase', to: 'items#purchase'
   resources :items do
-  collection do
-    get 'get_category_children', defaults: { format: 'json' }
-    get 'get_category_grandchildren', defaults: { format: 'json' }
-    get 'myList', to: 'items#myList'
-  end
+    collection do
+      get 'get_category_children', defaults: { format: 'json' }
+      get 'get_category_grandchildren', defaults: { format: 'json' }
+      get 'myList', to: 'items#myList'
+    end
   end
 
   resources :items do
@@ -52,5 +52,6 @@ Rails.application.routes.draw do
   # get 'categories/index'
   # get 'items_comments/create'
   end
-end
+  end
+
 
