@@ -69,9 +69,6 @@ $(function () {
   });
 
   $('body').on('click', '.remove_image', function () {
-    // if ($('.select_image').length  < 4){
-    //   $('.pre-content').children('p').html('<p>クリックをしてアップロード</p>');
-    // };
     var filesArray = $('.item_images_hidden').val().split(',');
     var id = $(this).closest('.select_image').data('id');
 
