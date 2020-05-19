@@ -1,5 +1,7 @@
 require 'rails_helper'
 
+# bundle exec rspec spec/models/user_spec.rb
+
 describe User do
   describe '#create' do
     context 'can save' do
@@ -8,6 +10,7 @@ describe User do
         expect(user).to be_valid
       end
       
+
       it "self_introductionを入力していなくても登録できること" do
         user = build(:user)
         user = build(:user, self_introduction: "")
@@ -116,10 +119,6 @@ describe User do
         another_user.valid?
         expect(another_user.errors[:email]).to include()
       end
-      # it "重複したemailが存在する場合登録できないこと" do
-      #   user1 = FactoryBot.create(:user,nickname: "taro", email: "taro@example.com")
-      #   expect(FactoryBot.build(:user, nickname: "ziro", email: user1.email)).to_not be_valid
-      # end
 
       it "重複したnicknameが存在する場合登録できないこと" do
         user = create(:user)
