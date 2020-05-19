@@ -1,0 +1,76 @@
+%body
+  %noscript
+    %iframe
+  / End Google Tag Manager (noscript)
+  .single-container
+    -# = form_with(model: @item, local: true, :builder => FormHelper::FormWithErrorMessageBuilder) do |form|
+    %header.single-header
+      %h1
+        %a{:href => "#"}
+          %img.head{ src: "/images/logo.png"}
+       
+        
+    %main.single-main
+      %section.l-single-container.buy-item-container
+        %h2.l-single-head.buy-head 購入内容の確認
+        %section.buy-content.buy-item
+          .buy-content-inner
+            .buy-item-box
+              %h3.buy-item-image
+                %img.lazyloaded{:alt => "", "data-src" => "https://static.mercdn.net/thumb/photos/m54421812372_1.jpg?1587687662", :src => "https://static.mercdn.net/thumb/photos/m54421812372_1.jpg?1587687662"}/
+              .buy-item-detail
+                
+        %section.buy-content.buy-item
+          .buy-content-inner
+            %form#buy-item-form.buy-form{:action => "https://www.mercari.com/jp/transaction/buy/done/m54421812372/", :method => "POST", :novalidate => "novalidate"}
+              %ul.buy-price-table
+                %li.buy-price-row.buy-you-pay.bold
+                  .buy-price-cell.buy-price-cell-label 支払い金額
+                  .buy-price-cell
+                    %span{"data-buy-pay" => "1200"} ¥1,200
+              %ul.buy-accordion.buy-not-have-point
+                %li.accordion-parent
+                  .checkbox-default.buy-use-point
+                    %input{:disabled => "disabled", :type => "checkbox"}/
+                    %i.icon-check
+                    %label ポイントを使用 (所持ポイント: P0)
+              %section.buy-content.buy-user-info{"data-buy" => "pay-method"}
+                .buy-content-inner
+                  %h3 支払い方法
+                  %a{:href => "#"}
+                    %p.buy-user-info-text
+                      %i.icon-plus-circle
+                      %span.buy-register-text 登録してください
+              %section.buy-content.buy-user-info
+                .buy-content-inner
+                  %h3 配送先
+                  %a{:href => "#"}
+                    %p.buy-user-info-text
+                      %i.icon-plus-circle
+                      %span.buy-register-text 登録してください
+                .purchase.html.haml
+              %section.buy-content.buy-user-info
+              %button.btn-default{:type => "submit"} 購入する
+              
+
+                 
+                 
+  
+
+    %footer.single-footer
+      %nav
+        %ul.clearfix
+          %li
+            %a{:href => "/jp/privacy/"} プライバシーポリシー
+          %li
+            %a{:href => "/jp/tos/"} フリマ利用規約
+          %li
+            %a{:href => "/jp/tokutei/"} 特定商取引に関する表記
+      %a.single-footer-logo{:href => "/jp/"}
+        %img.hea{ src: "/images/logo-white.png"}
+      %p
+        %p.furima6 © Furima, Inc.
+  %script{:src => "//pcweb-assets.mercdn.net/assets/js/app.js?2310494441"}
+  
+  
+  

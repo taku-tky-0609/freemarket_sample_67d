@@ -7,12 +7,20 @@ Rails.application.routes.draw do
     post 'addresses', to: 'users/registrations#create_address'
     # post 'card',to: 'users/registrations#create_credit_cards' ← 追加実装
   root 'items#index'
-  
+  get '/items/:item_id/purchase', to: 'items#purchase'
   resources :items do
     collection do
-    get 'get_category_children', defaults: { format: 'json' }
-    get 'get_category_grandchildren', defaults: { format: 'json' }
-    get 'myList', to: 'items#myList'
+      get 'get_category_children', defaults: { format: 'json' }
+      get 'get_category_grandchildren', defaults: { format: 'json' }
+      get 'myList', to: 'items#myList'
+    end
+  end
+
+  resources :items do
+    collection do
+      get  'purchase/:id'=>  'items#purchase', as: 'purchase'
+      post 'pay/:id'=>   'items#pay', as: 'pay'#httpメソッドはpostなので注意
+      get  'done'=>      'items#done', as: 'done'
     end
   end
   resources :users, only: :show
@@ -43,5 +51,6 @@ Rails.application.routes.draw do
   # get 'categories/index'
   # get 'items_comments/create'
   end
-end
+  end
+
 
