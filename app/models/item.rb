@@ -3,11 +3,10 @@ class Item < ApplicationRecord
   # has_many :likes
   # has_many :items_statuses
   # has_many :item_images
-  
+  # accepts_nested_attributes_for :item_images
   belongs_to :user
   belongs_to :brand
   belongs_to :category
-  # accepts_nested_attributes_for :item_images
   has_many_attached :images
   accepts_nested_attributes_for :brand
   extend ActiveHash::Associations::ActiveRecordExtensions

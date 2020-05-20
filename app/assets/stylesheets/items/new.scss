@@ -125,7 +125,7 @@
         .top3{
           margin-top: 15px;
           display: block;
-          vertical-align: baseline;
+          // vertical-align: baseline;
           box-sizing: border-box;
           .top3_3{
             font-family: Arial,游ゴシック体,YuGothic,メイリオ,Meiryo,sans-serif;
@@ -377,7 +377,7 @@
               white-space: nowrap;
               word-break: break-word;
               -webkit-appearance: button;
-              -webkit-writing-mode: horizontal-tb !important;
+              // -webkit-writing-mode: horizontal-tb !important;
               text-rendering: auto;
               letter-spacing: normal;
               word-spacing: normal;
@@ -541,5 +541,5 @@
        }
       }
     }
-} 
+ } 
 }

@@ -33,6 +33,7 @@ class ItemsController < ApplicationController
   
     # Item.create(item_params)
     @item = Item.new(item_params)
+    binding.pry
     unless @item.valid?
       # flash.now[:alert] = @item.errors.full_messages
       # helper Form
