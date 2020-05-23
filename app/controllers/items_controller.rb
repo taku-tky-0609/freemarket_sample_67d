@@ -5,6 +5,7 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
+    # @item.item_images.build
     @item.build_brand
     # @item.brand.build
     # @category_parent_array = ["---"]
