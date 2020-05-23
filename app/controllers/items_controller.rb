@@ -5,14 +5,7 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
-    # @item.item_images.build
     @item.build_brand
-    # @item.brand.build
-    # @category_parent_array = ["---"]
-    # # @category_parent_array = Category.where(ancestry: nil)
-    # Category.where(ancestry: nil).each do |parent|
-    #   @category_parent_array << parent.name
-
       # def get_category_children
       #   @category_children = Category.find(params[:parent_id]).children
       # end
