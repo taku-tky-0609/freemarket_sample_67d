@@ -1,54 +1,13 @@
 // Place all the styles related to the items controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
-.titleContainer {
-  display: flex;
-  align-items: center;
-  &__title {
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 1.4em;
-  }
-  &__required {
-    font-size: 12px;
-    padding: 0 4px;
-    background-color: #ff0211;
-    color: #fff;
-    border-radius: 2px;
-    font-weight: 600;
-    line-height: 1.4em;
-    margin-left: 10px;
-  }
-  &__any {
-    font-size: 12px;
-    padding: 0 4px;
-    background-color: rgb(197, 194, 194);
-    color: #fff;
-    border-radius: 2px;
-    font-weight: 600;
-    line-height: 1.4em;
-    margin-left: 10px;
-  }
-}
-
-
-.texts {
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  height: 48px;
-  padding: 0 16px;
-  display: flex;
-  width: 100%;
-  margin:10px 0 10px;
-}
-
-.itemsNewContainer {
+.hoge{
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   background-color: rgb(245, 245, 245);
-  &__title {
+
+  .first{
     height: 128px;
     -webkit-box-align: center;
     align-items: center;
@@ -58,8 +17,11 @@
     height: 49px;
     width: 185px;
     }
+
   }
-  &__body {
+
+  .body {
+    
     justify-content: center;
     background-color: rgb(255, 255, 255);
     max-width: 700px;
@@ -73,16 +35,41 @@
     font-size: 14px;
     color: rgb(51, 51, 51);
     margin-left: 350px;
-    &__form {
+    
+    .body_1{
       padding: 40px;
-      .image {
+      .body_2{
         vertical-align: baseline;
-        padding: 40px;
-        &__top{
+        padding: 20px;
+        
+        .top{
           align-items: center;
           display: flex;
           font-family: Arial,游ゴシック体,YuGothic,メイリオ,Meiryo,sans-serif;
+          
+
+        .top_text{
+
+        }
+        .top_text_2{
+          margin-left: 8px;
+          font-size: 12px;
+          padding: 0 4px;
+          background-color: #ff0211;
+          color: #fff;
+          border-radius: 2px;
+          display: inline-block;
+          font-style: normal;
+          font-weight: 600;
+          line-height: 1.4em;
+          margin: 0;
+          margin-left: 10px;
+        }
       }
+        .top_text_details{
+
+        }
+
         .style_form{
           .gazou{
             align-content: center;
@@ -106,20 +93,74 @@
             box-sizing: border-box;
           }
         }
+
+        .top_text{
+          font-size: 14px;
+          font-weight: 600;
+          line-height: 1.4em;
+        }
+        .top_text_details{
+          font-size: 14px;
+          line-height: 1.4em;
+          margin-top: 16px;
+        }
       }
-      .product{
+
+      .body_3{
         padding: 40px;
         vertical-align: baseline;
-        &__explanation {
-          display: flex;
-          &__text {
+        .top2{
+          display: block;
+          vertical-align: baseline;
+
+          .top2_3{
+            align-items: center;
+            display: flex;
+
+
+          
+
+            .Product_name{
+              font-size: 14px;
+              font-weight: 600;
+              line-height: 1.4em;
+              
+            }
+            
+
+            .Product_name_2{
+              margin-left: 8px;
+              font-family: Arial,游ゴシック体,YuGothic,メイリオ,Meiryo,sans-serif;
+              font-size: 12px;
+              padding: 0 4px;
+              background-color: #ff0211;
+              color: #fff;
+              border-radius: 2px;
+              display: inline-block;
+              font-style: normal;
+              font-weight: 600;
+              line-height: 1.4em;
+            
+            
+            }
+          }
+          .product{
+            border-color: #ff0211;
             border: 1px solid #ccc;
             border-radius: 4px;
-            height: 120px;
+            box-sizing: border-box;
+            font-family: inherit;
+            font-size: inherit;
+            height: 48px;
+            margin: 0;
+            outline: none;
             padding: 0 16px;
+            width: inherit;
             display: flex;
             width: 100%;
-            margin:10px 0 10px;
+            margin-top: 10px;
+           
+            
           }
         }
         .top3{
@@ -136,30 +177,336 @@
               font-weight: 600;
               line-height: 1.4em;
             }
+            .Product_description_2 {
+              margin-left: 8px;
+              font-size: 12px;
+              padding: 0 4px;
+              background-color: #ff0211;
+              color: #fff;
+              border-radius: 2px;
+              display: inline-block;
+              font-style: normal;
+              font-weight: 600;
+              line-height: 1.4em;
+              margin-left: 10px;
+            }
+          }
+          .style_textarea{
+            font-family: Arial,游ゴシック体,YuGothic,メイリオ,Meiryo,sans-serif;
+            width: 100%;
+            border-color: #ff0211;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            color: #222;
+            font-size: 16px;
+            margin: 0;
+            outline: none;
+            padding: 13px 16px;
+            resize: vertical;
+            vertical-align: middle;
+            margin-top: 20px;
           }
         }
       }
       
-      .details{
+      .body_4{
         padding: 40px;
         vertical-align: baseline;
-        &__title {
+        .top4{
+
+        .top4_1{
+          .Product_details{
+            color: rgb(136, 136, 136);
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 1.4em;
+            margin-bottom: 24px;
+          }
+        }
+          .top4_2{
+            font-family: Arial,游ゴシック体,YuGothic,メイリオ,Meiryo,sans-serif;
+            align-items: center;
+            display: flex;
+            vertical-align: baseline;
+            .category{
+              font-size: 14px;
+              font-weight: 600;
+              line-height: 1.4em;
+            }
+            .category_2{
+              margin-left: 8px;
+              font-size: 12px;
+              padding: 0 4px;
+              background-color: #ff0211;
+              color: #fff;
+              border-radius: 2px;
+              display: inline-block;
+              font-style: normal;
+              font-weight: 600;
+              line-height: 1.4em;
+              margin-left: 10px;
+            }
+          }
+          .category_3{
+            -webkit-appearance: none;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            color: #222;
+            font-size: 16px;
+            height: 48px;
+            line-height: 1;
+            margin-top: 10px;
+            outline: none;
+            padding: 0 56px 0 16px;
+            width: 100%;
+          }
+          .top4_3{
+            font-family: Arial,游ゴシック体,YuGothic,メイリオ,Meiryo,sans-serif;
+            align-items: center;
+            display: flex;
+            margin-top: 15px;
+            .brand{
+              font-size: 14px;
+              font-weight: 600;
+              line-height: 1.4em;
+              vertical-align: baseline;
+            }
+            .brand_2{
+              margin-left: 8px;
+              font-size: 12px;
+              padding: 0 4px;
+              background-color: #bfbfbf;
+              color: #fff;
+              border-radius: 2px;
+              display: inline-block;
+              font-style: normal;
+              font-weight: 600;
+              line-height: 1.4em;
+              margin-left: 10px;
+            }
+          }
+          .brand_3{
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-family: inherit;
+            font-size: inherit;
+            height: 48px;
+            margin-top: 10px;
+            outline: none;
+            padding: 0 16px;
+            width: inherit;
+            -webkit-writing-mode: horizontal-tb !important;
+            text-rendering: auto;
+            color: -internal-light-dark-color(black, white);
+            letter-spacing: normal;
+            word-spacing: normal;
+            text-transform: none;
+            text-indent: 0px;
+            text-shadow: none;
+            display: inline-block;
+            text-align: start;
+            -webkit-appearance: textfield;
+            background-color: -internal-light-dark-color(white, black);
+            -webkit-rtl-ordering: logical;
+            cursor: text;
+            width: 100%;
+          }
+
+          .top4_4{
+            margin-top: 17px;
+            font-family: Arial,游ゴシック体,YuGothic,メイリオ,Meiryo,sans-serif;
+            align-items: center;
+            display: flex;
+
+            .Product_status{
+              font-size: 14px;
+              font-weight: 600;
+              line-height: 1.4em;
+              box-sizing: border-box;
+              cursor: default;
+            }
+            .Product_status_2{
+              font-family: Arial,游ゴシック体,YuGothic,メイリオ,Meiryo,sans-serif;
+              padding-top: 0px;
+              padding-right: 4px;
+              padding-bottom: 0px;
+              padding-left: 4px;
+              font-size: 12px;
+              background-color: #ff0211;
+              color: #fff;
+              border-radius: 2px;
+              display: inline-block;
+              font-style: normal;
+              font-weight: 600;
+              line-height: 1.4em;
+              margin-left: 10px;
+            }
+          }
+          .Product_status_3{
+            -webkit-appearance: none;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            color: #222;
+            font-size: 16px;
+            height: 48px;
+            line-height: 1;
+            margin: 0;
+            outline: none;
+            padding: 0 56px 0 16px;
+            width: 100%;
+            font-family: inherit;
+            overflow: visible !important;
+            width: 100%;
+            margin-top: 10px;
+          }
+        }
+      }
+
+      .body_5{
+        box-sizing: border-box;
+        display: block;
+        padding: 40px;
+
+        .body5_1{
           color: rgb(136, 136, 136);
           font-size: 14px;
           font-weight: 600;
           line-height: 1.4em;
           margin-bottom: 24px;
+          display: block;
+          margin-block-start: 1em;
+          margin-block-end: 1em;
+          margin-inline-start: 0px;
+          margin-inline-end: 0px;
         }
-      }
-      .delivery {
-        box-sizing: border-box;
-        display: block;
-        padding: 40px;
-        .title {
-          color: rgb(136, 136, 136);
-          font-weight: 600;
+        .body5_2{
+          font-family: Arial,游ゴシック体,YuGothic,メイリオ,Meiryo,sans-serif;
+          align-items: center;
+          display: flex;
+          margin-top: 10px;
+
+          .shipping_fee_burden{
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 1.4em;
+          }
+          .shipping_fee_burden_2{
+            font-family: Arial,游ゴシック体,YuGothic,メイリオ,Meiryo,sans-serif;
+            padding-top: 0px;
+            padding-right: 4px;
+            padding-bottom: 0px;
+            padding-left: 4px;
+            font-size: 12px;
+            background-color: #ff0211;
+            color: #fff;
+            border-radius: 2px;
+            display: inline-block;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 1.4em;
+            margin-left: 10px;
+          }
         }
- 
+        .Product_status_3{
+          -webkit-appearance: none;
+          background-color: #fff;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          box-sizing: border-box;
+          color: #222;
+          font-size: 16px;
+          height: 48px;
+          line-height: 1;
+          margin: 0;
+          outline: none;
+          padding: 0 56px 0 16px;
+          width: 100%;
+          font-family: inherit;
+          overflow: visible !important;
+          width: 100%;
+          margin-top: 10px;
+        }
+
+        .body5_3{
+          font-family: Arial,游ゴシック体,YuGothic,メイリオ,Meiryo,sans-serif;
+          align-items: center;
+          display: flex;
+          margin-top: 10px;
+          .shipping_region{
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 1.4em;
+          }
+          .shipping_region_2{
+            font-family: Arial,游ゴシック体,YuGothic,メイリオ,Meiryo,sans-serif;
+            padding-top: 0px;
+            padding-right: 4px;
+            padding-bottom: 0px;
+            padding-left: 4px;
+            font-size: 12px;
+            background-color: #ff0211;
+            color: #fff;
+            border-radius: 2px;
+            display: inline-block;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 1.4em;
+            margin-left: 10px;
+          }
+        }
+        .Product_status_3{
+          -webkit-appearance: none;
+          background-color: #fff;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          box-sizing: border-box;
+          color: #222;
+          font-size: 16px;
+          height: 48px;
+          line-height: 1;
+          margin: 0;
+          outline: none;
+          padding: 0 56px 0 16px;
+          width: 100%;
+          font-family: inherit;
+          overflow: visible !important;
+          width: 100%;
+          margin-top: 10px;
+        }
+
+        .body5_4{
+          font-family: Arial,游ゴシック体,YuGothic,メイリオ,Meiryo,sans-serif;
+          align-items: center;
+          display: flex;
+          margin-top: 10px;
+          .days{
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 1.4em;
+          }
+          .days_2{
+            font-family: Arial,游ゴシック体,YuGothic,メイリオ,Meiryo,sans-serif;
+            padding-top: 0px;
+            padding-right: 4px;
+            padding-bottom: 0px;
+            padding-left: 4px;
+            font-size: 12px;
+            background-color: #ff0211;
+            color: #fff;
+            border-radius: 2px;
+            display: inline-block;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 1.4em;
+            margin-left: 10px;
+          }
+        }
         .Product_status_3{
           -webkit-appearance: none;
           background-color: #fff;
@@ -475,14 +822,5 @@
       }
     }
 
-  }
- 
-  select {
-    border: 1px solid #ccc;
-    margin:10px 0 10px;
-    padding: 0 16px;
-    height: 48px;
-    width: 100%;
-    background-color: white;
   }
 }

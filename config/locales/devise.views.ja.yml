@@ -41,24 +41,6 @@ ja:
               blank: "が入力されていません。"
         address:
           attributes:
-              item_name:
-                blank: "が入力されていません。"
-              category_id:
-                blank: "が入力されていません。"
-              status_id:
-                blank: "が入力されていません。"
-              delivery_method_id:
-                blank: "が入力されていません。"
-              delivery_fee_id:
-                blank: "が入力されていません。"
-              delivery_area_id:
-                blank: "が入力されていません。"
-              estimated_delivery_id:
-                blank: "が入力されていません。"
-              price:
-                blank: "が入力されていません。"
-        item:
-          attributes:
               prefectures:
                 blank: "が入力されていません。"
               postal_code:
