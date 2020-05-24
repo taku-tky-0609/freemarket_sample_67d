@@ -6,7 +6,7 @@ FactoryBot.define do
     price                 {Faker::Number.number(digits: 8)}
     category_id           {Faker::Number.between(from: 1, to: 100)}
     status_id             {Faker::Number.between(from: 1, to: 100)}
-    brand_id              {Faker::Number.between(from: 1, to: 100)}
+    brand                 {Faker::Number.between(from: 1, to: 100)}
     size                  {Faker::String.random(length: [1, 6])}
     delivery_fee_id       {Faker::Number.between(from: 1, to: 100)}
     delivery_method_id    {Faker::Number.between(from: 1, to: 100)}
