@@ -1,97 +1,48 @@
 = render 'items/header'
 
-.itemsShow
-  .itemsShow__container
-    .ProductName
-      %h2 くっきー
-      -# = @item.item_name
-    .ProductInformation
-      .ProductImages
-        -# - @item.images do |img|
-        -#   = image_tag(img.image_url.url, size: '300x300', class: "" ,id: "main_#{i}")
-        = image_tag "cookie.png", class:"ProductImages__main"
-        .ProductImages__subContainer
-          -# - @product.images.each_with_index do |img, i|
-          -#   = image_tag(img.image_url.url, size: '60x60', "": "#{i}")
-          = image_tag "cookie.png", class:"subImage"
-          = image_tag "cookie2.png", class:"subImage"
-          = image_tag "cookie3.png", class:"subImage"
-      .ProductSelections
-        %table.ProductSelections__lists
-          %tr
-            %th 出品者
-            %td 
-              = @item.user.nickname
-          %tr
-            %th カテゴリー
-            %td 
-              = @item.category.category_name
-              
-              -# %= @items.name
-            -# %td 
-              -# = link_to category_path(@category_parent), class: '' do
-              -# #{@category_parent.name}
-              -# %br
-              -# = link_to category_path(@category_child), class: '' do
-              -# %i.fas.fa-chevron-right
-              -# #{@category_child.name}
-              -# %br
-              -# = link_to category_path(@category_grand_child), class: '' do
-              -# %i.fas.fa-chevron-right
-              -# #{@category_grand_child.name}
-          %tr
-            %th ブランド
-            %td 
-              = @item.brand.name
-          %tr
-            %th 商品の状態
-            %td 
-              = @item.status.name
-          %tr
-            %th 配送料の負担
-            %td 
-              = @item.delivery_fee.name
-          %tr
-            %th 配送の方法
-            %td 
-              = @item.delivery_method.name
-          %tr
-            %th 配送元地域
-            %td 
-              = @item.prefecture.name
-          %tr
-            %th 発送日の目安
-            %td 
-              = @item.estimated_delivery.name
-    .PriceContainer
-      .ProductPrice
-        = @item.price
-      .ProductTax
-        (税込)送料込み
-    = link_to "#", class: "purchase" do
-      購入画面に進む
-    .ProductExplanation
-      超くっきーランドで購入しました 
-      %br ［縦14㎝×横8.5㎝　ファスナー10㎝］
-      %br 1.2回使用しましたが、美品です
-      %br 神経質な方は遠慮ください
-    .itemsShow__container__clickBox
-      .likesCount
-        ❤️いいね!!
-      = link_to "#", class: "inappropriateReport" do
-        不適切な商品の報告
-      = link_to "#", class: "initiative" do
-        あんしん・あんぜんへの取り組み
-
-.itemsComment
-  .itemsComment__container
-    .erxplanation
-      相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
-    .commentForm
-      @commentが適宜されたらtext_fielbに変更
-    = link_to "#", class: "commentSubmit" do
-      コメントする
-
-
-
+.itemsShowContainer
+  .ProductName
+  .ProductInformation
+    .ProductInformation__picture
+    .ProductInformation__selections
+      .ProductInformation__selections__left
+        %li.ProductInformation__selections__left__list
+          出品者
+        %li.ProductInformation__selections__left__list
+          カテゴリー
+        %li.ProductInformation__selections__left__list
+          ブランド
+        %li.ProductInformation__selections__left__list
+          商品の状態
+        %li.ProductInformation__selections__left__list
+          配送料の負担
+        %li.ProductInformation__selections__left__list
+          配送の方法
+        %li.ProductInformation__selections__left__list
+          配送元地域
+        %li.ProductInformation__selections__left__list
+          発送日の目安	
+        %li.ProductInformation__selections__left__list
+      .ProductInformation__selections__right
+        %li.ProductInformation__selections__right__list
+          出品者(test用)
+        %li.ProductInformation__selections__right__list
+          カテゴリー(test用)
+        %li.ProductInformation__selections__right__list
+          ブランド(test用)
+        %li.ProductInformation__selections__right__list
+          商品の状態(test用)
+        %li.ProductInformation__selections__right__list
+          配送料の負担(test用)
+        %li.ProductInformation__selections__right__list
+          配送の方法(test用)
+        %li.ProductInformation__selections__right__list
+          配送元地域(test用)
+        %li.ProductInformation__selections__right__list
+          発送日の目安(test用)
+        %li.ProductInformation__selections__right__list
+  .ProductPrice
+  -# = link_to ？？_path do
+    購入画面に進む
+    
 = render 'items/footer'

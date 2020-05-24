@@ -39,15 +39,9 @@ module FormHelper
     end
 
     def password_field(attribute, options={})                                       
-      input_field_with_error(attribute, options) do                             
-         super                                                                   
-      end                                                                       
-    end     
-
-    # def collection_select(attribute, array, value, column, options={})                                       
-    #   input_field_with_error(attribute, array, value, column, options) do                             
-    #      super                                                                   
-    #   end                                                                       
-    # end                                                                 
+        input_field_with_error(attribute, options) do                             
+       super                                                                   
+     end                                                                       
+    end                                                                 
   end                                                                         
 end    
