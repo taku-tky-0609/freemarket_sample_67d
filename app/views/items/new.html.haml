@@ -10,12 +10,18 @@
           出品画像
           %span.titleContainer__required 必須
         %p.top_text_details 最大10枚までアップロードできます
-        .post__drop__box__container 
+        -# .post__drop__box__container 
+        -#   .prepend_area
+        -#     .pre-content
+        -#       %p クリックをしてアップロード
+        -#       = form.file_field :images, id: "upload_file", class: "upload_files", data:{id: "1"}
+        -#       = form.hidden_field :file, class: "item_images_hidden"            
+
+        .new_item_page_container_main_carrierwave_image
           .prepend_area
-            .pre-content
-              %p クリックをしてアップロード
-              = form.file_field :images, id: "upload_file", class: "upload_files", data:{id: "1"}
-              = form.hidden_field :file, class: "item_images_hidden"            
+            %p.new_item_page_container_main_label
+            = form.fields_for :item_images do |i|
+              = i.file_field :src, class: 'js-file'
       
         -# .post__drop__box__container2           
         -#   .pre-content2  
