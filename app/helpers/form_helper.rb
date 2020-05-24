@@ -31,12 +31,6 @@ module FormHelper
       end                                                                       
     end
 
-    def number_field(attribute, options={})                                       
-      input_field_with_error(attribute, options) do                             
-         super                                                                   
-      end                                                                       
-    end
-    
     def telephone_field(attribute, options={})                                       
       input_field_with_error(attribute, options) do                             
          super                                                                   
