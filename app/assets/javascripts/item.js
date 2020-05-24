@@ -1,6 +1,7 @@
 $(function (){
   function buildFileField(index) {
-    html = `<input class= "js-file" type= "file"name="item[item_images_attributes][${index}][src]" id="item_item_images_attributes_${index}_src">
+    html = `<div class="new_item_page_container_main_label">
+              <input class= "js-file" type= "file"name="item[item_images_attributes][${index}][src]" id="item_item_images_attributes_${index}_src">
               <div class="js-remove">削除</div>
             </div>`;  
     return html;
@@ -16,6 +17,11 @@ let fileIndex = [1,2,3,4,5,6,7,8,9,10];
     return false;
 
   })
+
+  $(document).on("click", '.js-remove', function(){
+    $(this).parent().remove();
+
+  });
 
 
 

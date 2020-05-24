@@ -19,9 +19,10 @@
 
         .new_item_page_container_main_carrierwave_image
           .prepend_area
-            %p.new_item_page_container_main_label
-            = form.fields_for :item_images do |i|
-              = i.file_field :src, class: 'js-file'
+            .new_item_page_container_main_label
+              = form.fields_for :item_images do |i|
+                = i.file_field :src, class: 'js-file'
+                .js-remove 削除
       
         -# .post__drop__box__container2           
         -#   .pre-content2  
