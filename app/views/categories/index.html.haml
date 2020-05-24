@@ -1,0 +1,14 @@
+.category
+  - @parents.where(ancestry: nil).each do |parent|
+    = link_to "#", class:"ProductSelections__lists__category" do
+      = parent.name
+  - @parents.where(ancestry: nil).each_with_index do |parent,i|
+    = link_to "#", class:"parent__category__#{++i}" do
+      = parent.name
+      %br
+      
+    -# = link_to "#", class:"ProductSelections__lists__category" do
+    -#   = parent.name
+    -#   %br
+    -# = link_to "#", class:"ProductSelections__lists__category" do
+    -#   = parent.name

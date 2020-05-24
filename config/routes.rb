@@ -18,6 +18,8 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :categories 
+
   resources :items do
     collection do
       get  'purchase/:id'=>  'items#purchase', as: 'purchase'
