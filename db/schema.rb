@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_08_122803) do
+ActiveRecord::Schema.define(version: 2020_05_05_134954) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -87,7 +87,6 @@ ActiveRecord::Schema.define(version: 2020_05_08_122803) do
     t.datetime "updated_at", null: false
     t.bigint "brand_id"
     t.integer "prefecture_id"
-    t.bigint "buyer_id"
     t.index ["brand_id"], name: "fk_rails_36708b3aa6"
     t.index ["category_id"], name: "index_items_on_category_id"
     t.index ["user_id"], name: "index_items_on_user_id"
@@ -101,6 +100,16 @@ ActiveRecord::Schema.define(version: 2020_05_08_122803) do
     t.datetime "updated_at", null: false
     t.index ["item_id"], name: "index_items_comments_on_item_id"
     t.index ["user_id"], name: "index_items_comments_on_user_id"
+  end
+
+  create_table "items_statuses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "item_id", null: false
+    t.string "status", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_items_statuses_on_item_id"
+    t.index ["user_id"], name: "index_items_statuses_on_user_id"
   end
 
   create_table "likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

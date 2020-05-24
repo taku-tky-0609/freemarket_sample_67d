@@ -4,8 +4,8 @@ class Item < ApplicationRecord
   # has_many :items_statuses
   has_many :item_images
   
-  belongs_to :user
   belongs_to :brand
+  belongs_to :user
   belongs_to :category
   accepts_nested_attributes_for :item_images
   extend ActiveHash::Associations::ActiveRecordExtensions
@@ -19,10 +19,10 @@ class Item < ApplicationRecord
 
   validates :item_name, presence: true
   validates :price, presence: true
+  # validates :category_id, presence: true
   validates :status_id, presence: true
   validates :delivery_method_id, presence: true
   validates :delivery_fee_id, presence: true
   validates :prefecture_id, presence: true
   validates :estimated_delivery_id, presence: true
-  validates :category_id, presence: true
 end
