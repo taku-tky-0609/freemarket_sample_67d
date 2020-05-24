@@ -5,7 +5,7 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
-    # @item.item_images.build
+    @item.item_images.build
     @categori_parent_array = ["---"]
     @categori_parent_array = Categori.where(ancestry: nil)
   end
