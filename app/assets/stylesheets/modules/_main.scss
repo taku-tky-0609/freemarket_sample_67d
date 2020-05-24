@@ -158,26 +158,9 @@ a {
         background-color: white;
         margin: 3.2vw;
         width: 20vw;
-        position: relative;
-        .pickupImage {
+        img {
           width: 20vw;
           height: calc(20vw * 1);
-        }
-        .soldOutContainer {
-          position: absolute;
-          top: 0;
-          left: 0px;
-          border-bottom: 8vw solid transparent;
-          border-left: 8vw solid red;
-        }
-        .soldOutComment {
-          transform: rotate(-45deg);
-          position: absolute;
-          top: 18px;
-          left: 6px;
-          color: #ffffff;
-          font-weight: bold;
-          font-size: 18px;
         }
         .detailsContainer {
           display: flex;
@@ -211,3 +194,7 @@ a {
   margin-right: 5px;
 }
 
+.pickupImage {
+  width: 100px;
+  height: 100px;
+}

@@ -2,19 +2,20 @@
 
 .itemsShow
   .itemsShow__container
-    -if @item.buyer_id.present?
-      .soldOutContainer
-      .soldOutComment
-        SOLD
     .ProductName
-      = @item.item_name
+      %h2 くっきー
+      -# = @item.item_name
     .ProductInformation
       .ProductImages
-        - @item.images.each_with_index do |image,i|
-          %div{class: "ProductImages__#{++i}"}
-            = image_tag image
-
+        -# - @item.images do |img|
+        -#   = image_tag(img.image_url.url, size: '300x300', class: "" ,id: "main_#{i}")
+        = image_tag "cookie.png", class:"ProductImages__main"
         .ProductImages__subContainer
+          -# - @product.images.each_with_index do |img, i|
+          -#   = image_tag(img.image_url.url, size: '60x60', "": "#{i}")
+          = image_tag "cookie.png", class:"subImage"
+          = image_tag "cookie2.png", class:"subImage"
+          = image_tag "cookie3.png", class:"subImage"
       .ProductSelections
         %table.ProductSelections__lists
           %tr
@@ -25,7 +26,8 @@
             %th カテゴリー
             %td 
               = @item.category.name
-
+              
+              -# %= @items.name
             -# %td 
               -# = link_to category_path(@category_parent), class: '' do
               -# #{@category_parent.name}
@@ -66,12 +68,8 @@
         = @item.price
       .ProductTax
         (税込)送料込み
-    -if user_signed_in? && @item.buyer_id == nil && @item.user_id != current_user.id
-      = form_tag(action: :pay, method: :post) do
-        %script.payjp-button{:src => "https://checkout.pay.jp", :type => "text/javascript" ,"data-text" => "購入する" ,"data-key" => "pk_test_32534f246a14649e6d9c3ac8"}
-    -# ↓入江さんの商品購入確認外面の実装が完了したら復帰
-    -# = link_to "#", class: "purchase furimaBtn" do
-    -#   購入画面に進む
+    = link_to "#", class: "purchase" do
+      購入画面に進む
     .ProductExplanation
       超くっきーランドで購入しました 
       %br ［縦14㎝×横8.5㎝　ファスナー10㎝］
@@ -85,19 +83,15 @@
       = link_to "#", class: "initiative" do
         あんしん・あんぜんへの取り組み
 
-- if user_signed_in? && current_user.id == @item.user_id
-  .moreList
-    .moreList__container
-      = link_to '編集', edit_item_path(@item.id), method: :get, class: "itemsShowBtn furimaBtn"
-      = link_to '削除', "/items/#{@item.id}", method: :delete, class: "itemsShowBtn"
-
 .itemsComment
   .itemsComment__container
     .erxplanation
       相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
     .commentForm
       @commentが適宜されたらtext_fielbに変更
-    = link_to "#", class: "itemsShowBtn furimaBtn" do
+    = link_to "#", class: "commentSubmit" do
       コメントする
+
+
 
 = render 'items/footer'
