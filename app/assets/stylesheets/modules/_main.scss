@@ -138,7 +138,7 @@ a {
 .category {
   background-color: rgb(243, 243, 243);
   &__wrapper {
-    padding: 40px 0 60px;
+    padding: 80px 0 80px;
     text-align: center;
     &__title {
       font-size: 36px;
@@ -150,40 +150,7 @@ a {
       color: $furima_theme_color;
     }
     &__box {
-      display: flex;
-      flex-flow: row wrap;
-      justify-content: flex-start;
-      padding: 1vw 10vw 1vw;
-      .ProductContainer {
-        background-color: white;
-        margin: 3.2vw;
-        width: 20vw;
-        img {
-          width: 20vw;
-          height: calc(20vw * 1);
-        }
-        .detailsContainer {
-          display: flex;
-          justify-content: space-around;
-          &__left {
-            justify-self: start;
-            margin-bottom: 5px;
-            &__name {
-              font-size: 12px;
-            }
-            &__prise {
-              font-size: 8px;
-            }
-            &__tax {
-              font-size: 10px;
-            }
-          }
-          &__right {
-            display: flex;
-            align-items: center;
-          }
-        }
-      }
+      height: 450px;
     }
   }  
 }
@@ -192,9 +159,4 @@ a {
   height: 100px;
   width: 260px;
   margin-right: 5px;
-}
-
-.pickupImage {
-  width: 100px;
-  height: 100px;
 }
