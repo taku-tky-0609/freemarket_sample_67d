@@ -39,9 +39,17 @@
     %a{:href => '/'}
       %img{ src: "/images/logo-white.png", alt: "会社ロゴ" }
   %p © FURIMA 
-%a{:href => '#'}
-  .sellingBtn
-    %span.sellingBtn__text 出品する
-    %img.sellingBtn__icon{ src: "/images/icon_camera.png", alt: "画像アイコン" }
+- if user_signed_in?
+  %a
+    = link_to new_item_path do
+      .sellingBtn
+        %span.sellingBtn__text 出品する
+        %img.sellingBtn__icon{ src: "/images/icon_camera.png", alt: "画像アイコン" }
+- else
+  %a
+    = link_to  new_user_session_path do
+      .sellingBtn
+        %span.sellingBtn__text 出品する
+        %img.sellingBtn__icon{ src: "/images/icon_camera.png", alt: "画像アイコン" }
 
 
