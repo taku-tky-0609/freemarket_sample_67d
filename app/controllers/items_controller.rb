@@ -30,7 +30,6 @@ class ItemsController < ApplicationController
 
 
   def create
-  
     # Item.create(item_params)
     @item = Item.new(item_params)
     unless @item.valid?
@@ -94,19 +93,6 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:item_name, :price, :category_id, :status_id, :size, :delivery_method_id, :delivery_fee_id, :prefecture_id, :estimated_delivery_id, brand_attributes: [:name]).merge(user_id: current_user.id).merge(images: images_params) 
+    params.require(:item).permit(:item_name, :price, :category_id, :status_id, :size, :delivery_method_id, :delivery_fee_id, :prefecture_id, :estimated_delivery_id, brand_attributes: [:name], images: []).merge(user_id: current_user.id) 
   end
-
-  def images_params
-    strong_param = params.require(:item).permit(images: [])
-    if strong_param[:images].present?
-      strong_param[:images].each do |image|
-        image.original_filename = URI.encode(image.original_filename)
-      end
-    end
-    strong_param[:images]
-  end
-
-
-
 end
