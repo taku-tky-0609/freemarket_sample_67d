@@ -1,100 +1,48 @@
 = render 'items/header'
 
-.itemsShow
-  .itemsShow__container
-    -if @item.buyer_id.present?
-      .soldOutContainer
-      .soldOutComment
-        SOLD
-    .ProductName
-      = @item.item_name
-    .ProductInformation
-      .ProductImages
-        - @item.images.each_with_index do |image,i|
-          %div{class: "ProductImages__#{++i}"}
-            = image_tag image
-
-        .ProductImages__subContainer
-      .ProductSelections
-        %table.ProductSelections__lists
-          %tr
-            %th 出品者
-            %td 
-              = @item.user.nickname
-          %tr
-            %th カテゴリー
-            %td 
-              - @parents.each do |parent|
-                - if @item.category_id == parent.id 
-                  = link_to category_path(parent.parent.parent), class:"ProductSelections__lists__category" do
-                    = parent.parent.parent.name
-                    %br
-                  = link_to category_path(parent.parent), class:"ProductSelections__lists__category" do
-                    = parent.parent.name
-                    %br
-                  = link_to category_path(parent), class:"ProductSelections__lists__category" do
-                    = parent.name
-          %tr
-            %th ブランド
-            %td 
-              = @item.brand.name
-          %tr
-            %th 商品の状態
-            %td 
-              = @item.status.name
-          %tr
-            %th 配送料の負担
-            %td 
-              = @item.delivery_fee.name
-          %tr
-            %th 配送の方法
-            %td 
-              = @item.delivery_method.name
-          %tr
-            %th 配送元地域
-            %td 
-              = @item.prefecture.name
-          %tr
-            %th 発送日の目安
-            %td 
-              = @item.estimated_delivery.name
-    .PriceContainer
-      .ProductPrice
-        = @item.price
-      .ProductTax
-        (税込)送料込み
-    -if user_signed_in? && @item.buyer_id == nil && @item.user_id != current_user.id
-      = form_tag(action: :pay, method: :post) do
-        %script.payjp-button{:src => "https://checkout.pay.jp", :type => "text/javascript" ,"data-text" => "購入する" ,"data-key" => "pk_test_32534f246a14649e6d9c3ac8"}
-    -# ↓入江さんの商品購入確認外面の実装が完了したら復帰
-    -# = link_to "#", class: "purchase furimaBtn" do
-    -#   購入画面に進む
-    .ProductExplanation
-      超くっきーランドで購入しました 
-      %br ［縦14㎝×横8.5㎝　ファスナー10㎝］
-      %br 1.2回使用しましたが、美品です
-      %br 神経質な方は遠慮ください
-    .itemsShow__container__clickBox
-      .likesCount
-        ❤️いいね!!
-      = link_to "#", class: "inappropriateReport" do
-        不適切な商品の報告
-      = link_to "#", class: "initiative" do
-        あんしん・あんぜんへの取り組み
-
-- if user_signed_in? && current_user.id == @item.user_id
-  .moreList
-    .moreList__container
-      = link_to '編集', edit_item_path(@item.id), method: :get, class: "itemsShowBtn furimaBtn"
-      = link_to '削除', "/items/#{@item.id}", method: :delete, class: "itemsShowBtn"
-
-.itemsComment
-  .itemsComment__container
-    .erxplanation
-      相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
-    .commentForm
-      @commentが適宜されたらtext_fielbに変更
-    = link_to "#", class: "itemsShowBtn furimaBtn" do
-      コメントする
-
+.itemsShowContainer
+  .ProductName
+  .ProductInformation
+    .ProductInformation__picture
+    .ProductInformation__selections
+      .ProductInformation__selections__left
+        %li.ProductInformation__selections__left__list
+          出品者
+        %li.ProductInformation__selections__left__list
+          カテゴリー
+        %li.ProductInformation__selections__left__list
+          ブランド
+        %li.ProductInformation__selections__left__list
+          商品の状態
+        %li.ProductInformation__selections__left__list
+          配送料の負担
+        %li.ProductInformation__selections__left__list
+          配送の方法
+        %li.ProductInformation__selections__left__list
+          配送元地域
+        %li.ProductInformation__selections__left__list
+          発送日の目安	
+        %li.ProductInformation__selections__left__list
+      .ProductInformation__selections__right
+        %li.ProductInformation__selections__right__list
+          出品者(test用)
+        %li.ProductInformation__selections__right__list
+          カテゴリー(test用)
+        %li.ProductInformation__selections__right__list
+          ブランド(test用)
+        %li.ProductInformation__selections__right__list
+          商品の状態(test用)
+        %li.ProductInformation__selections__right__list
+          配送料の負担(test用)
+        %li.ProductInformation__selections__right__list
+          配送の方法(test用)
+        %li.ProductInformation__selections__right__list
+          配送元地域(test用)
+        %li.ProductInformation__selections__right__list
+          発送日の目安(test用)
+        %li.ProductInformation__selections__right__list
+  .ProductPrice
+  -# = link_to ？？_path do
+    購入画面に進む
+    
 = render 'items/footer'
