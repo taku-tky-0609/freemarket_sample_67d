@@ -6,22 +6,7 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
     @item.build_brand
-    # @item.brand.build
-    # @category_parent_array = ["---"]
-    # # @category_parent_array = Category.where(ancestry: nil)
-    # Category.where(ancestry: nil).each do |parent|
-    #   @category_parent_array << parent.name
 
-      # def get_category_children
-      #   @category_children = Category.find(params[:parent_id]).children
-      # end
-      
-      # def get_category_grandchildren
-      #   @category_grandchildren = Category.find(params[:child_id]).children
-      # end
-      # @grandchildren = get_category_grandchildren.find_by
-      # end
-      
     end
     def get_category_children
       @category_children = Category.find_by(id: "#{params[:parent_id]}", ancestry: nil).children
@@ -82,6 +67,7 @@ class ItemsController < ApplicationController
   def show
     @item = Item.includes(:user, :category)
     @item = Item.find(params[:id])
+    @parents = Category.all
   end
   
   def purchase

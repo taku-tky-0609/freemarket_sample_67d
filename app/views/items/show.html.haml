@@ -24,19 +24,16 @@
           %tr
             %th カテゴリー
             %td 
-              = @item.category.name
-
-            -# %td 
-              -# = link_to category_path(@category_parent), class: '' do
-              -# #{@category_parent.name}
-              -# %br
-              -# = link_to category_path(@category_child), class: '' do
-              -# %i.fas.fa-chevron-right
-              -# #{@category_child.name}
-              -# %br
-              -# = link_to category_path(@category_grand_child), class: '' do
-              -# %i.fas.fa-chevron-right
-              -# #{@category_grand_child.name}
+              - @parents.each do |parent|
+                - if @item.category_id == parent.id 
+                  = link_to category_path(parent.parent.parent), class:"ProductSelections__lists__category" do
+                    = parent.parent.parent.name
+                    %br
+                  = link_to category_path(parent.parent), class:"ProductSelections__lists__category" do
+                    = parent.parent.name
+                    %br
+                  = link_to category_path(parent), class:"ProductSelections__lists__category" do
+                    = parent.name
           %tr
             %th ブランド
             %td 
