@@ -1,0 +1,43 @@
+.category {
+  padding: 0 20% 10%;
+  &__list {
+    margin: auto;
+    &__title {
+      font-size: 20px;
+      font-weight: bold;
+      padding: 40px 20px 10px;
+    }
+    &__container {
+      padding: 5px;
+      &__parent {
+        display: inline-block;
+        background-color: white;
+        border-radius: 4px;
+        box-shadow: 1px 1px 1px 1px rgba(14,14,14,0.0580392);
+        padding: 0.5px 30px;
+        margin: 5px;
+        color: #333;
+        font-size: 16px;
+        line-height: 40px;
+      }
+    }
+  }
+  .categoryParentTitle {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 40px 20px 10px;
+  }
+  .categoryContainer {
+    &__list{
+      display: inline-block;
+      background-color: white;
+      border-radius: 4px;
+      box-shadow: 1px 1px 1px 1px rgba(14,14,14,0.0580392);
+      padding: 0.5px 10px;
+      margin: 5px;
+      color: #333;
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+}

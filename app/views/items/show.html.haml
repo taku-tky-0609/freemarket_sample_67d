@@ -26,13 +26,13 @@
             %td 
               - @parents.each do |parent|
                 - if @item.category_id == parent.id 
-                  = link_to "#", class:"ProductSelections__lists__category" do
+                  = link_to category_path(parent.parent.parent), class:"ProductSelections__lists__category" do
                     = parent.parent.parent.name
                     %br
-                  = link_to "#", class:"ProductSelections__lists__category" do
+                  = link_to category_path(parent.parent), class:"ProductSelections__lists__category" do
                     = parent.parent.name
                     %br
-                  = link_to "#", class:"ProductSelections__lists__category" do
+                  = link_to category_path(parent), class:"ProductSelections__lists__category" do
                     = parent.name
           %tr
             %th ブランド

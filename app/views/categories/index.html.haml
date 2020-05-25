@@ -1,14 +1,104 @@
+= render 'items/header'
+
 .category
-  - @parents.where(ancestry: nil).each do |parent|
-    = link_to "#", class:"ProductSelections__lists__category" do
-      = parent.name
-  - @parents.where(ancestry: nil).each_with_index do |parent,i|
-    = link_to "#", class:"parent__category__#{++i}" do
-      = parent.name
-      %br
+  .category__list
+    .category__list__title
+      カテゴリー一覧
+    .category__list__container
+      - @parents.where(ancestry: nil).each do |parent|
+        = link_to "#", class:"category__list__container__parent" do
+          = parent.name
+  .categoryParentTitle
+    レディース
+  .categoryContainer
+    - @parents.where(ancestry: 1).each do |parent|
+      = link_to category_path(parent), class:"categoryContainer__list" do
+        = parent.name
+
+  .categoryParentTitle
+    メンズ
+  .categoryContainer
+    - @parents.where(ancestry: 196).each do |parent|
+      = link_to "#", class:"categoryContainer__list" do
+        = parent.name
+
+  .categoryParentTitle
+    ベビー・キッズ
+  .categoryContainer
+    - @parents.where(ancestry: 327).each do |parent|
+      = link_to "#", class:"categoryContainer__list" do
+        = parent.name
+
+  .categoryParentTitle
+    インテリア・住まい・小物
+  .categoryContainer
+    - @parents.where(ancestry: 461).each do |parent|
+      = link_to "#", class:"categoryContainer__list" do
+        = parent.name
+
+  .categoryParentTitle
+    本・音楽・ゲーム
+  .categoryContainer
+    - @parents.where(ancestry: 601).each do |parent|
+      = link_to "#", class:"categoryContainer__list" do
+        = parent.name
+
+  .categoryParentTitle
+    おもちゃ・ホビー・グッズ
+  .categoryContainer
+    - @parents.where(ancestry: 661).each do |parent|
+      = link_to "#", class:"categoryContainer__list" do
+        = parent.name
+
+  .categoryParentTitle
+    コスメ・香水・美容
+  .categoryContainer
+    - @parents.where(ancestry: 774).each do |parent|
+      = link_to "#", class:"categoryContainer__list" do
+        = parent.name
+
+  .categoryParentTitle
+    家電・スマホ・カメラ
+  .categoryContainer
+    - @parents.where(ancestry: 874).each do |parent|
+      = link_to "#", class:"categoryContainer__list" do
+        = parent.name
+
+  .categoryParentTitle
+    スポーツ・レジャー
+  .categoryContainer
+    - @parents.where(ancestry: 960).each do |parent|
+      = link_to "#", class:"categoryContainer__list" do
+        = parent.name
+
+  .categoryParentTitle
+    ハンドメイド
+  .categoryContainer
+    - @parents.where(ancestry: 1069).each do |parent|
+      = link_to "#", class:"categoryContainer__list" do
+        = parent.name
+
+  .categoryParentTitle
+    チケット
+  .categoryContainer
+    - @parents.where(ancestry: 1123).each do |parent|
+      = link_to "#", class:"categoryContainer__list" do
+        = parent.name
+
+  .categoryParentTitle
+    自動車・オートバイ
+  .categoryContainer
+    - @parents.where(ancestry: 1183).each do |parent|
+      = link_to "#", class:"categoryContainer__list" do
+        = parent.name
+
+  .categoryParentTitle
+    その他
+  .categoryContainer
+    - @parents.where(ancestry: 1246).each do |parent|
+      = link_to "#", class:"categoryContainer__list" do
+        = parent.name
+
       
-    -# = link_to "#", class:"ProductSelections__lists__category" do
-    -#   = parent.name
-    -#   %br
-    -# = link_to "#", class:"ProductSelections__lists__category" do
-    -#   = parent.name
+
+= render 'items/footer'
