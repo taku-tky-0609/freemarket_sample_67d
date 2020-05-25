@@ -19,8 +19,8 @@
 
         .new_item_page_container_main_carrierwave_image
           .prepend_area
-            .new_item_page_container_main_label
-              = form.fields_for :item_images do |i|
+            = form.fields_for :item_images do |i|
+              .new_item_page_container_main_label{"data-index" => "#{i.index}"}
                 = i.file_field :src, class: 'js-file'
                 .js-remove 削除
       
