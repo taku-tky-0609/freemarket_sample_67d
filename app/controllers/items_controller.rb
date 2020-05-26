@@ -5,6 +5,7 @@ class ItemsController < ApplicationController
   
   def new
     @item = Item.new
+    @item.item_images.build
     @item.build_brand
   end
   def get_category_children
@@ -21,6 +22,7 @@ class ItemsController < ApplicationController
       binding.pry
       render :new and return
     end
+    binding.pry
     @item.save
     redirect_to root_path
   end
@@ -31,6 +33,6 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:item_name, :price, :category_id, :status_id, :size, :delivery_method_id, :delivery_fee_id, :prefecture_id, :estimated_delivery_id, brand_attributes: [:name]).merge(user_id: current_user.id)
+    params.require(:item).permit(:item_name, :price, :category_id, :status_id, :size, :delivery_method_id, :delivery_fee_id, :prefecture_id, :estimated_delivery_id, brand_attributes: [:name], item_images_attributes: [:src, :_destroy, :id]).merge(user_id: current_user.id)
   end
 end
