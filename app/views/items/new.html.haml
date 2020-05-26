@@ -5,16 +5,18 @@
     = form_with(model: @item, local: true, :builder => FormHelper::FormWithErrorMessageBuilder) do |form|
       .itemsNewContainer__body__form
         .itemsNewContainer__body__upload
-          %h3.titleContainer__title 
-            出品画像
-            %span.titleContainer__required 必須
-          %p.top_text_details 最大10枚までアップロードできます
-        .post__drop__box__container 
+        %h3.titleContainer__title 
+          出品画像
+          %span.titleContainer__required 必須
+        %p.top_text_details 最大10枚までアップロードできます
+        .new_item_page_container_main_carrierwave_image 
           .prepend_area
             .pre-content
-              %p クリックをしてアップロード
-              = form.file_field :images, id: "upload_file", class: "upload_files", data:{id: "1"}
-              = form.hidden_field :file, class: "item_images_hidden"            
+            =form.fields_for :item_images do |i|
+              .new_item_page_container_main_label{"data-index" => "#{i.index}"}
+                = i.file_field :src, class: 'js-file'
+                .js-remove 削除 
+              %p クリックをしてアップロード           
         .product
           .product__name.titleContainer
             %h1.titleContainer__title 商品名
