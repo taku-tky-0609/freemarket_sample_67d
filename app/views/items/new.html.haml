@@ -74,12 +74,12 @@
                 = form.number_field :price, class: "feeContainer__form", placeholder: "0"                
             %h2 販売手数料 (10%)
             %h1.sales_profit 販売利益
-        .body_7
-          .body7_2
-            .body7_3
-              = form.submit :text, class: "style_button1", value: "送信する"
-              = form.submit :text, class: "style_button2", value: "下書きに保存"
-              .sakana= link_to "戻る", root_path
+        .submitArea
+          .submitArea__container
+            = form.submit :text, class: "submitArea__container__button", value: "送信する"
+            = form.submit :text, class: "submitArea__container__button btnColor", value: "下書きに保存"
+            = link_to root_path, class:"submitArea__container__root" do
+              戻る
 
 
           %p.setu
