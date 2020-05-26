@@ -16,6 +16,11 @@
     font-family: Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
     font-size: 14px;
     margin-left: 350px;
+    &__upload {
+      .uploadContainer {
+        padding: 40px;
+      }
+    }
     &__form {
       padding: 40px;
       .product{
@@ -42,7 +47,6 @@
           font-weight: 600;
         }
       }
-
       .price{
         padding: 40px 40px 0px;
         display: block;
@@ -59,6 +63,7 @@
             padding-bottom: 12px;
             box-sizing: content-box;
             display: flex;
+            justify-content: space-between;
             .sellingContainer{
               font-family: Arial,游ゴシック体,YuGothic,メイリオ,Meiryo,sans-serif;
               align-items: center;
@@ -69,9 +74,10 @@
                 line-height: 1.4em;
               }
             }
-            .feeContainer{
+            .feeContainer {
+              display: flex;
               span {
-                margin-left: 240px;
+                padding: 15px;
               }
               &__form {
                 text-align: right;
@@ -85,7 +91,6 @@
           }
         }
       }
-
       .submitArea{
         width: 360px;
         margin-top: 0px;
@@ -93,7 +98,7 @@
         margin-bottom: 32px;
         margin-left: auto;
         &__container {
-          &___button{
+          &__button {
             background-color: #ea352d;
             color: #fff;
             font-family: Arial,游ゴシック体,YuGothic,メイリオ,Meiryo,sans-serif;
@@ -112,61 +117,26 @@
             background-color: gray;
           }
           &__root {
+            display: block;
             text-align: center;
           }
         }
-        .setu{
-          font-size: 12px;
-          line-height: 1.4em;
-          display: block;
-          margin-block-start: 1em;
-          margin-block-end: 1em;
-          margin-inline-start: 0px;
-          margin-inline-end: 0px;
+        .explanation{
+          font-size: 13px;
+          margin-top: 5px;
         }
       }
     }
   }
-  .buttonn4{
+  .terms{
     padding: 40px 0px 41px;
     margin-top: auto;
     text-align: center;
-    .sc-kDhYZr.gwHGkM{
-      margin: 0px;
-      padding: 0px;
-      border-width: 0px;
-      border-style: initial;
-      border-color: initial;
-      border-image: initial;
-      display: block;
-    }
-    .sc-sPYgB.gbluiW{
-      display: block;
-      font-family: Arial,游ゴシック体,YuGothic,メイリオ,Meiryo,sans-serif;
-      .furima{
-        display: block;
-        .furima1_2{
-          color: black;
-        }
-        .furima2-2{
-          color: black;
-        }
-        .furima3-3{
-          color: black;
-        }
-      }
-    }
-    .furima4{
-      height: 65px;
-      margin-bottom: 8px;
-      width: 80px;
-      vertical-align: middle;
-      .hea{
-        width: 100px;
-        height: 100px;
-      }
+    p {
+      margin-top: 30px;
     }
   }
+
   select {
     border: 1px solid #ccc;
     margin:10px 0 10px;
