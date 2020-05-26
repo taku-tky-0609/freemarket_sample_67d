@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_21_134130) do
+ActiveRecord::Schema.define(version: 2020_05_25_134152) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
@@ -25,15 +25,14 @@ ActiveRecord::Schema.define(version: 2020_04_21_134130) do
   end
 
   create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "item", null: false
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "categoris", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "category_name", null: false
-    t.string "ancestry", null: false
+  create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "ancestry"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -65,14 +64,16 @@ ActiveRecord::Schema.define(version: 2020_04_21_134130) do
     t.string "item_name", null: false
     t.integer "price", null: false
     t.bigint "category_id", null: false
-    t.string "status", null: false
+    t.integer "status_id", null: false
     t.string "size", null: false
-    t.string "delivery_method"
-    t.string "delivery_fee", null: false
-    t.string "delivery_area", null: false
-    t.datetime "estimated_delivery", null: false
+    t.integer "delivery_method_id"
+    t.integer "delivery_fee_id", null: false
+    t.integer "estimated_delivery_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "brand_id"
+    t.integer "prefecture_id"
+    t.index ["brand_id"], name: "fk_rails_36708b3aa6"
     t.index ["category_id"], name: "index_items_on_category_id"
     t.index ["user_id"], name: "index_items_on_user_id"
   end
@@ -85,16 +86,6 @@ ActiveRecord::Schema.define(version: 2020_04_21_134130) do
     t.datetime "updated_at", null: false
     t.index ["item_id"], name: "index_items_comments_on_item_id"
     t.index ["user_id"], name: "index_items_comments_on_user_id"
-  end
-
-  create_table "items_statuses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "item_id", null: false
-    t.string "status", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["item_id"], name: "index_items_statuses_on_item_id"
-    t.index ["user_id"], name: "index_items_statuses_on_user_id"
   end
 
   create_table "likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -131,5 +122,6 @@ ActiveRecord::Schema.define(version: 2020_04_21_134130) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "items", "brands"
   add_foreign_key "users", "addresses"
 end
