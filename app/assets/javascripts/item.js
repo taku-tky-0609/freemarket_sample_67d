@@ -34,6 +34,7 @@ fileIndex.splice(0, lastIndex);
   $(document).on("click", '.js-remove', function(){
     const targetIndex = $(this).parent().data('index');
     $(this).parent().remove();
+
     if ($('.js-file').length == 0) $('.pre-content').append(buildFileField(fileIndex[0]));
     $(`img[data-index="${targetIndex}"]`).remove();
   });
