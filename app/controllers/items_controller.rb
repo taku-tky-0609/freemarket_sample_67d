@@ -49,17 +49,22 @@ class ItemsController < ApplicationController
   def pay
     @item = Item.find(params[:id])
     Payjp.api_key = Rails.application.credentials.dig(:payjp, :PAYJP_SECRET_KEY)
-    charge = Payjp::Charge.create(
-    amount: @item.price,
-    card: params['payjp-token'],
-    currency: 'jpy'
+    Payjp::Charge.create(
+      :amount => @item.price, #支払金額を引っ張ってくる
+      :customer => current_user.credit_card.customer_id,  #顧客ID
+      :currency => 'jpy',              #日本円
     )
+    # charge = Payjp::Charge.create(
+    # amount: @item.price,
+    # credit_card: params['payjp-token'],
+    # currency: 'jpy'
+    # )
     
     @item.buyer_id = 0
     @item.buyer_id = @item.buyer_id + current_user.id
     @item.save
 
-    redirect_to root_path
+    redirect_to purchase_edit_item_path
     
   end
 
@@ -68,9 +73,20 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
   end
   
-  def purchase
-    
+  def purchase_index
+    @item = Item.find(params[:id])
   end
+
+  def purchase_edit
+    @item = Item.find(params[:id])
+  end
+
+
+  # def purchase
+  #   @item = Item.includes(:user, :category)
+  #   # @item = Item.find(params[:id])
+  # end
+ 
   def edit
     @item = Item.find(params[:id])
   end

@@ -68,10 +68,9 @@
         (税込)送料込み
     -if user_signed_in? && @item.buyer_id == nil && @item.user_id != current_user.id
       = form_tag(action: :pay, method: :post) do
-        %script.payjp-button{:src => "https://checkout.pay.jp", :type => "text/javascript" ,"data-text" => "購入する" ,"data-key" => "pk_test_32534f246a14649e6d9c3ac8"}
-    -# ↓入江さんの商品購入確認外面の実装が完了したら復帰
-    -# = link_to "#", class: "purchase furimaBtn" do
-    -#   購入画面に進む
+        %script.payjp-button{:src => "https://checkout.pay.jp", :type => "text/javascript" ,"data-text" => "" ,"data-key" => "pk_test_32534f246a14649e6d9c3ac8"}
+    = link_to purchase_index_item_path(@item), class: "purchase furimaBtn" do
+      購入画面に進む
     .ProductExplanation
       超くっきーランドで購入しました 
       %br ［縦14㎝×横8.5㎝　ファスナー10㎝］
