@@ -41,14 +41,44 @@ ja:
               blank: "が入力されていません。"
         address:
           attributes:
-              prefectures:
-                blank: "が入力されていません。"
-              postal_code:
-                blank: "が入力されていません。"
-              municipality:
-                blank: "が入力されていません。"
-              house_number:
-                blank: "が入力されていません。"
+            prefectures:
+              blank: "が入力されていません。"
+            postal_code:
+              blank: "が入力されていません。"
+            municipality:
+              blank: "が入力されていません。"
+            house_number:
+              blank: "が入力されていません。"
+        item:
+          attributes:
+            item_name:
+              blank: "が入力されていません。"
+            price:
+              blank: "が入力されていません。"
+            category_id:
+              blank: "が入力されていません。"
+            status_id:
+              blank: "が入力されていません。"
+            size:
+              blank: "が入力されていません。"
+            delivery_method_id:
+              blank: "が入力されていません。"
+            delivery_fee_id:
+              blank: "が入力されていません。"
+            prefecture_id:
+              blank: "が入力されていません。"
+            estimated_delivery_id:
+              blank: "が入力されていません。"
+            brand_id:
+              blank: "が入力されていません。"
+        category:
+          attributes:
+            category_id:
+              blank: "が入力されていません。"
+            name:
+              blank: "が入力されていません。"
+            ancestry:
+              blank: "が入力されていません。"
     attributes:
       user:
         nickname: "ニックネーム"
@@ -77,6 +107,17 @@ ja:
         prefectures: "都道府県"
         municipality: "市区町村"
         house_number: "番地"
+      item:
+        item_name: "商品名"
+        price: "料金"
+        category_id: "カテゴリー"
+        status_id: "商品の状態"
+        size: "サイズ"
+        delivery_method_id: "発送方法"
+        delivery_fee_id: "発送料金の負担"
+        prefecture_id: "発送元"
+        estimated_delivery_id: "発送日数"
+        brand_id: "ブランド"
   devise:
     confirmations:
       new:
