@@ -1,44 +1,5 @@
 class ItemsController < ApplicationController
   def index
-    @items = Item.includes(:user, :category).order("created_at DESC")
-  end
-
-  def new
-    @item = Item.new
-    # @item.item_images.build
-    @item.build_brand
-    # @item.brand.build
-    @category_parent_array = ["---"]
-    # @category_parent_array = Category.where(ancestry: nil)
-    Category.where(ancestry: nil).each do |parent|
-      @category_parent_array << parent.name
-    end
-  end
-
-  def get_category_children
-    
-    # @category_children = Category.find(params[:item_category_id])
-    # @category_children = Category.find_by(name: params[:item_category_id])
-    @category_children = Category.find(params[:parent_id]).children
-    
-  end
-
-  def get_category_grandchildren
-    @category_grandchildren = Category.find(params[:child_id]).children
-    
-  end
-
-
-  def create
-    # Item.create(item_params)
-    @item = Item.new(item_params)
-    unless @item.valid?
-      # flash.now[:alert] = @item.errors.full_messages
-      # helper Form
-      render :new and return
-    end
-    @item.save
-    redirect_to root_path
   end
   
   def myList

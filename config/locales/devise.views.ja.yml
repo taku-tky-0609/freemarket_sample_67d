@@ -41,23 +41,14 @@ ja:
               blank: "が入力されていません。"
         address:
           attributes:
-              item_name:
+              prefectures:
                 blank: "が入力されていません。"
-              category_id:
+              postal_code:
                 blank: "が入力されていません。"
-              status_id:
+              municipality:
                 blank: "が入力されていません。"
-              delivery_method_id:
+              house_number:
                 blank: "が入力されていません。"
-              delivery_fee_id:
-                blank: "が入力されていません。"
-              delivery_area_id:
-                blank: "が入力されていません。"
-              estimated_delivery_id:
-                blank: "が入力されていません。"
-              price:
-                blank: "が入力されていません。"
- 
     attributes:
       user:
         nickname: "ニックネーム"
@@ -86,7 +77,6 @@ ja:
         prefectures: "都道府県"
         municipality: "市区町村"
         house_number: "番地"
-
   devise:
     confirmations:
       new:

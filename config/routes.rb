@@ -45,8 +45,7 @@ Rails.application.routes.draw do
     
       
   resources :users, only: :show
-  
-   
+  resources :items
   post "logout" => "users#logout"
   resources :credit_cards, only: [:new, :show] do
     collection do
