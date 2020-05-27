@@ -19,10 +19,8 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     unless @item.valid?
-      binding.pry
       render :new and return
     end
-    binding.pry
     @item.save
     redirect_to root_path
   end
