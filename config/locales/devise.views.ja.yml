@@ -71,6 +71,8 @@ ja:
               blank: "が入力されていません。"
             brand_id:
               blank: "が入力されていません。"
+            item_images:
+              blank: "が入力されていません。"
         category:
           attributes:
             category_id:
@@ -118,6 +120,7 @@ ja:
         prefecture_id: "発送元"
         estimated_delivery_id: "発送日数"
         brand_id: "ブランド"
+        item_images: "商品画像"
   devise:
     confirmations:
       new:
