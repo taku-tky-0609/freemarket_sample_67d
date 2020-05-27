@@ -12,5 +12,6 @@ class Item < ApplicationRecord
   belongs_to_active_hash :estimated_delivery
   belongs_to_active_hash :status
 
+  validates :item_images, presence: true
   validates :item_name, :price, :status_id, :delivery_method_id, :delivery_fee_id, :prefecture_id, :estimated_delivery_id, :category_id, presence: true
 end

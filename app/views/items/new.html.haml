@@ -30,6 +30,7 @@
             %h1.titleContainer__title カテゴリー
             %h2.titleContainer__required 必須
           .newcate2
+          -# = form.collection_select :category_id, Category.where(ancestry: nil), :id, :name, {prompt: "---",selected:@item.category&.root_id}, class: ''
           = form.collection_select :category_id, Category.where(ancestry: nil), :id, :name, prompt: "---", class: ''
           .newcate
           .brand.titleContainer
@@ -77,9 +78,8 @@
             %h1.sales_profit 販売利益
         .submitArea
           .submitArea__container
-            = form.submit :text, class: "submitArea__container__button", value: "送信する"
-            = form.submit :text, class: "submitArea__container__button btnColor", value: "下書きに保存"
-            = link_to root_path, class:"submitArea__container__root" do
+            = form.submit "送信する", class: "submitArea__container__button"
+            = link_to "#" , class:"submitArea__container__root" do
               戻る
           .explanation
             禁止されている
