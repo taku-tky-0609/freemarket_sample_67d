@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
 
   def index
+    @items = Item.includes(:user, :category).order("created_at DESC")
   end
   
   def new
@@ -34,6 +35,25 @@ class ItemsController < ApplicationController
   def myList
     @items = current_user.items
   end
+
+  def edit
+    @item = Item.find(params[:id])
+  end
+  
+  def update
+    @item = Item.find(params[:id])
+    if @item.update(item_params)
+      redirect_to root_path
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    item = Item.find(params[:id])
+    item.destroy
+    redirect_to root_path
+   end
 
   private
 
