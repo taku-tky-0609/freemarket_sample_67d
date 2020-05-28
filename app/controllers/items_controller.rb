@@ -28,12 +28,11 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.includes(:user, :category)
     @item = Item.find(params[:id])
   end
 
   def myList
-    @items = Item.where(user_id: current_user.id)
+    @items = current_user.items
   end
 
   private
