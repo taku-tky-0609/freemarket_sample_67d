@@ -23,16 +23,19 @@
           %tr
             %th カテゴリー
             %td 
-              = link_to "#", class: 'ProductSelections__lists__category' do
-                #{@item.category.parent.parent.name}
-              %br
-              = link_to "#", class: 'ProductSelections__lists__category' do
-                %i.fas.fa-chevron-right
-                #{@item.category.parent.name}
-              %br
-              = link_to "#", class: 'ProductSelections__lists__category' do
-                %i.fas.fa-chevron-right
-                #{@item.category.name}
+              -unless @item.category.parent == nil
+                = link_to "#", class: 'ProductSelections__lists__category' do
+                  #{@item.category.parent.parent.name}
+                %br
+              -unless @item.category.parent == nil
+                = link_to "#", class: 'ProductSelections__lists__category' do
+                  %i.fas.fa-chevron-right
+                  #{@item.category.parent.name}
+                %br
+              -unless @item.category.name == nil
+                = link_to "#", class: 'ProductSelections__lists__category' do
+                  %i.fas.fa-chevron-right
+                  #{@item.category.name}
           %tr
             %th ブランド
             %td 

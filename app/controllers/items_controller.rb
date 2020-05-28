@@ -38,6 +38,8 @@ class ItemsController < ApplicationController
 
   def edit
     @item = Item.find(params[:id])
+    # @item.item_images.build
+    # @item.build_brand
   end
   
   def update

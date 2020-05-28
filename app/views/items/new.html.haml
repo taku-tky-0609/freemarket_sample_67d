@@ -19,9 +19,6 @@
                   .form-file   
                     .new_item_page_container_main_label{"data-index" => "#{i.index}"}
                       = i.file_field :src, class: 'js-file', id: 'js-file'
-                      
-                    
-                         
         .product
           .product__name.titleContainer
             %h1.titleContainer__title 商品名
@@ -81,35 +78,35 @@
             %h1.sales_profit 販売利益
         .submitArea
           .submitArea__container
-            = form.submit :text, class: "submitArea__container__button", value: "送信する"
-            = form.submit :text, class: "submitArea__container__button btnColor", value: "下書きに保存"
-            = link_to root_path, class:"submitArea__container__root" do
+            = form.submit "送信する", class: "submitArea__container__button"
+            = link_to "#" , class:"submitArea__container__root" do
               戻る
-
-
-          %p.setu
+          .explanation
             禁止されている
-            %a.setu1{:href => "#", :rel => "#", :target => "_blank"}> 行為
+            = link_to "#" do
+              行為
             および
-            %a.setu2{:href => "#", :rel => "#", :target => "_blank"}> 出品物
+            = link_to "#" do
+              出品物
             を必ずご確認ください。
-            %a.setu3{:href => "#", :rel => "#", :target => "_blank"}> 偽ブランド品
+            = link_to "#" do
+              偽ブランド品
             や
-            %a.setu4{:href => "#", :rel => "#", :target => "_blank"}> 盗品物
+            = link_to "#" do
+              盗品物
             などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして
-            %a.setu5{:href => "#", :rel => "#", :target => "_blank"}> 加盟店規約
+            = link_to "#" do
+              加盟店規約
             に同意したことになります。
-
-    .buttonn4  
-      .sc-kDhYZr.gwHGkM
-      .sc-sPYgB.gbluiW
-        %ul.furima
-          %li.furima1
-            %a.furima1_2{:href => "/jp/privacy/"} プライバシーポリシー
-          %li.furima2
-            %a.furima2-2{:href => "/jp/tos/"} フリマ利用規約
-          %li.furima3
-            %a.furima3-3{:href => "/jp/tokutei/"} 特定商取引に関する表記
-      %a.furima4{:href => "/jp/"}
-        %img.hea{ src: "/images/logo-white.png"}
-      %p.furima6 © Furima, Inc.
+    .terms  
+      %ul
+        %li
+          = link_to "#" do
+            プライバシーポリシー
+        %li
+          = link_to "#" do
+            フリマ利用規約
+        %li
+          = link_to "#" do
+            特定商取引に関する表記
+      %p © Furima, Inc.
