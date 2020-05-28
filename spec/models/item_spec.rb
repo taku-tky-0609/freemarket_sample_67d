@@ -1,5 +1,4 @@
 require 'rails_helper'
-# bundle exec rspec spec/models/item_spec.rb
 describe Item do
   describe '#create' do
     context 'can save' do

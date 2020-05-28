@@ -1,11 +1,8 @@
 require 'rails_helper'
 
-# bundle exec rspec spec/controllers/items_controller_spec.rb
-
 describe ItemsController, type: :controller do
   render_views
   let(:user) { create(:user) }
-  let(:item) { create(:item) }
   before do
     login_user user
   end 
@@ -19,8 +16,9 @@ describe ItemsController, type: :controller do
   describe 'POST #create' do 
     it "商品登録に成功した場合root_pathに遷移すること" do
       expect{
-        post :create, item: attributes_for(:item, category_id: caregory.id )
-      }.to change(Items, :count).by(1)
+        item_params = FactoryBot.attributes_for(:item)
+        post :create, params: { item: item_params }
+      }.to change(Item, :count).by(1)
       expect(response).to render_template(root_path)
     end
   end
