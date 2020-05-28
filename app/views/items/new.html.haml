@@ -5,19 +5,23 @@
     = form_with(model: @item, local: true, :builder => FormHelper::FormWithErrorMessageBuilder) do |form|
       .itemsNewContainer__body__form
         .itemsNewContainer__body__upload
-          .uploadContainer
-            %h3.titleContainer__title 
-              出品画像
-              %span.titleContainer__required 必須
-            %p.top_text_details 最大5枚までアップロードできます
-            .new_item_page_container_main_carrierwave_image 
-              .prepend_area
-                .pre-content
-                =form.fields_for :item_images do |i|
-                  .new_item_page_container_main_label{"data-index" => "#{i.index}"}
-                    = i.file_field :src, class: 'js-file'
-                    .js-remove 削除 
-                %p クリックをしてアップロード           
+        %h3.titleContainer__title 
+          出品画像
+          %span.titleContainer__required 必須
+        %p.top_text_details 最大5枚までアップロードできます
+        =form.fields_for :item_images do |i|
+          .new_item_page_container_main_carrierwave_image 
+            .prepend_area
+              .pre-content
+                = i.label :image, for: "js-file" do
+                  %p.text 
+                    クリックをしてアップロード
+                  .form-file   
+                    .new_item_page_container_main_label{"data-index" => "#{i.index}"}
+                      = i.file_field :src, class: 'js-file', id: 'js-file'
+                      
+                    
+                         
         .product
           .product__name.titleContainer
             %h1.titleContainer__title 商品名
@@ -30,7 +34,6 @@
             %h1.titleContainer__title カテゴリー
             %h2.titleContainer__required 必須
           .newcate2
-          -# = form.collection_select :category_id, Category.where(ancestry: nil), :id, :name, {prompt: "---",selected:@item.category&.root_id}, class: ''
           = form.collection_select :category_id, Category.where(ancestry: nil), :id, :name, prompt: "---", class: ''
           .newcate
           .brand.titleContainer
@@ -78,35 +81,35 @@
             %h1.sales_profit 販売利益
         .submitArea
           .submitArea__container
-            = form.submit "送信する", class: "submitArea__container__button"
-            = link_to "#" , class:"submitArea__container__root" do
+            = form.submit :text, class: "submitArea__container__button", value: "送信する"
+            = form.submit :text, class: "submitArea__container__button btnColor", value: "下書きに保存"
+            = link_to root_path, class:"submitArea__container__root" do
               戻る
-          .explanation
+
+
+          %p.setu
             禁止されている
-            = link_to "#" do
-              行為
+            %a.setu1{:href => "#", :rel => "#", :target => "_blank"}> 行為
             および
-            = link_to "#" do
-              出品物
+            %a.setu2{:href => "#", :rel => "#", :target => "_blank"}> 出品物
             を必ずご確認ください。
-            = link_to "#" do
-              偽ブランド品
+            %a.setu3{:href => "#", :rel => "#", :target => "_blank"}> 偽ブランド品
             や
-            = link_to "#" do
-              盗品物
+            %a.setu4{:href => "#", :rel => "#", :target => "_blank"}> 盗品物
             などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして
-            = link_to "#" do
-              加盟店規約
+            %a.setu5{:href => "#", :rel => "#", :target => "_blank"}> 加盟店規約
             に同意したことになります。
-    .terms  
-      %ul
-        %li
-          = link_to "#" do
-            プライバシーポリシー
-        %li
-          = link_to "#" do
-            フリマ利用規約
-        %li
-          = link_to "#" do
-            特定商取引に関する表記
-      %p © Furima, Inc.
+
+    .buttonn4  
+      .sc-kDhYZr.gwHGkM
+      .sc-sPYgB.gbluiW
+        %ul.furima
+          %li.furima1
+            %a.furima1_2{:href => "/jp/privacy/"} プライバシーポリシー
+          %li.furima2
+            %a.furima2-2{:href => "/jp/tos/"} フリマ利用規約
+          %li.furima3
+            %a.furima3-3{:href => "/jp/tokutei/"} 特定商取引に関する表記
+      %a.furima4{:href => "/jp/"}
+        %img.hea{ src: "/images/logo-white.png"}
+      %p.furima6 © Furima, Inc.

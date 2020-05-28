@@ -28,6 +28,11 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @item = Item.find(params[:id])
+  end
+
+  def myList
+    @items = current_user.items
   end
 
   private
