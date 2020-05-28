@@ -1,43 +1,61 @@
 $(function (){
   function buildFileField(index) {
     html = `<div class="new_item_page_container_main_label" data-index="${index}">
-              <input class= "js-file" type= "file"name="item[item_images_attributes][${index}][src]" id="item_item_images_attributes_${index}_src">
-              <div class="js-remove">削除</div>
+              <input id = "js-file" class= "js-file" type= "file"name="item[item_images_attributes][${index}][src]" id="item_item_images_attributes_${index}_src">
             </div>`;  
     return html;
   };
   const buildImg = (index, url)=> {
-    const html = `<img data-index="${index}" src="${url}" width="20%" height="160px">`;
+    const html = `
+    <div class = "image-box" data-index="${index}" data-lightbox="abc">
+      <a href="${url}" data-lightbox="group">
+        <img data-index="${index}" src="${url}" data-lightbox="group">
+      </a>
+      <i class="fas fa-trash-alt"></i>
+    </div>`;
     return html;
   };
+
 // file_fieldのnameに動的なindexをつける為の配列
 let fileIndex = [1,2,3,4,5,6,7,8,9,10];
 lastIndex = $('.new_item_page_container_main_label').data('index');
 fileIndex.splice(0, lastIndex);
 
-  $("body").on('change', '.js-file', function(e){
+  $(document).on('change', '.js-file', function(e){
     const targetIndex = $(this).parent().data('index')
     const file = e.target.files[0];
     const blobUrl = window.URL.createObjectURL(file);
     $('.prepend_area').prepend(buildImg(targetIndex, blobUrl));
 
+    var imagesLength = $('.image-box').length;
+    $('.pre-content').css('width', `calc(100% - ${20 * (imagesLength % 5)}%)`);
+    var imagesLength = $('.image-box').length;
+    if (imagesLength ===4) {
+      $('.text').html('<i class="fas fa-camera"></i>');
+    } else if (imagesLength === 5){
+      $('.pre-content').css('display', 'none');
+    };
 
-
-    $(".prepend_area").append(buildFileField(fileIndex[0]));
+    $(".form-file").prepend(buildFileField(fileIndex[0]));
     fileIndex.shift();
-    // 末尾の数に1足した数を追加する
     fileIndex.push(fileIndex[fileIndex.length - 1] + 1)
-    
-
   })
 
-  $(document).on("click", '.js-remove', function(){
+  $(document).on("click", '.fa-trash-alt', function(){
     const targetIndex = $(this).parent().data('index');
-    $(this).parent().remove();
-
-    if ($('.js-file').length == 0) $('.pre-content').append(buildFileField(fileIndex[0]));
-    $(`img[data-index="${targetIndex}"]`).remove();
+    $(`.new_item_page_container_main_label[data-index="${targetIndex}"]`).remove();
+    var imagesLength = $('.image-box').length;
+    $('.pre-content').css('width', `calc(100% - ${20 * (imagesLength % 5 - 1)}%)`);
+    if (imagesLength -1 ===4) {
+      $('.pre-content').show().css('width', `calc(100% - ${20 * ((imagesLength - 1 )% 5)}%)`);
+      $('.text').html('<i class="fas fa-camera"></i>');
+    } else if (imagesLength - 1===3){
+      $('.text').html('<p class="text">クリックをしてアップロード</i>');
+    };
+    if ($('.js-file').length == 0) { $('.pre-content').append(buildFileField(fileIndex[0]));}
+    $(`div[data-index="${targetIndex}"]`).remove();
   });
+
 })
 
 
@@ -284,3 +302,4 @@ fileIndex.splice(0, lastIndex);
 //     // console.log(inputHidden)
 //     // if ($('input[type="hidden"').attr("value") == deleteSrc){
 //     //   ;
+

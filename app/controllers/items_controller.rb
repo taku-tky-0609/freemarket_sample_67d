@@ -15,19 +15,24 @@ class ItemsController < ApplicationController
   def get_category_grandchildren
     @category_grandchildren = Category.find("#{params[:child_id]}").children
   end
-  
+
   def create
     @item = Item.new(item_params)
-    unless @item.valid?
-      binding.pry
-      render :new and return
+    if @item.save
+      redirect_to root_path
+    else
+      @item.item_images.build
+      @item.build_brand
+      render action: :new
     end
-    binding.pry
-    @item.save
-    redirect_to root_path
   end
 
   def show
+    @item = Item.find(params[:id])
+  end
+
+  def myList
+    @items = current_user.items
   end
 
   private

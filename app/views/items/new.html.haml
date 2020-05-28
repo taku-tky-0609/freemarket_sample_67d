@@ -8,15 +8,20 @@
         %h3.titleContainer__title 
           出品画像
           %span.titleContainer__required 必須
-        %p.top_text_details 最大10枚までアップロードできます
-        .new_item_page_container_main_carrierwave_image 
-          .prepend_area
-            .pre-content
-            =form.fields_for :item_images do |i|
-              .new_item_page_container_main_label{"data-index" => "#{i.index}"}
-                = i.file_field :src, class: 'js-file'
-                .js-remove 削除 
-              %p クリックをしてアップロード           
+        %p.top_text_details 最大5枚までアップロードできます
+        =form.fields_for :item_images do |i|
+          .new_item_page_container_main_carrierwave_image 
+            .prepend_area
+              .pre-content
+                = i.label :image, for: "js-file" do
+                  %p.text 
+                    クリックをしてアップロード
+                  .form-file   
+                    .new_item_page_container_main_label{"data-index" => "#{i.index}"}
+                      = i.file_field :src, class: 'js-file', id: 'js-file'
+                      
+                    
+                         
         .product
           .product__name.titleContainer
             %h1.titleContainer__title 商品名
