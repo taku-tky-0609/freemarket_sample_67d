@@ -23,16 +23,16 @@
           %tr
             %th カテゴリー
             %td 
-              -unless @item.category.parent == nil
+              -if @item.category.parent.parent.name.present?
                 = link_to "#", class: 'ProductSelections__lists__category' do
                   #{@item.category.parent.parent.name}
                 %br
-              -unless @item.category.parent == nil
+              -if @item.category.parent.name.present?
                 = link_to "#", class: 'ProductSelections__lists__category' do
                   %i.fas.fa-chevron-right
                   #{@item.category.parent.name}
                 %br
-              -unless @item.category.name == nil
+              -if @item.category.name.present?
                 = link_to "#", class: 'ProductSelections__lists__category' do
                   %i.fas.fa-chevron-right
                   #{@item.category.name}
