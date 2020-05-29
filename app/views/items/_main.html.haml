@@ -69,8 +69,24 @@
     .category__wrapper__title ピックアップカテゴリー
     %a{ href:"#", class:"category__wrapper__subtitle"} 新規投稿商品
     .category__wrapper__box 
-
-  .pickupCategory__wrapper
-    .pickupCategory__wrapper__title ピックアップブランド
-    %a{ href:"#", class:"pickupCategory__wrapper__subtitle"} アーカイバ
+      - @items.each do |item|
+        = link_to item_path(item.id), class:"ProductContainer" do
+          = image_tag item.item_images[0].src.url
+          -if item.buyer_id.present?
+            .soldOutContainer
+            .soldOutComment
+              SOLD
+          .detailsContainer
+            .detailsContainer__left
+              .detailsContainer__left__name
+                = item.item_name
+              .detailsContainer__left__price
+                = item.price
+              .detailsContainer__left__tax
+                （税込）
+            .detailsContainer__right
+              ★ ０
+  .category__wrapper
+    .category__wrapper__title ピックアップブランド
+    %a{ href:"#", class:"category__wrapper__subtitle"} アーカイバ
     .pickupCategory__wrapper__box 
