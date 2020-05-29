@@ -1,5 +1,5 @@
 class Item < ApplicationRecord
-  belongs_to :brand
+  belongs_to :brand, optional:true
   belongs_to :user
   belongs_to :category
   has_many :item_images
@@ -12,6 +12,5 @@ class Item < ApplicationRecord
   belongs_to_active_hash :estimated_delivery
   belongs_to_active_hash :status
 
-  validates :item_images, presence: true
-  validates :item_name, :price, :status_id, :delivery_method_id, :delivery_fee_id, :prefecture_id, :estimated_delivery_id, :category_id, presence: true
+  validates :item_name, :price, :status_id, :delivery_method_id, :delivery_fee_id, :prefecture_id, :estimated_delivery_id, :category_id, :item_images, presence: true
 end
