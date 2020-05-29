@@ -2,11 +2,11 @@
 
 .categoryShow
   .categoryShow__root
-    - unless @category.parent == nil
+    -if @category.parent.parent.name.present?
       = link_to category_path(@category.parent.parent), class:"categoryShow__root__category" do
         = @category.parent.parent.name
         　>　
-    - unless @category.parent == nil
+    -if @category.parent.name.present?
       = link_to category_path(@category.parent), class:"categoryShow__root__category" do
         = @category.parent.name
         　>　
@@ -16,7 +16,7 @@
     #{@category.name}の商品一覧
   - @items.each do |item|
     = link_to item_path(item.id), class:"categoryShowContainer" do
-      = image_tag(url_for(item.images[0]), class:"categoryShowContainer__image")
+      = image_tag item.item_images[0].src.url, class:"categoryShowContainer__image"
       -if item.buyer_id.present?
         .soldOutContainer
         .soldOutComment
@@ -31,7 +31,4 @@
             （税込）
         .details__right
           ★ ０
-
-  
-
 = render 'items/footer'

@@ -24,7 +24,7 @@
             %th カテゴリー
             %td 
               -if @item.category.parent.parent.name.present?
-                = link_to "#", class: 'ProductSelections__lists__category' do
+                = link_to category_path(@item.category.id), class: 'ProductSelections__lists__category' do
                   #{@item.category.parent.parent.name}
                 %br
               -if @item.category.parent.name.present?
