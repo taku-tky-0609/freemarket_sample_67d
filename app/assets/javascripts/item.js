@@ -26,8 +26,11 @@ fileIndex.splice(0, lastIndex);
     const targetIndex = $(this).parent().data('index')
     const file = e.target.files[0];
     const blobUrl = window.URL.createObjectURL(file);
+    if (img = $(`img[data-index="${targetIndex}"]`)[0]) {
+      img.setAttribute('src', blobUrl);
+    } else{
     $('.prepend_area').prepend(buildImg(targetIndex, blobUrl));
-
+    }
     var imagesLength = $('.image-box').length;
     $('.pre-content').css('width', `calc(100% - ${20 * (imagesLength % 5)}%)`);
     var imagesLength = $('.image-box').length;
