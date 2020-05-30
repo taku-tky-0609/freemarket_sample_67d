@@ -10,25 +10,29 @@
           %span.titleContainer__required 必須
         %p.top_text_details
           最大5枚までアップロードできます    
-          .new_item_page_container_main_carrierwave_image 
-            .prepend_area
+          .saved_item_page_container_main_carrierwave_image 
+            .saved-item
+              .prepend_area
+                -if @item.persisted?
+                  - @item.item_images.each_with_index do |image, i|
+                    .image-box{"data-index" => "#{i}"}
+                      = image_tag image.src.url, data: { index: i }
+                      .editting-box
+                        %i.fas.fa-image
+                        %i.fas.fa-trash-alt
+                  .pre-content
+                    = form.label :image, for: "js-file" do
+                      %p.text 
+                        クリックをしてアップロード
+            =form.fields_for :item_images do |i|
+              .new_item_page_container_main_label{"data-index" => "#{i.index}"}
+                = i.file_field :src, class: 'js-file', id: 'saved-js-file', data:{ index: i.index }
               -if @item.persisted?
-                - @item.item_images.each_with_index do |image, i|
-                  .image-box{"data-index" => "#{i}"}
-                    = image_tag image.src.url, data: { index: i }
-                    .editting-box
-                      %i.fas.fa-image
-                      %i.fas.fa-trash-alt
-          =form.fields_for :item_images do |i|
-            .new_item_page_container_main_label{"data-index" => "#{i.index}"}
-              = i.file_field :src
-              %br
+                = i.check_box :_destroy, data:{ index: i.index }, class: 'hidden-destroy'
             -if @item.persisted?
-              = i.check_box :_destroy, data:{ index: i.index }, class: 'hidden-destroy'
-          -if @item.persisted?
-            .new_item_page_container_main_label{"data-index" => "#{@item.item_images.count}"}
-            .form-file{"data-index" => "#{@item.item_images.count}"}
-              = form.file_field :src, class: 'js-file', id: 'js-file', name: "item[item_images_attributes][#{@item.item_images.count}][src]" 
+              .form-file
+                .new_item_page_container_main_label{"data-index" => "#{@item.item_images.count}"}
+                  = form.file_field :src, class: 'js-file', id: 'js-file', name: "item[item_images_attributes][#{@item.item_images.count}][src]", data:{ index: "#{@item.item_images.count}"}
               -# .prepend_area
               -#   .pre-content
               -#     = i.label :image, for: "js-file" do
