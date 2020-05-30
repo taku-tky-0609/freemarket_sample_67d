@@ -3,14 +3,14 @@
   padding: 32px 16px;
   background-color: #EEEEEE;
   
-  .buy-content__item{
+  &__item{
 
     padding: 0 0 100px;
     color: black;
     text-shadow: none;
     font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
     display: block;
-    .buy-content__item__inner{
+    &__inner{
       display: block;
 
       .buy-item-headder{
@@ -175,100 +175,85 @@ img.hea{
 //edit
 
 .first{
- 
   text-align: center;
   padding-top: 100px;
   text-shadow: none;
   font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
   display: block;
   background-color: #EEEEEE;
-
-  
   .second{
-    
-    
-    .buy-content__attention__title{
-      background-color: wheat;
-      width: 600px;
-      margin: 0 auto;
-      display: block;
-     
-
-      .buy-content__item{
-        padding: 32px 0;
-        transition: all ease-out .3s;
-        font-size: 18px;
-        border-top: 1px solid #f5f5f5;
-        width: 100%;
-        .buy-item-image{
-          
+    .buy-content__attention{
+      .y{
+        padding-bottom: 50px;
+        width: 600px;
+        font-size: 30px;
+        text-align: center;
+        justify-content: center;
+        margin-left: 420px;
+      .buy-content__attention__title{
+        background-color: wheat;
+        width: 700px;
+        margin: 0 auto;
+        display: block;
         }
+      }
+      
+        .buy-content__item{
+          padding: 32px 0;
+          transition: all ease-out .3s;
+          font-size: 18px;
+          border-top: 1px solid #f5f5f5;
+          width: 100%;
+          .buy-content__item__inner{
+            background-color: #fff;
+
+            .buy-item-main{
+
+             }
+        .buy-item-detail{
+          .buy-item-name{
+            padding-top: 20px;
+            margin-right: 20px;
+            .buy-price{
+              padding-top: 5px;
+              .shipping-free{
+                padding-top: 20px;
+              }
+          
+          }
+              }
+            }
+          }
+        }
+        .buy-content__item{
+
+          .buy-form{
+            .buy-price-table{
+              margin-top: 5px;
+              text-align: center;
+              .buy-price-table__left{
+                padding-top: 20px;
+              }
+              .buy-price-table__right{
+                padding-bottom: 30px;
+                margin-right: 20px;
+              }
+            }
+          }
         
+      }
+      .buy-content__user-info__submit{
+        padding-top: 40px;
+
       }
     }
   }
 }
 
-
-.y{
- padding-bottom: 50px;
- width: 600px;
- font-size: 30px;
- text-align: center;
- justify-content: center;
- margin-left: 420px;
-}
-.tt{
-  background-color: #fff;
-  width: 600px;
-  margin-left: 420px;
-}
-.buy-content__user-info__submit{
-  padding-top: 40px;
-  
-}
-.buy-item-image{
-  padding-bottom: 30px;
- 
-}
-
-.buy-item-name{
-  padding-top: 20px;
-  margin-right: 20px;
-}
-.buy-price{
-  padding-top: 5px;
- 
-}
-.shipping-free{
-  padding-top: 20px;
-  
-}
-
-
-.buy-price-table{
-  margin-top: 5px;
-  text-align: center;
-
-}
-.buy-price-table__left{
-  padding-top: 20px;
-}
-
-
-.buy-price-table__right{
-  padding-bottom: 30px;
-  margin-right: 20px;
-  
-}
-
-
-
 img.head{
   width: 200px;
   height: 100px;
 }
-
 
 
 .buy-item-image{
@@ -278,3 +263,22 @@ img.head{
     margin-top: 60px;
   }
 }
+.tt {
+  background-color: #fff;
+  width: 700px;
+  margin-left: 420px;
+}
+.buy-content__attention__title{
+  background-color: wheat;
+  width: 700px;
+  margin-left: 420px;
+  display: block;
+  }
+.buy-item-name{
+  padding-top: 20px;
+  margin-right: 20px;
+}
+
+
+
+
