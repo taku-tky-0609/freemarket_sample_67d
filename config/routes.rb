@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   devise_scope :user do
     get 'addresses', to: 'users/registrations#new_address'
     post 'addresses', to: 'users/registrations#create_address'
-    # post 'card',to: 'users/registrations#create_credit_cards' ← 追加実装
+  end    
   root 'items#index'
   # get '/items/:item_id/purchase', to: 'items#purchase'
   resources :items do
@@ -45,7 +45,12 @@ Rails.application.routes.draw do
     
       
   resources :users, only: :show
-  resources :items
+  resources :items do
+    collection do
+      get 'get_category_children', defaults: { format: 'json' }
+      get 'get_category_grandchildren', defaults: { format: 'json' }
+    end
+  end
     
   post "logout" => "users#logout"
   resources :credit_cards, only: [:new, :show] do
@@ -56,6 +61,5 @@ Rails.application.routes.draw do
     end
   end
 
-end
 end
 
