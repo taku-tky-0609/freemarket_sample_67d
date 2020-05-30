@@ -8,9 +8,9 @@
           商品購入の確認
           .buy-new
             .buy-item-image
-            - @item.images.each_with_index do |image,i|
-              %div{class: "#{++i}"}
-              = image_tag image
+              - @item.item_images.each_with_index do |image,i|
+                %div{class: "ProductImages__#{++i}"}
+                  = image_tag image.src.url 
             .buy-item-detail
               .buy-item-name
                 = @item.item_name

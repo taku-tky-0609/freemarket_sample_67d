@@ -28,22 +28,27 @@
         margin: 0 auto;
         display: block;
         background: #fff;
+        // padding-left: 100px;
         .buy-content_title{
           font-size: 22px;
           padding: 32px;
-          line-height: 1.5;
           text-align: center;
+          justify-content: center;
+          height: 200px;
+          display: block;
+
           .buy-new{ 
-            padding-left: 100px;
             font-size: 13px;
             margin-left: 120px;
             text-align: center;
             padding: 32px 16px;
             border-top: 1px solid #f5f5f5;
             display: flex;
+            
             img{
               width: 80px;
               height: 80px;
+              
               }
             }
           }
@@ -53,7 +58,7 @@
           border-top: 1px solid #f5f5f5;
           .buy-price-table{
             display: flex;
-            margin-left: 160px;
+            margin-left: 220px;
             .buy-price-table__left{
               text-align: left;
               font-size: 25px;
@@ -61,9 +66,9 @@
 
             }
             .buy-price-table__right{
-              margin-left: 130px;
+              margin-left: 60px;
               font-size: 25px;
-              margin-top: 5px;
+              margin-top: 25px;
             }
           }
       
@@ -195,7 +200,9 @@ img.hea{
         font-size: 18px;
         border-top: 1px solid #f5f5f5;
         width: 100%;
-        
+        .buy-item-image{
+          
+        }
         
       }
     }
@@ -227,7 +234,7 @@ img.hea{
 
 .buy-item-name{
   padding-top: 20px;
-  border-top: 1px solid wheat;
+  margin-right: 20px;
 }
 .buy-price{
   padding-top: 5px;
@@ -237,23 +244,37 @@ img.hea{
   padding-top: 20px;
   
 }
-.buy-price-table__left{
-  padding-top: 5px;
-  border-top: 1px solid wheat;
-}
 
-.buy-price-table__left{
-  border-top: 1px solid wheat;
-  padding-top: 20px;
-
-  
-}
 
 .buy-price-table{
   margin-top: 5px;
- 
+  text-align: center;
+
 }
+.buy-price-table__left{
+  padding-top: 20px;
+}
+
+
 .buy-price-table__right{
   padding-bottom: 30px;
+  margin-right: 20px;
   
+}
+
+
+
+img.head{
+  width: 200px;
+  height: 100px;
+}
+
+
+
+.buy-item-image{
+  fieldset, img{
+    width: 200px;
+    height: 200px;
+    margin-top: 60px;
+  }
 }

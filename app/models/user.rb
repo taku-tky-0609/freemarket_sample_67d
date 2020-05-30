@@ -10,12 +10,20 @@ class User < ApplicationRecord
     鳥取県:31,島根県:32,岡山県:33,広島県:34,山口県:35,
     徳島県:36,香川県:37,愛媛県:38,高知県:39,
     福岡県:40,佐賀県:41,長崎県:42,熊本県:43,大分県:44,宮崎県:45,鹿児島県:46, 
-    沖縄県:47,ラフテル:48
+    沖縄県:47
   }
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+         has_many :items
+         has_many :comments
+         has_many :likes
+         has_many :items_statuses
+         has_one :credit
+         has_one :address
+         accepts_nested_attributes_for :address
+         
   validates :nickname, presence: true, uniqueness: true
   has_many :items
   has_many :comments

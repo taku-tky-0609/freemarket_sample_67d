@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
 
   def index
+    @items = Item.includes(:user, :category).order("created_at DESC")
   end
   
   def myList
@@ -75,7 +76,12 @@ class ItemsController < ApplicationController
   def edit
     @item = Item.find(params[:id])
   end
-  
+
+  def myList
+    @items = current_user.items
+  end
+
+
   def update
     @item = Item.find(params[:id])
     if @item.update(item_params)
@@ -90,12 +96,6 @@ class ItemsController < ApplicationController
     item.destroy
     redirect_to root_path
    end
-
-  # private
-
-  # def item_params
-  #   params.require(:item).permit(:item_name, :price, :category_id, :status_id, :size, :delivery_method_id, :delivery_fee_id, :prefecture_id, :estimated_delivery_id, brand_attributes: [:name], images: []).merge(user_id: current_user.id) 
-  # end
 
   private
 
