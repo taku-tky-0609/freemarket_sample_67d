@@ -1,0 +1,18 @@
+
+* {
+  box-sizing: border-box;
+}
+.editting-box{
+  display: flex;
+  justify-content: space-evenly;
+  
+  .fa-image{
+    width: 100%;
+    display: block;
+    background-color: whitesmoke;
+    text-align: center;
+    color: gray;
+    cursor: pointer;
+    margin-right: 2px;
+  }
+}

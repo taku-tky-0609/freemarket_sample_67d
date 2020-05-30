@@ -18,7 +18,8 @@ $(function (){
 
 // file_fieldのnameに動的なindexをつける為の配列
 let fileIndex = [1,2,3,4,5,6,7,8,9,10];
-lastIndex = $('.new_item_page_container_main_label').data('index');
+lastIndex = $('.new_item_page_container_main_label:last').data('index');
+console.log(lastIndex)
 fileIndex.splice(0, lastIndex);
 
   $(document).on('change', '.js-file', function(e){
