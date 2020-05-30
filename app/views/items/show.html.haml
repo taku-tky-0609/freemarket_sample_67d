@@ -23,16 +23,16 @@
           %tr
             %th カテゴリー
             %td 
-              -unless @item.category.parent == nil
+              -if @item.category.parent.parent.name.present?
                 = link_to "#", class: 'ProductSelections__lists__category' do
                   #{@item.category.parent.parent.name}
                 %br
-              -unless @item.category.parent == nil
+              -if @item.category.parent.name.present?
                 = link_to "#", class: 'ProductSelections__lists__category' do
                   %i.fas.fa-chevron-right
                   #{@item.category.parent.name}
                 %br
-              -unless @item.category.name == nil
+              -if @item.category.name.present?
                 = link_to "#", class: 'ProductSelections__lists__category' do
                   %i.fas.fa-chevron-right
                   #{@item.category.name}
@@ -66,20 +66,18 @@
       .ProductTax
         (税込)送料込み
     -if user_signed_in? && @item.buyer_id == nil && @item.user_id != current_user.id
-      = form_tag(action: :pay, method: :post) do
-        %script.payjp-button{:src => "https://checkout.pay.jp", :type => "text/javascript" ,"data-text" => "購入する" ,"data-key" => "pk_test_32534f246a14649e6d9c3ac8"}
-    .itemsShow__container__clickBox
-      .likesCount
-        ❤️いいね!!
-      = link_to "#", class: "inappropriateReport" do
-        不適切な商品の報告
-      = link_to "#", class: "initiative" do
-        あんしん・あんぜんへの取り組み
+      .itemsShow__container__clickBox
+        .likesCount
+          ❤️いいね!!
+        = link_to "#", class: "inappropriateReport" do
+          不適切な商品の報告
+        = link_to "#", class: "initiative" do
+          あんしん・あんぜんへの取り組み
 
 - if user_signed_in? && current_user.id == @item.user_id
   .moreList
     .moreList__container
       = link_to '編集', edit_item_path(@item.id), method: :get, class: "itemsShowBtn furimaBtn"
       = link_to '削除', "/items/#{@item.id}", method: :delete, class: "itemsShowBtn"
-
+      
 = render 'items/footer'
