@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
 
+  before_action :set_item, only: :show
   def index
     @items = Item.includes(:user, :category).order("created_at DESC")
   end
@@ -54,9 +55,9 @@ class ItemsController < ApplicationController
     end
   end
 
+  
+
   def show
-    @item = Item.includes(:user, :category)
-    @item = Item.find(params[:id])
   end
   
   def purchase_index
@@ -98,6 +99,11 @@ class ItemsController < ApplicationController
    end
 
   private
+
+  def set_item
+    @item = Item.includes(:user, :category)
+    @item = Item.find(params[:id])
+  end
 
   def item_params
     params.require(:item).permit(:item_name, :price, :category_id, :status_id, :size, :delivery_method_id, :delivery_fee_id, :prefecture_id, :estimated_delivery_id, brand_attributes: [:name], item_images_attributes: [:src, :_destroy, :id]).merge(user_id: current_user.id)
