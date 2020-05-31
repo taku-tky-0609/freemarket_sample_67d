@@ -338,6 +338,8 @@ PLATFORMS
 DEPENDENCIES
   active_hash
   ancestry
+  better_errors
+  binding_of_caller
   bootsnap (>= 1.1.0)
   byebug
   capistrano
