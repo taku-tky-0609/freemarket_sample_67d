@@ -1,6 +1,5 @@
 class ItemsController < ApplicationController
-
-  before_action :set_item, only: :show
+  before_action :set_item, only: [:show, :pay, :purchase_index, :purchase_edit, :edit, :update, :destroy]
   def index
     @items = Item.includes(:user, :category).order("created_at DESC")
   end
@@ -11,7 +10,7 @@ class ItemsController < ApplicationController
   end
 
   def pay
-    @item = Item.find(params[:id])
+  
     Payjp.api_key = Rails.application.credentials.dig(:payjp, :PAYJP_SECRET_KEY)
     Payjp::Charge.create(
       :amount => @item.price, #支払金額を引っ張ってくる
@@ -54,21 +53,22 @@ class ItemsController < ApplicationController
   
 
   def show
+   
   end
   
   def purchase_index
-    @item = Item.find(params[:id])
+   
   end
 
   def purchase_edit
-    @item = Item.find(params[:id])
+   
   end
 
 
  
  
   def edit
-    @item = Item.find(params[:id])
+    
   end
 
   def myList
@@ -77,7 +77,7 @@ class ItemsController < ApplicationController
 
 
   def update
-    @item = Item.find(params[:id])
+    
     if @item.update(item_params)
       redirect_to root_path
     else
@@ -86,7 +86,7 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    item = Item.find(params[:id])
+  
     item.destroy
     redirect_to root_path
    end
