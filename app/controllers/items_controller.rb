@@ -6,7 +6,7 @@ class ItemsController < ApplicationController
   end
   
   def myList
-    # @items = Item.includes(:user, :category).order("created_at DESC")
+   
     @items = Item.where(user_id: current_user.id)
   end
 
@@ -18,11 +18,7 @@ class ItemsController < ApplicationController
       :customer => current_user.credit_card.customer_id,  #顧客ID
       :currency => 'jpy',              #日本円
     )
-    # charge = Payjp::Charge.create(
-    # amount: @item.price,
-    # credit_card: params['payjp-token'],
-    # currency: 'jpy'
-    # )
+    
     
     @item.buyer_id = 0
     @item.buyer_id = @item.buyer_id + current_user.id
@@ -69,10 +65,7 @@ class ItemsController < ApplicationController
   end
 
 
-  # def purchase
-  #   @item = Item.includes(:user, :category)
-  #   # @item = Item.find(params[:id])
-  # end
+ 
  
   def edit
     @item = Item.find(params[:id])

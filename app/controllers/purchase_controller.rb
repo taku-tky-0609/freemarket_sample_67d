@@ -15,15 +15,7 @@ class PurchaseController < ApplicationController
       end
     end
   
-    # def pay
-    #   Payjp.api_key = Rails.application.credentials[:PAYJP_PRIVATE_KEY]
-    #   Payjp::Charge.create(
-    #     :amount => @item.price, #支払金額を引っ張ってくる
-    #     :customer => @card.customer_id,  #顧客ID
-    #     :currency => 'jpy',              #日本円
-    #   )
-    #   redirect_to done_item_buyers_path #完了画面に移動
-    # end
+   
   
     
   
@@ -36,7 +28,7 @@ class PurchaseController < ApplicationController
     end
   
     def set_item
-      # binding.pry
+      
       @item = Item.find(params[:item_id])
     end
   

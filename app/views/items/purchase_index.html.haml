@@ -50,21 +50,23 @@
                 購入する
                 
 
-          -# pay_item_path
-            method: :post
+    
     %footer.single-footer
-      %nav
-        %ul.clearfix
+      .terms  
+        %ul
           %li
-            
-            %a{:href => "/jp/privacy/"} プライバシーポリシー
+            = link_to "#" do
+              プライバシーポリシー
           %li
-            %a{:href => "/jp/tos/"} フリマ利用規約
+            = link_to "#" do
+              フリマ利用規約
           %li
-            %a{:href => "/jp/tokutei/"} 特定商取引に関する表記
-      %nav2
-        %a.single-footer-logo{:href => "/jp/"}
-          %img.hea{ src: "/images/logo-white.png"}
-        %p
-          %p.furima6 © Furima, Inc.
-          %script{:src => "//pcweb-assets.mercdn.net/assets/js/app.js?2310494441"}
+            = link_to "#" do
+              特定商取引に関する表記
+
+        %img.hea{ src: "/images/logo-white.png"}
+        %p © Furima, Inc.
+
+          
+      
+      

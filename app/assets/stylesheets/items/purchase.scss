@@ -133,6 +133,12 @@
     }
     .single-footer{
      
+      a{
+        padding: 9px 9px 9px 9px;
+        font-size: 14px;
+        color: black;
+      }
+
       .clearfix{
         display: flex;
         width: 456px;
@@ -146,12 +152,7 @@
         text-align: center;
         margin: 0 auto;
 
-        a{
-          padding: 9px 9px 9px 9px;
-          font-size: 14px;
-          color: black;
-        }
-
+        
   
         
       }
@@ -181,6 +182,11 @@ img.hea{
   font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
   display: block;
   background-color: #EEEEEE;
+  a{
+    padding-top: 40px;
+    padding-left: 100px;
+    color:black;
+  }
   .second{
     .buy-content__attention{
       .y{
@@ -211,6 +217,7 @@ img.hea{
 
              }
         .buy-item-detail{
+          
           .buy-item-name{
             padding-top: 20px;
             margin-right: 20px;
@@ -226,6 +233,7 @@ img.hea{
           }
         }
         .buy-content__item{
+          
 
           .buy-form{
             .buy-price-table{
@@ -267,6 +275,7 @@ img.head{
   background-color: #fff;
   width: 700px;
   margin-left: 420px;
+  
 }
 .buy-content__attention__title{
   background-color: wheat;
@@ -277,11 +286,9 @@ img.head{
 .buy-item-name{
   padding-top: 20px;
   margin-right: 20px;
+ 
 }
-a{
-  padding-top: 40px;
-  padding-left: 100px;
-}
+
 
 
 
