@@ -1,2 +1,22 @@
-%h1 Categories#index
-%p Find me in app/views/categories/index.html.haml
+= render 'items/header'
+
+.category
+  .category__title
+    カテゴリー一覧
+  .category__list
+    .category__list__parent
+      - @parents.where(ancestry: nil).each do |parent|
+        .parentTitle
+          = parent.name
+        .children
+          - parent.children.each do |p|
+            .children__container
+              .children__container__title
+                = p.name
+                .grandchildrenContainer
+                  - p.children.each do |pp|
+                    .grandchildrenContainer__title
+                      = link_to category_path(pp), class:"categoryContainer__list" do
+                        = pp.name
+ 
+= render 'items/footer'
