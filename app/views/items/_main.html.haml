@@ -67,11 +67,11 @@
 .category
   .category__wrapper
     .category__wrapper__title ピックアップカテゴリー
-    %a{ href:"#"} 新規投稿商品
+    %a{ href:"#", class:"category__wrapper__subtitle"} 新規投稿商品
     .category__wrapper__box 
       - @items.each do |item|
         = link_to item_path(item.id), class:"ProductContainer" do
-          = image_tag(url_for(item.images[0]), class:"pickupImage")
+          = image_tag item.item_images[0].src.url
           -if item.buyer_id.present?
             .soldOutContainer
             .soldOutComment
@@ -86,20 +86,7 @@
                 （税込）
             .detailsContainer__right
               ★ ０
-
-        -# .content_post
-        -#   .more
-        -#     %span= image_tag 'arrow_top.png'
-        -#     %ul.more_list
-        -#       %li
-        -#         = link_to '詳細', "/tweets/#{tweet.id}", method: :get
-        -#       - if user_signed_in? && current_user.id == tweet.user_id
-        -#         %li
-        -#           = link_to '編集', "/tweets/#{tweet.id}/edit", method: :get
-        -#         %li
-        -#           = link_to '削除', "/tweets/#{tweet.id}", method: :delete
-
   .category__wrapper
     .category__wrapper__title ピックアップブランド
     %a{ href:"#", class:"category__wrapper__subtitle"} アーカイバ
-    .category__wrapper__box 
+    .pickupCategory__wrapper__box 

@@ -1,42 +1,38 @@
 require 'rails_helper'
-describe User do
+describe Address do
+  let(:user) { create(:user) }
   describe '#create' do
     context 'can save' do
-      it "全てのバリデーションをクリアする場合は登録できること" do
-        user = build(:address)
-        expect(user).to be_valid
+      it "全てのバリデーションをクリアする場合は登録できること"  do
+        user = build(:user)
+        address = build(:address)
+        expect(address).to be_valid
       end
     end
       
     context 'can not save' do
       it "user_idがない場合は登録できないこと" do
-        user = build(:address, user_id: "")
-        user.valid?
-        expect(user.errors[:user_id]).to include("can't be blank")
+        address = build(:address, user_id: "")
+        address.valid?
+        expect(user.errors[:user_id]).to include()
       end
       
       it "postal_codeがない場合は登録できないこと" do
-        user = build(:address, postal_code: "")
-        user.valid?
-        expect(user.errors[:postal_code]).to include("can't be blank")
+        address = build(:address, postal_code: "")
+        address.valid?
+        expect(address.errors[:postal_code]).to include("が入力されていません。", "のフォーマットが不適切です。記述例 000-0000")
       end
       
       it "prefecturesがない場合は登録できないこと" do
-        user = build(:address, prefectures: "")
-        user.valid?
-        expect(user.errors[:prefectures]).to include("can't be blank")
+        address = build(:address, prefectures: "")
+        address.valid?
+        expect(address.errors[:prefectures]).to include("が入力されていません。")
       end
       
       it "municipalityがない場合は登録できないこと" do
-        user = build(:address, municipality: "")
-        user.valid?
-        expect(user.errors[:municipality]).to include("can't be blank")
-      end
-
-      it "buildingがない場合は登録できないこと" do
-        user = build(:address, building: "")
-        user.valid?
-        expect(user.errors[:building]).to include("can't be blank")
+        address = build(:address, municipality: "")
+        address.valid?
+        expect(address.errors[:municipality]).to include("が入力されていません。")
       end
     end
   end

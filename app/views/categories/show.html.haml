@@ -1,0 +1,37 @@
+= render 'items/header'
+
+.categoryShow
+  .categoryShow__root
+    - unless @category.parent == nil
+      = link_to category_path(@category.parent.parent), class:"categoryShow__root__category" do
+        = @category.parent.parent.name
+        　>　
+    - unless @category.parent == nil
+      = link_to category_path(@category.parent), class:"categoryShow__root__category" do
+        = @category.parent.name
+        　>　
+    = link_to category_path(@category), class:"categoryShow__root__category" do
+      = @category.name
+  .categoryShow__title
+    #{@category.name}の商品一覧
+  - @items.each do |item|
+    = link_to item_path(item.id), class:"categoryShowContainer" do
+      = image_tag(url_for(item.images[0]), class:"categoryShowContainer__image")
+      -if item.buyer_id.present?
+        .soldOutContainer
+        .soldOutComment
+          SOLD
+      .categoryShowContainer__details
+        .details__left
+          .details__left__name
+            = item.item_name
+          .details__left__price
+            = item.price
+          .details__left__tax
+            （税込）
+        .details__right
+          ★ ０
+
+  
+
+= render 'items/footer'

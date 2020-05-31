@@ -10,7 +10,7 @@
 
       - @items.each do |item|
         = link_to item_path(item.id), class:"ProductContainer" do
-          = image_tag(url_for(item.images[0]), class:"pickupImage")
+          = image_tag item.item_images[0].src.url
           .detailsContainer
             .detailsContainer__left
               .detailsContainer__left__name
