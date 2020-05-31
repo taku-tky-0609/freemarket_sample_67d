@@ -3,19 +3,19 @@
 .categoryShow
   .categoryShow__root
     -if @category.ancestry.nil?
-      111
     -elsif @category.parent.parent != nil
-      = @category.parent.parent.name
+      = link_to category_path(@category.parent.parent.id), class:"categoryContainer__list" do
+        = @category.parent.parent.name
       　>　
     -else
-      222
     -if @category.parent.present?
-      = @category.parent.name
-      　>　
+      = link_to category_path(@category.parent.id), class:"categoryContainer__list" do
+        = @category.parent.name
+        　>　
       = @category.name
   .categoryShow__title
     #{@category.name}の商品一覧
-  - @categories.each do |c|
+  - @items.each do |c|
     .categoryShowContainer
       = link_to item_path(c.id)  do
         = image_tag c.item_images[0].src.url, class:"categoryShowContainer__image"

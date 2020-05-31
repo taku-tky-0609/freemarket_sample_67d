@@ -5,18 +5,20 @@
     カテゴリー一覧
   .category__list
     .category__list__parent
-      - @parents.where(ancestry: nil).each do |parent|
+      - @parents.where(ancestry: nil).each do |p|
         .parentTitle
-          = parent.name
+          = link_to category_path(p), class:"categoryContainer__list" do
+            = p.name
         .children
-          - parent.children.each do |p|
+          - p.children.each do |c|
             .children__container
               .children__container__title
-                = p.name
-                .grandchildrenContainer
-                  - p.children.each do |pp|
-                    .grandchildrenContainer__title
-                      = link_to category_path(pp), class:"categoryContainer__list" do
-                        = pp.name
+                = link_to category_path(c), class:"categoryContainer__list" do
+                  = c.name
+                  .grandchildrenContainer
+                    - c.children.each do |gc|
+                      .grandchildrenContainer__title
+                        = link_to category_path(gc), class:"categoryContainer__list" do
+                          = gc.name
  
 = render 'items/footer'
