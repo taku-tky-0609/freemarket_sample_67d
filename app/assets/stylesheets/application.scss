@@ -1,5 +1,3 @@
-@import "slick-theme"; 
-@import "slick";
 @import "config/*";
 @import "font-awesome-sprockets";
 @import "font-awesome";
@@ -8,4 +6,6 @@
 @import "credit_cards/*";
 @import "registrations/*";
 @import "items/*";
-@import "categories/*"
+@import "categories/*";
+@import "slick-theme"; 
+@import "slick";
