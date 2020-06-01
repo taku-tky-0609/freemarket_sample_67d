@@ -15,6 +15,12 @@ module FormHelper
       end                                                                       
     end
 
+    def fields_for(attribute, options={})
+      input_field_with_error(attribute, options) do                             
+        super                                                                   
+      end                                                                       
+    end
+
     def text_field(attribute, options={})                                       
       input_field_with_error(attribute, options) do                             
          super                                                                   

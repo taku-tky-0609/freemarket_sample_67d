@@ -13,7 +13,11 @@
         - @item.item_images.each_with_index do |image,i|
           %div{class: "ProductImages__#{++i}"}
             = image_tag image.src.url
-        .ProductImages__subContainer
+      .ProductImages-nav
+        - @item.item_images.each_with_index do |image,i|
+          %div{class: "ProductImages__#{++i}"}
+            = image_tag image.src.url      
+        -# .ProductImages__subContainer
       .ProductSelections
         %table.ProductSelections__lists
           %tr
