@@ -1,0 +1,64 @@
+
+// * {
+//   box-sizing: border-box;
+// }
+.saved_item_page_container_main_carrierwave_image{
+  display: flex;
+  // width: 100%;
+  .prepend_area{
+    display: flex;
+    
+      .text{
+        line-height: 160px;
+        text-align: center;
+      }
+      .new_item_page_container_main_label{
+        display: flex;
+      }
+    }
+    .image-box{
+      width: 20%;
+      height: 160px;
+      margin-right: 5px;
+      img {
+        width: 100%;
+        height: calc(160px - 21px);
+      }
+      .fa-trash-alt {
+      display: block;
+      background-color: whitesmoke;
+      text-align: center;
+      color: gray;
+      cursor: pointer;
+      width: 100%;
+      }
+     
+    }
+  
+  #js-file{
+    display: none;
+  }
+
+}
+  .editting-box{
+    display: flex;
+    // justify-content: space-evenly;
+    
+    .fa-image{
+      width: 100%;
+      display: block;
+      background-color: whitesmoke;
+      text-align: center;
+      color: gray;
+      cursor: pointer;
+      margin-right: 2px;
+    }
+  }
+  #saved-js-file{
+    display: none;
+  }
+  .pre-content{
+    width: 100%;
+    height: 160px;
+    border: 1px dotted;
+  }
