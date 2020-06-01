@@ -11,8 +11,15 @@ Rails.application.routes.draw do
   resources :categories 
 
   root 'items#index'
-  # get '/items/:item_id/purchase', to: 'items#purchase'
+  
+
   resources :items do
+    member do
+      post 'pay'            #id'=>   'items#pay', as: 'pay'  httpメソッドはpostなので注意
+      get  'done'           #=>      'items#done', as: 'done'
+      get "purchase_index"
+      get "purchase_edit"
+    end
     collection do
       get 'get_category_children', defaults: { format: 'json' }
       get 'get_category_grandchildren', defaults: { format: 'json' }
@@ -20,21 +27,8 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :items do
-    member do
-      post 'pay'            #id'=>   'items#pay', as: 'pay'  httpメソッドはpostなので注意
-      get  'done'           #=>      'items#done', as: 'done'
-    end
-  end
-
-  resources :items  do
-    member do
-      get "purchase_index"
-      get "purchase_edit"
-      # get "purchase_confirmation"
-      # post "purchase"
-    end
-  end
+  
+  
 
 
   resources :purchases  do
