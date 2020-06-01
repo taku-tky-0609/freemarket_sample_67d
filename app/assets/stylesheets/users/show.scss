@@ -2,13 +2,23 @@
   background-color: rgb(245, 240, 240);
   display: flex;
   justify-content: space-between;
-  padding: 40px;
+  padding: 40px 150px;
   width: 100%;
   .center__content {
     height: 100%;
-    .center__top, img {
-      height: 155px;
+    width: calc(100% - 20%);
+    margin-right: 30px;
+    .center__tog {
+      height: 200px;
       width: 100%;
+      background-color: white;
+      position: relative;
+      img {
+        position: absolute;
+        top: 50px;
+        bottom: 50px;
+        left: calc(100% - 55%);
+      }
     }
     .mypage--tags {
       margin-top: 10px;
