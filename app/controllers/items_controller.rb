@@ -86,16 +86,14 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-  
-    item.destroy
+    @item.destroy
     redirect_to root_path
    end
 
   private
 
   def set_item
-    @item = Item.includes(:user, :category)
-    @item = Item.find(params[:id])
+    @item = Item.includes(:user, :category).find(params[:id])
   end
 
   def item_params

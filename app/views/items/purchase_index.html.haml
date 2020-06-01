@@ -9,7 +9,7 @@
           .buy-new
             .buy-item-image
               - @item.item_images.each_with_index do |image,i|
-                %div{class: "ProductImages__#{++i}"}
+              .ProductImages__
                   = image_tag image.src.url 
             .buy-item-detail
               .buy-item-name
