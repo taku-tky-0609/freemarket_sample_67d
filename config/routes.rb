@@ -6,7 +6,10 @@ Rails.application.routes.draw do
   devise_scope :user do
     get 'addresses', to: 'users/registrations#new_address'
     post 'addresses', to: 'users/registrations#create_address'
-  end    
+  end
+
+  resources :categories 
+
   root 'items#index'
   # get '/items/:item_id/purchase', to: 'items#purchase'
   resources :items do
