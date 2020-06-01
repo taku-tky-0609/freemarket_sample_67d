@@ -57,7 +57,7 @@
       }
       .ProductSelections {
         margin: 0 20px 0;
-        width: 50%;
+        width: 100%;
         padding: 0 10px 0;
         display: inline-flex;
         &__lists {
@@ -163,12 +163,13 @@
 }
 
 .ProductImages {
+  height: 300px;
   &__0 {
     margin: auto;
     width: 16vw;
     height: calc(16vw * 1.1);
   }  
-  &__1,&__2,&__3 {
+  &__1,&__2,&__3,&__4 {
     display: inline-block;
     margin-top: 5px;
     width: 4.5vw;
@@ -176,7 +177,23 @@
   }
   img {
     width: 100%;
-    height: 100%;
+  }
+}
+
+.ProductImages-nav {
+  &__0 {
+    margin: auto;
+    width: 16vw;
+    height: calc(16vw * 1.1);
+  }  
+  &__1,&__2,&__3,&__4 {
+    display: inline-block;
+    margin-top: 5px;
+    width: 4.5vw;
+    height: calc(4.5vw * 1.1);
+  }
+  img {
+    width: 100%;
   }
 }
 
