@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   devise_for :users, controllers: {
     registrations: 'users/registrations',
   }
@@ -10,6 +11,36 @@ Rails.application.routes.draw do
   resources :categories 
 
   root 'items#index'
+  
+
+  resources :items do
+    member do
+      post 'pay'            #id'=>   'items#pay', as: 'pay'  httpメソッドはpostなので注意
+      get  'done'           #=>      'items#done', as: 'done'
+      get "purchase_index"
+      get "purchase_edit"
+    end
+    collection do
+      get 'get_category_children', defaults: { format: 'json' }
+      get 'get_category_grandchildren', defaults: { format: 'json' }
+      get 'myList', to: 'items#myList'
+    end
+  end
+
+  
+  
+
+
+  resources :purchases  do
+    member do
+      get "purchase_index"
+      get "purchase_confirmation"
+      post "purchase"
+      get "purchase_edit"
+    end
+  end
+    
+      
   resources :users, only: :show
   resources :items do
     collection do
@@ -27,5 +58,6 @@ Rails.application.routes.draw do
       post 'delete', to: 'credit_cards#delete'
     end
   end
+
 end
 

@@ -1,7 +1,8 @@
 .header 
   .header__main-header 
     .header__main-header--icon 
-      %img{ src: "/images/logo.png"}
+      = link_to root_path do
+        %img{ src: "/images/logo.png"}
     .header__main-header--search-box 
       %li.header__main-header--search-box__input 
         %input(type="text" placeholder="キーワードから探す")

@@ -1,0 +1,276 @@
+
+$border: border;
+
+.buy-content{
+  text-align: center;
+  padding: 32px 16px;
+  background-color: #EEEEEE;
+  
+  &__item{
+
+    padding: 0 0 100px;
+    color: black;
+    text-shadow: none;
+    font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+    display: block;
+    &__inner{
+      display: block;
+
+      .buy-item-headder{
+        height: 128px;
+        text-align: center;
+        padding-top: 40px;
+        img{
+          width: 185px;
+          height: 55px;
+          
+        }
+      }
+      .buy-item-main{
+        width: 700px;
+        margin: 0 auto;
+        display: block;
+        background: #fff;
+        .buy-content_title{
+          font-size: 22px;
+          padding: 32px;
+          text-align: center;
+          justify-content: center;
+          height: 200px;
+          display: block;
+
+          .buy-new{ 
+            font-size: 13px;
+            margin-left: 120px;
+            text-align: center;
+            padding: 32px 16px;
+            border-top: border;
+            display: flex;
+            
+            img{
+              width: 80px;
+              height: 80px;
+              
+              }
+            }
+          }
+          &{
+          padding-bottom: 48px;
+          padding: 32px 16px;
+          border-top: border;
+          .buy-price-table{
+            display: flex;
+            margin-left: 220px;
+            &__left{
+              text-align: left;
+              margin-top: 25px;
+
+
+            }
+            &__right{
+              margin-left: 60px;
+              font-size: 25px;
+              margin-top: 25px;
+            }
+          }
+      
+        }
+        .buy-content__user-info{
+          margin: 0;
+          padding: 32px 0;
+          transition: all ease-out .3s;
+          border-top: border;
+          &__inner{
+            margin-right: 280px;
+            font-size: 18px;
+            width: 100%;
+  
+            padding: 0;
+
+            .user-info-update{
+              line-height: 1.5;
+              margin: 8px 0 0;
+              font-size: 14px;
+              a{
+                color: #0099e8;
+              }
+
+            }
+          }            
+              h3{
+                font-size: 18px;
+                
+              }
+            
+                a.purchase.furimaBtn{
+                 
+                  position: relative;
+                  display: inline-block;
+                  font-weight: bold;
+                  padding: 0.25em 0.5em;
+                  text-decoration: none;
+                  color: #FFF;
+                  background: #00bcd4;
+                  transition: .4s;
+                  margin-top: 50px;
+                 
+              }
+          
+        }
+
+      }
+    }
+    .single-footer{
+     
+      a{
+        padding: 9px 9px 9px 9px;
+        font-size: 14px;
+        color: black;
+      }
+
+      .clearfix{
+        display: flex;
+        width: 456px;
+        height: 220px;
+        
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1;
+        padding: 40px 0;
+        text-align: center;
+        margin: 0 auto;
+        
+      }
+    }
+  }
+}
+
+//たての幅を小さくするため
+nav{
+  height: 50px;
+
+}
+
+//ロゴを小さくするため
+img.hea{
+  width: 80px;
+  height: 65px;
+  margin-top: 40px;
+
+}
+//edit
+
+.first{
+  text-align: center;
+  padding-top: 100px;
+  text-shadow: none;
+  font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+  display: block;
+  background-color: #EEEEEE;
+  
+  a{
+    padding-top: 40px;
+    padding-left: 100px;
+    color:black;
+  }
+  .second{
+    .buy-content__attention{
+      .y{
+        padding-bottom: 50px;
+        width: 600px;
+        font-size: 30px;
+        text-align: center;
+        justify-content: center;
+        margin-left: 420px;
+      .buy-content__attention__title{
+        background-color: wheat;
+        width: 700px;
+        margin: 0 auto;
+        display: block;
+        }
+      }
+      
+        .buy-content__item{
+          padding: 32px 0;
+          transition: all ease-out .3s;
+          font-size: 18px;
+          border-top: border;
+          width: 100%;
+          &__inner{
+            background-color: #fff;
+
+            .buy-item-main{
+
+             }
+        .buy-item-detail{
+          
+          .buy-item-name{
+            padding-top: 20px;
+            margin-right: 20px;
+            .buy-price{
+              padding-top: 5px;
+              .shipping-free{
+                padding-top: 20px;
+              }
+          
+          }
+              }
+            }
+          }
+        }
+        .buy-content__item{
+          
+
+          .buy-form{
+            .buy-price-table{
+              margin-top: 5px;
+              text-align: center;
+              .buy-price-table__left{
+                padding-top: 20px;
+              }
+              .buy-price-table__right{
+                padding-bottom: 30px;
+                margin-right: 20px;
+              }
+            }
+          }
+        
+      }
+      a{
+        padding-top: 40px;
+        padding-left: 100px;
+      }
+    }
+  }
+}
+
+img.head{
+  width: 200px;
+  height: 100px;
+}
+
+
+.buy-item-image{
+  fieldset, img{
+    width: 200px;
+    height: 200px;
+  }
+}
+.tt {
+  background-color: #fff;
+  width: 700px;
+  margin-left: 420px;
+  
+}
+.buy-content__attention__title{
+  background-color: wheat;
+  width: 700px;
+  margin-left: 420px;
+  display: block;
+  }
+.buy-item-name{
+  padding-top: 20px;
+  margin-right: 20px;
+ 
+}

@@ -15,10 +15,10 @@
               = form.label :image, for: "js-file" do
                 %p.text 
                   クリックをしてアップロード
-              =form.fields_for :item_images do |i|
                 .form-file   
-                  .new_item_page_container_main_label{"data-index" => "#{i.index}"}
-                    = i.file_field :src, class: 'js-file', id: 'js-file', data:{ index: i.index }
+                  .new_item_page_container_main_label{"data-index" => "0"}
+                    =form.fields_for :item_image do |i|
+                      = i.file_field :src, class: 'js-file', id: 'js-file', data:{ index: 0 }, name: "item[item_images_attributes][0][src]"
         .product
           .product__name.titleContainer
             %h1.titleContainer__title 商品名

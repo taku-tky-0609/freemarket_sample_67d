@@ -36,12 +36,13 @@
         %li.topic__list  
           %a{:href => '#'} お知らせ
   .footer__companylogo
-    %a{:href => '/'}
+    = link_to 'root' do
       %img{ src: "/images/logo-white.png", alt: "会社ロゴ" }
   %p © FURIMA 
-%a{:href => '#'}
+= link_to '#' do
   .sellingBtn
-    %span.sellingBtn__text 出品する
-    %img.sellingBtn__icon{ src: "/images/icon_camera.png", alt: "画像アイコン" }
-
+    = link_to "new_item" do
+      出品する
+    = image_tag "/images/icon_camera.png", class:"sellingBtn__icon"
+    
 
