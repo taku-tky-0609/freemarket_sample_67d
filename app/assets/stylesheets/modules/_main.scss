@@ -135,8 +135,9 @@ a {
   }
 }
 
-.category {
+.pickupCategory {
   background-color: rgb(243, 243, 243);
+  padding: 0 9vw 0;
   &__wrapper {
     padding: 40px 0 60px;
     text-align: center;
@@ -153,7 +154,7 @@ a {
       display: flex;
       flex-flow: row wrap;
       justify-content: flex-start;
-      padding: 1vw 10vw 1vw;
+      padding: 1vw 1vw 1vw;
       .ProductContainer {
         background-color: white;
         margin: 3.2vw;
@@ -202,7 +203,10 @@ a {
         }
       }
     }
-  }  
+  }
+  .brand {
+    height: 500px;
+  }
 }
 
 .storeIcon {
@@ -210,4 +214,3 @@ a {
   width: 260px;
   margin-right: 5px;
 }
-
