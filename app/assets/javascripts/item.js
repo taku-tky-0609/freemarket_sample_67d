@@ -85,21 +85,24 @@ $(document).on("click", '.fa-image', function(){
   });
 
   $('.ProductImages').slick({
-    infinite: true, //スライドのループ有効化
-    arrows: false, //矢印非表示
+    // infinite: true, //スライドのループ有効化
     fade: true, //フェードの有効化
-    draggable: false, //ドラッグ操作の無効化
+    arrows: false,
+    // asNavFor: '.ProductImages-nav'
   });
-  $('.ProductImages-nav').slick({
-    infinite: true, //スライドのループ有効化
-    slidesToShow: 6, //表示するスライドの数
-    slidesToScroll:1,
-    focusOnSelect: true, //フォーカスの有効化
-    asNavFor: '.ProductImages', //thumbnailクラスのナビゲーション
-    prevArrow: '<img src="前への矢印画像のパス" class="slide-arrow prev-arrow">',
-    nextArrow: '<img src="次への矢印画像のパス" class="slide-arrow next-arrow">'
-  });  
 
+  $('.ProductImages-nav').slick({
+    // infinite: true, //スライドのループ有効化
+    // slidesToShow: 1, //表示するスライドの数
+    // // enterMode: true,
+    dots: true,
+    centerMode: true,
+    focusOnSelect: true,
+    variableWidth: true,//フォーカスの有効化
+    asNavFor: '.ProductImages', //thumbnailクラスのナビゲーション
+    // prevArrow:'<div class="arrow prev">PREV</div>',
+    // nextArrow:'<div class="arrow next">NEXT</div>',
+  });  
 })
 
 

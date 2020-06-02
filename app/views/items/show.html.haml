@@ -13,11 +13,9 @@
         - @item.item_images.each_with_index do |image,i|
           %div{class: "ProductImages__#{++i}"}
             = image_tag image.src.url 
-      .ProductImages-nav
+      .ProductImages-nav  
         - @item.item_images.each_with_index do |image,i|
-          %div{class: "ProductImages__#{++i}"}
-            = image_tag image.src.url      
-        .ProductImages__subContainer
+          = image_tag image.src.url, class: "scrollingImages"  
       .ProductSelections
         %table.ProductSelections__lists
           %tr
