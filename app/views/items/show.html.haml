@@ -10,6 +10,8 @@
       = @item.item_name
     .ProductInformation
       .ProductImages
+       
+
         - @item.item_images.each_with_index do |image,i|
           %div{class: "ProductImages__#{++i}"}
             = image_tag image.src.url
@@ -23,23 +25,8 @@
           %tr
             %th カテゴリー
             %td 
-              -if @item.category.ancestry.nil?
-                111
-              -elsif @item.category.parent.parent != nil
-                = link_to category_path(@item.category.parent.parent.id), class: 'ProductSelections__lists__category' do
-                  #{@item.category.parent.parent.name}
-                %br
-              -else
-                222
-              -if @item.category.parent != nil
-                = link_to category_path(@item.category.parent.id), class: 'ProductSelections__lists__category' do
-                  %i.fas.fa-chevron-right
-                  #{@item.category.parent.name}
-                %br
-              -if @item.category.name.present?
-                = link_to category_path(@item.category.id), class: 'ProductSelections__lists__category' do
-                  %i.fas.fa-chevron-right
-                  #{@item.category.name}
+
+              = @item.category.name
           %tr
             %th ブランド
             %td 
@@ -70,18 +57,36 @@
       .ProductTax
         (税込)送料込み
     -if user_signed_in? && @item.buyer_id == nil && @item.user_id != current_user.id
-      .itemsShow__container__clickBox
-        .likesCount
-          ❤️いいね!!
-        = link_to "#", class: "inappropriateReport" do
-          不適切な商品の報告
-        = link_to "#", class: "initiative" do
-          あんしん・あんぜんへの取り組み
+      = form_tag(action: :pay, method: :post) do
+        %script.payjp-button{:src => "https://checkout.pay.jp", :type => "text/javascript" ,"data-text" => "" ,"data-key" => "pk_test_32534f246a14649e6d9c3ac8"}
+    = link_to purchase_index_item_path(@item), class: "purchase furimaBtn" do
+      購入画面に進む
+    .ProductExplanation
+      超くっきーランドで購入しました 
+      %br ［縦14㎝×横8.5㎝　ファスナー10㎝］
+      %br 1.2回使用しましたが、美品です
+      %br 神経質な方は遠慮ください
+    .itemsShow__container__clickBox
+      .likesCount
+        ❤️いいね!!
+      = link_to "#", class: "inappropriateReport" do
+        不適切な商品の報告
+      = link_to "#", class: "initiative" do
+        あんしん・あんぜんへの取り組み
 
 - if user_signed_in? && current_user.id == @item.user_id
   .moreList
     .moreList__container
       = link_to '編集', edit_item_path(@item.id), method: :get, class: "itemsShowBtn furimaBtn"
       = link_to '削除', "/items/#{@item.id}", method: :delete, class: "itemsShowBtn"
-      
+
+.itemsComment
+  .itemsComment__container
+    .erxplanation
+      相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+    .commentForm
+      @commentが適宜されたらtext_fielbに変更
+    = link_to "#", class: "itemsShowBtn furimaBtn" do
+      コメントする
+
 = render 'items/footer'

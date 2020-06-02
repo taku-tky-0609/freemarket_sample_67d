@@ -109,7 +109,7 @@ ActiveRecord::Schema.define(version: 2020_05_27_143415) do
     t.integer "sales"
     t.integer "point"
     t.text "icon"
-    t.date "birthday"
+    t.string "birthday"
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"

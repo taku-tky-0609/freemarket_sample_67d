@@ -25,7 +25,15 @@ class User < ApplicationRecord
          accepts_nested_attributes_for :address
          
   validates :nickname, presence: true, uniqueness: true
-  validates :email, :phone_number, uniqueness: true
+  has_many :items
+  has_many :comments
+  has_many :likes
+  has_many :items_statuses
+  has_one :credit_card
+  has_one :address
+  accepts_nested_attributes_for :address
+  validates :email, uniqueness: true
+  validates :phone_number, uniqueness: true
   validates :last_name_kana, presence: true, length: { maximum: 35 }, format: { with: /\A[\p{katakana}\p{blank}ー－]+\z/, message: 'の入力はカタカナで入力して下さい。'}
   validates :first_name_kana, presence: true, length: { maximum: 35 }, format: { with: /\A[\p{katakana}\p{blank}ー－]+\z/, message: 'の入力はカタカナで入力して下さい。'}
   validates :last_name, presence: true, length: { maximum: 35 }, format: { with: /\A[ぁ-んァ-ン一-龥]/, message: "の入力は日本語でお願いします。"}
