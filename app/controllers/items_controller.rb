@@ -18,12 +18,14 @@ class ItemsController < ApplicationController
       :currency => 'jpy',              #日本円
     )
     
-    
-    @item.buyer_id = 0
-    @item.buyer_id = @item.buyer_id + current_user.id
-    @item.save
+     @item.buyer_id = 0
+      @item.buyer_id = @item.buyer_id + current_user.id
+      if @item.save
+        redirect_to purchase_edit_item_path
 
-    redirect_to purchase_edit_item_path
+      else redirect_to new_credit_card_path
+
+    end
   end
     
   def new
