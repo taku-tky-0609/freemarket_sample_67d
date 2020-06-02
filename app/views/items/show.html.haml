@@ -12,12 +12,12 @@
       .ProductImages
         - @item.item_images.each_with_index do |image,i|
           %div{class: "ProductImages__#{++i}"}
-            = image_tag image.src.url
+            = image_tag image.src.url 
       .ProductImages-nav
         - @item.item_images.each_with_index do |image,i|
           %div{class: "ProductImages__#{++i}"}
             = image_tag image.src.url      
-        -# .ProductImages__subContainer
+        .ProductImages__subContainer
       .ProductSelections
         %table.ProductSelections__lists
           %tr
@@ -27,21 +27,17 @@
           %tr
             %th カテゴリー
             %td 
-              -if @item.category.ancestry.nil?
-                111
-              -elsif @item.category.parent.parent != nil
-                = link_to category_path(@item.category.parent.parent.id), class: 'ProductSelections__lists__category' do
+              -if @item.category.parent.parent.name.present?
+                = link_to "#", class: 'ProductSelections__lists__category' do
                   #{@item.category.parent.parent.name}
                 %br
-              -else
-                222
-              -if @item.category.parent != nil
-                = link_to category_path(@item.category.parent.id), class: 'ProductSelections__lists__category' do
+              -if @item.category.parent.name.present?
+                = link_to "#", class: 'ProductSelections__lists__category' do
                   %i.fas.fa-chevron-right
                   #{@item.category.parent.name}
                 %br
               -if @item.category.name.present?
-                = link_to category_path(@item.category.id), class: 'ProductSelections__lists__category' do
+                = link_to "#", class: 'ProductSelections__lists__category' do
                   %i.fas.fa-chevron-right
                   #{@item.category.name}
           %tr
