@@ -31,6 +31,8 @@ $(function(){
   }
   $('#item_category_id').on('change', function(){
     var parentCategory = document.getElementById('item_category_id').value;
+    // var parentCategory =$('#item_category_id').data('category');
+    console.log(parentCategory);
     if (parentCategory != "---"){
       $.ajax({
         url: '/items/get_category_children',
@@ -56,6 +58,7 @@ $(function(){
     }
   });
   $('.newcate').on('change', '#child_category', function(){    
+    // var childId = $('#child_category option:selected').data('category');
     var childId = $('#child_category option:selected').data('category');
     console.log(childId);
     if (childId != "---"){

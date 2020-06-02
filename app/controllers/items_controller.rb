@@ -10,10 +10,12 @@ class ItemsController < ApplicationController
     @item.build_brand
   end
   def get_category_children
+    # @category_children = Category.find_by(id: "#{params[:parent_id]}", ancestry: nil).children
     @category_children = Category.find_by(id: "#{params[:parent_id]}", ancestry: nil).children
   end
 
   def get_category_grandchildren
+    # binding.pry
     @category_grandchildren = Category.find("#{params[:child_id]}").children
   end
 
@@ -38,8 +40,27 @@ class ItemsController < ApplicationController
 
   def edit
     @item = Item.find(params[:id])
-    # @item.item_images.build
-    # @item.build_brand
+
+
+    grandchild_category = @item.category
+    child_category = grandchild_category.parent
+
+
+    @category_parent_array = []
+    Category.where(ancestry: nil).each do |parent|
+      @category_parent_array << parent.name
+    end
+
+    @category_children_array = []
+    Category.where(ancestry: child_category.ancestry).each do |children|
+      @category_children_array << children
+    end
+
+    @category_grandchildren_array = []
+    Category.where(ancestry: grandchild_category.ancestry).each do |grandchildren|
+      @category_grandchildren_array << grandchildren
+    end
+
   end
   
   def update
