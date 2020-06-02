@@ -85,21 +85,21 @@ $(document).on("click", '.fa-image', function(){
   });
 
   $('.ProductImages').slick({
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    arrows: false,
-    fade: true,
-    asNavFor: '.slider-nav'
-
+    infinite: true, //スライドのループ有効化
+    arrows: false, //矢印非表示
+    fade: true, //フェードの有効化
+    draggable: false, //ドラッグ操作の無効化
   });
-//   $('.ProductImages-nav').slick({
-//     slidesToShow: 3,
-//     slidesToScroll: 1,
-//     asNavFor: '.slider-for',
-//     dots: true,
-//     centerMode: true,
-//     focusOnSelect: true
-// });  
+  $('.ProductImages-nav').slick({
+    infinite: true, //スライドのループ有効化
+    slidesToShow: 6, //表示するスライドの数
+    slidesToScroll:1,
+    focusOnSelect: true, //フォーカスの有効化
+    asNavFor: '.ProductImages', //thumbnailクラスのナビゲーション
+    prevArrow: '<img src="前への矢印画像のパス" class="slide-arrow prev-arrow">',
+    nextArrow: '<img src="次への矢印画像のパス" class="slide-arrow next-arrow">'
+  });  
+
 })
 
 
