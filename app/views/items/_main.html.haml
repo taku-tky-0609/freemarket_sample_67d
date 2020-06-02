@@ -64,11 +64,11 @@
       %h3.feature__content__list__title
         様々な支払いに対応
       %p.feature__content__list__explanation お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります。
-.category
-  .category__wrapper
-    .category__wrapper__title ピックアップカテゴリー
-    %a{ href:"#", class:"category__wrapper__subtitle"} 新規投稿商品
-    .category__wrapper__box 
+.pickupCategory
+  .pickupCategory__wrapper
+    .pickupCategory__wrapper__title ピックアップカテゴリー
+    %a{ href:"#", class:"pickupCategory__wrapper__subtitle"} 新規投稿商品
+    .pickupCategory__wrapper__box 
       - @items.each do |item|
         = link_to item_path(item.id), class:"ProductContainer" do
           = image_tag item.item_images[0].src.url
@@ -86,7 +86,7 @@
                 （税込）
             .detailsContainer__right
               ★ ０
-  .category__wrapper
-    .category__wrapper__title ピックアップブランド
-    %a{ href:"#", class:"category__wrapper__subtitle"} アーカイバ
+  .pickupCategory__wrapper.brand
+    .pickupCategory__wrapper__title ピックアップブランド
+    %a{ href:"#", class:"pickupCategory__wrapper__subtitle"} アーカイバ
     .pickupCategory__wrapper__box 
