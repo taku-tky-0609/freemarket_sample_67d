@@ -10,7 +10,7 @@
             .buy-item-image
               - @item.item_images.each_with_index do |image,i|
               .ProductImages__
-                  = image_tag image.src.url 
+                = image_tag image.src.url 
             .buy-item-detail
               .buy-item-name
                 = @item.item_name
@@ -64,9 +64,5 @@
               = link_to "#" do
                 特定商取引に関する表記
 
-          = image_tag "/images/logo-white.png", class:"hea"
+          = image_tag "/images/logo-white.png", class:"hea" do
           %p © Furima, Inc.
-
-          
-      
-      
