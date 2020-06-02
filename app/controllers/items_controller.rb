@@ -86,9 +86,13 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    @item.destroy
-    redirect_to root_path
-   end
+    if @item.destroy
+      redirect_to root_path notice: '削除に成功しました。'
+    else
+      render :new, alert: '保存に失敗しました。'
+    end
+  end
+  
 
   private
 

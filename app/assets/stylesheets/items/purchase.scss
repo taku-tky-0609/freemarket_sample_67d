@@ -58,13 +58,13 @@
           .buy-price-table{
             display: flex;
             margin-left: 220px;
-            .buy-price-table__left{
+            &__left{
               text-align: left;
               margin-top: 25px;
 
 
             }
-            .buy-price-table__right{
+            &__right{
               margin-left: 60px;
               font-size: 25px;
               margin-top: 25px;
@@ -194,7 +194,7 @@ img.hea{
           font-size: 18px;
           border-top: 1px solid #f5f5f5;
           width: 100%;
-          .buy-content__item__inner{
+          &__inner{
             background-color: #fff;
 
             .buy-item-main{

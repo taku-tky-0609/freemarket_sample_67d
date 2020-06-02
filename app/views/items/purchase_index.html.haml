@@ -2,15 +2,15 @@
   .buy-content__item
     .buy-content__item__inner
       .buy-item-headder
-        %img.head{ src: "/images/logo.png"}
+        = image_tag "/images/logo.png", class:"head" 
       .buy-item-main
         %h2.buy-content_title
           商品購入の確認
           .buy-new
             .buy-item-image
               - @item.item_images.each_with_index do |image,i|
-              .ProductImages__
-                = image_tag image.src.url 
+                .ProductImages__
+                  = image_tag image.src.url 
             .buy-item-detail
               .buy-item-name
                 = @item.item_name
@@ -64,5 +64,5 @@
               = link_to "#" do
                 特定商取引に関する表記
 
-          = image_tag "/images/logo-white.png", class:"hea" do
+          = image_tag "/images/logo-white.png", class: "hea"
           %p © Furima, Inc.
