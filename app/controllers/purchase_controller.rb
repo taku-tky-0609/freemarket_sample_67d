@@ -15,13 +15,7 @@ class PurchaseController < ApplicationController
       end
     end
   
-   
-  
-    
-  
     private
-    
-    
   
     def set_card
       @card = CreditCard.find_by(user_id: current_user.id)
