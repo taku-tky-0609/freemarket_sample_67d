@@ -198,9 +198,7 @@
   .slick-list.draggable{
     width: 350px;
     padding: 0px 50px;
-    /* margin: 0 50px; */
     position: absolute;
-    /* left: 10px; */
     right: -110px;
 
   }
@@ -209,7 +207,7 @@
     margin: auto;
     width: 300px;
     height: 300px;
-  }  
+  } 
   &__1,&__2,&__3,&__4 {
     display: inline-block;
     margin-top: 5px;
@@ -243,7 +241,6 @@
 }
 .ProductImages-nav.slick-initialized.slick-slider.slick-dotted{
   width: 150px;
-  /* position: absolute; */
   left: 130px;
 }
 
