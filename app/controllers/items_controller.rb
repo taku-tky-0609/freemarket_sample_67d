@@ -4,13 +4,11 @@ class ItemsController < ApplicationController
     @items = Item.includes(:user, :category).order("created_at DESC")
   end
   
-  def myList
-   
+  def myList   
     @items = Item.where(user_id: current_user.id)
   end
 
   def pay
-  
     Payjp.api_key = Rails.application.credentials.dig(:payjp, :PAYJP_SECRET_KEY)
     Payjp::Charge.create(
       :amount => @item.price, #支払金額を引っ張ってくる
@@ -52,52 +50,25 @@ class ItemsController < ApplicationController
     end
   end
 
-  
-
-  def show
-   
+  def show 
   end
   
   def purchase_index
-   
   end
 
   def purchase_edit
-   
   end
-
-
- 
- 
-  def edit
-    @item = Item.find(params[:id])
-
-    grandchild_category = @item.category
-    child_category = grandchild_category.parent
-
-    @category_parent_array = []
-    Category.where(ancestry: nil).each do |parent|
-      @category_parent_array << parent.name
-    end
-
-    @category_children_array = []
-    Category.where(ancestry: child_category.ancestry).each do |children|
-      @category_children_array << children
-    end
-
-    @category_grandchildren_array = []
-    Category.where(ancestry: grandchild_category.ancestry).each do |grandchildren|
-      @category_grandchildren_array << grandchildren
-    end
-  end
-
+  
   def myList
     @items = current_user.items
   end
 
+  def edit
+    set_category
+  end
 
   def update
-    
+    # binding.pry
     if @item.update(item_params)
       redirect_to root_path
     else
@@ -118,6 +89,27 @@ class ItemsController < ApplicationController
 
   def set_item
     @item = Item.includes(:user, :category).find(params[:id])
+  end
+
+  def set_category
+    @item = Item.find(params[:id])
+    grandchild_category = @item.category
+    child_category = grandchild_category.parent
+
+    @category_parent_array = []
+    Category.where(ancestry: nil).each do |parent|
+      @category_parent_array << parent.name
+    end
+
+    @category_children_array = []
+    Category.where(ancestry: child_category.ancestry).each do |children|
+      @category_children_array << children
+    end
+
+    @category_grandchildren_array = []
+    Category.where(ancestry: grandchild_category.ancestry).each do |grandchildren|
+      @category_grandchildren_array << grandchildren
+    end
   end
 
   def item_params
