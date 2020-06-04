@@ -1,24 +1,24 @@
 = render 'items/header'
 
-.category
-  .category__title
+.categoryList
+  .categoryList__title
     カテゴリー一覧
-  .category__list
-    .category__list__parent
+  .categoryList__list
+    .categoryList__list__parent
       - @parents.where(ancestry: nil).each do |p|
         .parentTitle
-          = link_to category_path(p), class:"categoryContainer__list" do
+          = link_to category_path(p), class:"categoryListContainer__list" do
             = p.name
         .children
           - p.children.each do |c|
             .children__container
               .children__container__title
-                = link_to category_path(c), class:"categoryContainer__list" do
+                = link_to category_path(c), class:"categoryListContainer__list" do
                   = c.name
                   .grandchildrenContainer
                     - c.children.each do |gc|
                       .grandchildrenContainer__title
-                        = link_to category_path(gc), class:"categoryContainer__list" do
+                        = link_to category_path(gc), class:"categoryListContainer__list" do
                           = gc.name
  
 = render 'items/footer'
