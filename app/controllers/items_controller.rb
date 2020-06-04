@@ -11,18 +11,16 @@ class ItemsController < ApplicationController
   def pay
     Payjp.api_key = Rails.application.credentials.dig(:payjp, :PAYJP_SECRET_KEY)
     Payjp::Charge.create(
-      :amount => @item.price, #支払金額を引っ張ってくる
-      :customer => current_user.credit_card.customer_id,  #顧客ID
-      :currency => 'jpy',              #日本円
+      :amount => @item.price,
+      :customer => current_user.credit_card.customer_id,
+      :currency => 'jpy',
     )
     
      @item.buyer_id = 0
       @item.buyer_id = @item.buyer_id + current_user.id
       if @item.save
         redirect_to purchase_edit_item_path
-
       else redirect_to new_credit_card_path
-
     end
   end
     
@@ -44,8 +42,6 @@ class ItemsController < ApplicationController
     if @item.save
       redirect_to root_path
     else
-      @item.item_images.build
-      @item.build_brand
       render action: :new
     end
   end
