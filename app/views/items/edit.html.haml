@@ -33,17 +33,6 @@
               .form-file
                 .new_item_page_container_main_label{"data-index" => "#{@item.item_images.count}"}
                   = form.file_field :src, class: 'js-file', id: 'js-file', name: "item[item_images_attributes][#{@item.item_images.count}][src]", data:{ index: "#{@item.item_images.count}"}
-              -# .prepend_area
-              -#   .pre-content
-              -#     = i.label :image, for: "js-file" do
-              -# %p.text 
-              -#   クリックをしてアップロード
-              -# .form-file   
-              -#   .new_item_page_container_main_label{"data-index" => "#{@item.item_images.count}"}
-          
-            -# =form.fields_for :item_images do |i|  
-
-
         .product
           .product__name.titleContainer
             %h1.titleContainer__title 商品名
@@ -56,8 +45,21 @@
             %h1.titleContainer__title カテゴリー
             %h2.titleContainer__required 必須
           .newcate2
-          = form.collection_select :category_id, Category.where(ancestry: nil), :id, :name, prompt: "---", class: ''
-          .newcate
+          -if @item.errors.any?
+            = form.collection_select :category_id, Category.where(ancestry: nil), :id, :name, prompt: "---", class: ''
+            .newcate
+          -else 
+            = form.collection_select(:category_id, Category.where(ancestry: nil), :id, :name, {selected: @item.category.parent.parent.id})
+            .newcate
+              .listing-select-wrapper__added#children_wrapper
+                %i.fas.fa-chevron-down.listing-select-wrapper__box--arrow-down
+                .listing-select-wrapper__box
+                  = form.select :child_id, options_for_select(@category_children_array.map{|cc| [cc.name, cc.id, {data:{category: cc.id}}]}, {prompt: "指定なし", selected: @item.category.parent.id}),{}, {class: 'listing-select-wrapper__box--select', id: 'child_category'}
+                %i.fas.fa-chevron-down.listing-select-wrapper__box--arrow-down
+              .listing-select-wrapper__added#grandchildren_wrapper
+                .listing-select-wrapper__box
+                  = form.select :category_id, options_for_select(@category_grandchildren_array.map{|gc| [gc.name, gc.id, {data:{category: gc.id}}]}, {prompt: "指定なし", selected: @item.category.id}),{}, {class: 'listing-select-wrapper__box--select', id: 'grandchildren_wrapper'}
+        
           .brand.titleContainer
             %h1.titleContainer__title ブランド
             %h2.titleContainer__any 任意
