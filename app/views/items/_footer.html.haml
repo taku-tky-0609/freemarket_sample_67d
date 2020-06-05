@@ -39,10 +39,23 @@
     = link_to 'root' do
       %img{ src: "/images/logo-white.png", alt: "会社ロゴ" }
   %p © FURIMA 
-= link_to '#' do
-  .sellingBtn
-    = link_to "/items/new" do
-      出品する
-    = image_tag "/images/icon_camera.png", class:"sellingBtn__icon"
+- if user_signed_in?
+  %a
+    = link_to new_item_path do
+      .sellingBtn
+        %span.sellingBtn__text 出品する
+        = image_tag "/images/icon_camera.png", class:"sellingBtn__icon"
+- else
+  %a
+    = link_to  new_user_session_path do
+      .sellingBtn
+        %span.sellingBtn__text 出品する
+        = image_tag "/images/icon_camera.png", class:"sellingBtn__icon"
+
+-# = link_to '#' do
+-#   .sellingBtn
+-#     = link_to "new_item" do
+-#       出品する
+-#     = image_tag "/images/icon_camera.png", class:"sellingBtn__icon"
     
 
