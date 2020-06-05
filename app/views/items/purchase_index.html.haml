@@ -28,7 +28,7 @@
           .buy-content__user-info__inner
             %h3 支払方法
             .user-info-update
-              = link_to "変更する", credit_cards_path(@user), calss:"update-btn"
+              = link_to "変更する", credit_cards_path(@user), method: :post, calss:"update-btn" 
             .user-info-text
             - if @default_card_information.blank?
             - else
