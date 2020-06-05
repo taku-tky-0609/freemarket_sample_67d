@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :pay, :purchase_index, :purchase_edit, :edit, :update, :destroy]
+  before_action :pay_confirmation, only: :pay
   def index
     @items = Item.includes(:user, :category).order("created_at DESC")
   end
@@ -11,18 +12,17 @@ class ItemsController < ApplicationController
   def pay
     Payjp.api_key = Rails.application.credentials.dig(:payjp, :PAYJP_SECRET_KEY)
     Payjp::Charge.create(
-      :amount => @item.price, #支払金額を引っ張ってくる
-      :customer => current_user.credit_card.customer_id,  #顧客ID
-      :currency => 'jpy',              #日本円
+      :amount => @item.price,
+      :customer => current_user.credit_card.customer_id,
+      :currency => 'jpy',
     )
     
      @item.buyer_id = 0
       @item.buyer_id = @item.buyer_id + current_user.id
       if @item.save
         redirect_to purchase_edit_item_path
-
-      else redirect_to new_credit_card_path
-
+      else 
+        redirect_to new_credit_card_path
     end
   end
     
@@ -44,13 +44,12 @@ class ItemsController < ApplicationController
     if @item.save
       redirect_to root_path
     else
-      @item.item_images.build
-      @item.build_brand
       render action: :new
     end
   end
 
-  def show 
+  def show
+    @parents = Category.all
   end
   
   def purchase_index
@@ -68,7 +67,6 @@ class ItemsController < ApplicationController
   end
 
   def update
-    # binding.pry
     if @item.update(item_params)
       redirect_to root_path
     else
@@ -114,5 +112,12 @@ class ItemsController < ApplicationController
 
   def item_params
     params.require(:item).permit(:item_name, :price, :category_id, :status_id, :size, :delivery_method_id, :delivery_fee_id, :prefecture_id, :estimated_delivery_id, brand_attributes: [:name], item_images_attributes: [:src, :_destroy, :id]).merge(user_id: current_user.id)
+  end
+
+  def pay_confirmation
+    @credit = current_user.credit_card
+    if @credit.nil?
+      redirect_to new_credit_card_path
+    end
   end
 end

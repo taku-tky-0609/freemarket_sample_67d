@@ -2,6 +2,8 @@
 .mypagetop
   = render 'users/side'
   .cardNewArea
+    .cardNewArea__advice
+      商品購入にはクレジットカード登録が必要です！！
     .cardNewArea__title
       クレジットカード情報入力
     = form_tag(pay_credit_cards_path, method: :post, id: 'charge-form',  name: "inputForm" , class: "cardNewArea__form") do
