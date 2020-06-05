@@ -46,6 +46,7 @@ $border: border;
             padding: 32px 16px;
             border-top: border;
             display: flex;
+            padding-left: 70px;
             
             img{
               width: 80px;
@@ -168,10 +169,15 @@ img.hea{
   font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
   display: block;
   background-color: #EEEEEE;
+  img.head{
+    width: 200px;
+    height: 100px;
+    margin-left: 170px; 
+  }
   
   a{
     padding-top: 40px;
-    padding-left: 100px;
+    padding-left: 149px;
     color:black;
   }
   .second{
@@ -245,9 +251,8 @@ img.hea{
   }
 }
 
-img.head{
-  width: 200px;
-  height: 100px;
+i{
+  padding-left: 50px;
 }
 
 
@@ -272,5 +277,17 @@ img.head{
 .buy-item-name{
   padding-top: 20px;
   margin-right: 20px;
+  padding-left: 40px;
  
+}
+
+.se{
+  padding-top: 60px;
+  padding-left: 100px;
+
+}
+
+.oo{
+  padding-right: 150px;
+  background-color: #EEEEEE;
 }
