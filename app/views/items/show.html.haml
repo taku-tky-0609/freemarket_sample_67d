@@ -14,8 +14,10 @@
 
         - @item.item_images.each_with_index do |image,i|
           %div{class: "ProductImages__#{++i}"}
-            = image_tag image.src.url
-        .ProductImages__subContainer
+            = image_tag image.src.url 
+      .ProductImages-nav  
+        - @item.item_images.each_with_index do |image,i|
+          = image_tag image.src.url, class: "scrollingImages"  
       .ProductSelections
         %table.ProductSelections__lists
           %tr
@@ -25,24 +27,16 @@
           %tr
             %th カテゴリー
             %td 
-              -if @item.category.ancestry.nil?
-                111
-              -elsif @item.category.parent.parent != nil
-                = link_to category_path(@item.category.parent.parent.id), class: 'ProductSelections__lists__category' do
-                  #{@item.category.parent.parent.name}
-                %br
-              -else
-                222
-              -if @item.category.parent != nil
-                = link_to category_path(@item.category.parent.id), class: 'ProductSelections__lists__category' do
-                  %i.fas.fa-chevron-right
-                  #{@item.category.parent.name}
-                %br
-              -if @item.category.name.present?
-                = link_to category_path(@item.category.id), class: 'ProductSelections__lists__category' do
-                  %i.fas.fa-chevron-right
-                  #{@item.category.name}
-
+              - @parents.each do |parent|
+                - if @item.category_id == parent.id 
+                  = link_to category_path(parent.parent.parent), class:"ProductSelections__lists__category" do
+                    = parent.parent.parent.name
+                    %br
+                  = link_to category_path(parent.parent), class:"ProductSelections__lists__category" do
+                    = parent.parent.name
+                    %br
+                  = link_to category_path(parent), class:"ProductSelections__lists__category" do
+                    = parent.name
           %tr
             %th ブランド
             %td 
@@ -71,12 +65,10 @@
       .ProductPrice
         = @item.price
       .ProductTax
-        (税込)送料込み
+        円 (税込) 送料込み
     -if user_signed_in? && @item.buyer_id == nil && @item.user_id != current_user.id
-      = form_tag(action: :pay, method: :post) do
-        %script.payjp-button{:src => "https://checkout.pay.jp", :type => "text/javascript" ,"data-text" => "" ,"data-key" => "pk_test_32534f246a14649e6d9c3ac8"}
-    = link_to purchase_index_item_path(@item), class: "purchase furimaBtn" do
-      購入画面に進む
+      = link_to purchase_index_item_path(@item), class: "purchase furimaBtn" do
+        購入画面に進む
     .ProductExplanation
       超くっきーランドで購入しました 
       %br ［縦14㎝×横8.5㎝　ファスナー10㎝］
