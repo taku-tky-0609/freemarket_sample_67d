@@ -6,12 +6,13 @@
   background-color: rgb(245, 245, 245);
   padding-bottom: 100px;
   &__title {
-    height: 128px;
     align-items: center;
     display: flex;
     margin-left: 570px;
+    padding: 15px 0px;
     .head{
     width: 185px;
+    height: 40px;
     }
   }
   &__body {
