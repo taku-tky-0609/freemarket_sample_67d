@@ -185,6 +185,7 @@ img.hea{
     color:black;
   }
   .second{
+    font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
     .buy-content__attention{
       .y{
         padding-bottom: 50px;
@@ -198,6 +199,7 @@ img.hea{
         width: 700px;
         margin: 0 auto;
         display: block;
+        
         }
       }
       
@@ -230,6 +232,7 @@ img.hea{
           }
         }
         .buy-content__item{
+          font-size: 30px;
           
 
           .buy-form{
@@ -296,3 +299,38 @@ i.fa-clock{
   background-color: #EEEEEE;
 }
 
+.buy-item-name{
+  font-size: 30px;
+}
+.buy-content__item{
+  font-size: 30px;
+}
+
+.buy-content__attention__title{
+  font-size: 30px;
+}
+.buy-content__user-info__submit__button{
+  font-size: 30px;
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+  padding: 0.25em 0.5em;
+  text-decoration: none;
+  color: #FFF;
+  background: #00bcd4;
+  transition: .4s;
+  margin-top: 50px;
+}
+a.buy-content__user-info__submit__button{
+  padding-top: 20px;
+  padding-left: 30px;
+  padding-bottom: 20px;
+  padding-right: 30px;
+  position: relative;
+  left: 90px;
+  bottom: 50px;
+  color: #FFF;
+}
+.second{
+  font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+}

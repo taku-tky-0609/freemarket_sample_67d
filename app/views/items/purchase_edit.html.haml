@@ -1,3 +1,4 @@
+= render 'header'
 .oo 
   .first
     .buy-item-headder
@@ -36,5 +37,6 @@
                 .buy-price-table__right
                   = "¥#{@item.price.to_s}"
       .se
-        .buy-content__user-info__submit
+        .buy-content__user-info__submit_btn
           = link_to "トップページへ戻る", root_path, class: 'buy-content__user-info__submit__button'
+= render 'footer'
