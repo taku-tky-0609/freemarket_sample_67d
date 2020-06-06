@@ -17,7 +17,7 @@ html{
   height: 100%;
   width: 100%;
   .single__header {
-    max-width: 50%;
+    max-width: 20%;
     margin: 0 auto;
     img {
       width: 140px;
@@ -33,7 +33,7 @@ html{
       max-width: 140px;
       margin: 0 auto;
       padding: 30px 10px;
-      font-size: 16px;
+      font-size: 20px;
     }
     .text__main--center {
       padding: 40px 40px 64px;
@@ -41,6 +41,13 @@ html{
       background-color: #fff;
       .text__contents {
         margin: 0 140px;
+        span {
+          margin-left: 8px;
+          padding: 2px 4px;
+          background-color: #ea352d;
+          color: white;
+          border-radius: 2px;
+        }
         .field {
          height: 100%;
          margin-top: 34px;
