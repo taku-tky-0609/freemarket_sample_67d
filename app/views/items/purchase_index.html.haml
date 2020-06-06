@@ -44,8 +44,8 @@
               .user-info-update
                 = link_to "変更する","#", calss:"update-btn"
               -if user_signed_in? && @item.buyer_id == nil && @item.user_id != current_user.id
-                = form_tag(action: :pay, method: :post) do
-                  %script.payjp-button{:src => "https://checkout.pay.jp", :type => "text/javascript" ,"data-text" => "" ,"data-key" => "pk_test_32534f246a14649e6d9c3ac8"}
+                -# = form_tag(action: :pay, method: :post) do
+                -#   %script.payjp-button{:src => "https://checkout.pay.jp", :type => "text/javascript" ,"data-text" => "" ,"data-key" => "pk_test_32534f246a14649e6d9c3ac8"}
               = link_to pay_item_path(@item), method: :post, class: "purchase furimaBtn" do
                 購入する
                 
