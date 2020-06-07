@@ -10,8 +10,6 @@
       = @item.item_name
     .ProductInformation
       .ProductImages
-       
-
         - @item.item_images.each_with_index do |image,i|
           %div{class: "ProductImages__#{++i}"}
             = image_tag image.src.url 
