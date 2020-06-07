@@ -84,6 +84,7 @@
               span {
                 padding: 15px;
               }
+              
               &__form {
                 text-align: right;
                 border: 1px solid #ccc;
@@ -229,5 +230,8 @@
   #js-file{
     display: none;
   }
-
+}
+.images-error-message {
+  margin-top: 5px;
+  color: red;
 }
