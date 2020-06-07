@@ -1,8 +1,11 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :pay, :purchase_index, :purchase_edit, :edit, :update, :destroy]
   before_action :pay_confirmation, only: :pay
+  before_action :header_category
+
   def index
     @items = Item.includes(:user, :category).order("created_at DESC")
+    @itemparents = Category.where(ancestry: nil)
   end
   
   def myList   
@@ -49,7 +52,7 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @parents = Category.all
+    @showparents = Category.all
   end
   
   def purchase_index
@@ -82,7 +85,6 @@ class ItemsController < ApplicationController
     end
   end
   
-
   private
 
   def set_item
