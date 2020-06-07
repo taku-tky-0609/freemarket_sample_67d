@@ -11,7 +11,6 @@ Rails.application.routes.draw do
   resources :categories 
 
   root 'items#index'
-  
 
   resources :items do
     member do
@@ -26,10 +25,6 @@ Rails.application.routes.draw do
       get 'myList', to: 'items#myList'
     end
   end
-
-  
-  
-
 
   resources :purchases  do
     member do
@@ -58,6 +53,4 @@ Rails.application.routes.draw do
       post 'delete', to: 'credit_cards#delete'
     end
   end
-
 end
-

@@ -1,6 +1,7 @@
 class PurchaseController < ApplicationController
     require 'payjp'#Payjpの読み込み
     before_action :set_card, :set_item, :purchase_index
+    before_action :header_category
   
     def index
       if @card.blank?

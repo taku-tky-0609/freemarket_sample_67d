@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :header_category
   def index
   end
   

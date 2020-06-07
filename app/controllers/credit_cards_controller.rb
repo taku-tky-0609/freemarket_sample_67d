@@ -1,4 +1,5 @@
 class CreditCardsController < ApplicationController
+  before_action :header_category
 
   require "payjp"
 

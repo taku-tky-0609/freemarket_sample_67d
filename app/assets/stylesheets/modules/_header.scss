@@ -77,6 +77,7 @@
 
 // カテゴリーの大枠の要素の共通項
 .category__list{
+  z-index: 10;
   position: absolute;
   height: 560px;
   background-color: white;
