@@ -164,7 +164,10 @@ img.hea{
   margin-top: 40px;
 
 }
-//edit
+
+li.s{
+  padding-top: 30px;
+}
 
 .first{
   text-align: center;
@@ -299,10 +302,11 @@ i.fa-clock{
   background-color: #EEEEEE;
 }
 
-.buy-item-name{
+
+.buy-item-namo{
   font-size: 30px;
 }
-.buy-content__item{
+.buy-content__iteo{
   font-size: 30px;
 }
 
@@ -333,4 +337,7 @@ a.buy-content__user-info__submit__button{
 }
 .second{
   font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+}
+.buy-price-table__right{
+  padding-bottom: 50px;
 }
