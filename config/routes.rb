@@ -27,9 +27,9 @@ Rails.application.routes.draw do
     end
   end
 
-  
-  
 
+
+  
 
   resources :purchases  do
     member do

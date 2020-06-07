@@ -50,9 +50,9 @@
       display: flex;
       position: relative;
       @include link-color();
-        &__brand a{
-          padding: 0 0 0 32px;
-        }
+      &__brand a{
+        padding: 0 0 0 32px;
+      }
     }
     &--right {
         display: flex;

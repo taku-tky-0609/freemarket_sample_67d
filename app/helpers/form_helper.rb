@@ -1,8 +1,8 @@
 module FormHelper                                                               
   class FormWithErrorMessageBuilder < ActionView::Helpers::FormBuilder
     def input_field_with_error(attribute, options={}, &block)   
-      error_messages = @object.errors.full_messages_for(attribute) 
-      if error_messages.any?                                                    
+      error_messages = @object.errors.full_messages_for(attribute)
+      if error_messages.any?                                             
         error_contents = create_error_div(attribute, error_messages)            
       end
       block.call + error_contents || ""                                         
@@ -12,16 +12,16 @@ module FormHelper
         messages.each do |message|                                              
           @template.concat(@template.content_tag(:div, message))                
         end                                                                     
-      end                                                                       
+      end                                                                    
     end
 
     def fields_for(attribute, options={})
-      input_field_with_error(attribute, options) do                             
-        super                                                                   
+      input_field_with_error(attribute, options) do                            
+        super                                                       
       end                                                                       
     end
 
-    def text_field(attribute, options={})                                       
+    def text_field(attribute, options={})                                     
       input_field_with_error(attribute, options) do                             
          super                                                                   
       end                                                                       
