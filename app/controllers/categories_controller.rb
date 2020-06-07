@@ -1,11 +1,14 @@
 class CategoriesController < ApplicationController
   before_action :set_category ,except: :index
+  before_action :header_category
+  
   def index
-    @parents = Category.all
+    @parents = Category.where(ancestry: nil)
   end
-
+  
   def show
     category_check(@category)
+    @parents = Category.where(ancestry: nil)
   end
 
   private

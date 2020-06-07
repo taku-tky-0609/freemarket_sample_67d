@@ -23,6 +23,9 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def header_category
+    @headerCategory = Category.where(ancestry: nil)
+  end
 end
 
 class ApplicationController < ActionController::Base

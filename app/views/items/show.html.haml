@@ -25,7 +25,7 @@
           %tr
             %th カテゴリー
             %td 
-              - @parents.each do |parent|
+              - @showparents.each do |parent|
                 - if @item.category_id == parent.id 
                   = link_to category_path(parent.parent.parent), class:"ProductSelections__lists__category" do
                     = parent.parent.parent.name
