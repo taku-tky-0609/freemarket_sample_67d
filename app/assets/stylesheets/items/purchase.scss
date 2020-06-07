@@ -1,6 +1,9 @@
 
 $border: border;
 
+html{
+  background-color: #EEEEEE;
+}
 .buy-content{
   text-align: center;
   padding: 32px 16px;
@@ -8,11 +11,12 @@ $border: border;
   
   &__item{
 
-    padding: 0 0 100px;
+    padding: 0 0 30px;
     color: black;
     text-shadow: none;
     font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
     display: block;
+   
     &__inner{
       display: block;
 
@@ -46,6 +50,7 @@ $border: border;
             padding: 32px 16px;
             border-top: border;
             display: flex;
+            padding-left: 70px;
             
             img{
               width: 80px;
@@ -159,22 +164,31 @@ img.hea{
   margin-top: 40px;
 
 }
-//edit
+
+li.s{
+  padding-top: 30px;
+}
 
 .first{
   text-align: center;
-  padding-top: 100px;
+  padding-top: 10px;
   text-shadow: none;
   font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
   display: block;
   background-color: #EEEEEE;
+  img.head{
+    width: 200px;
+    height: 100px;
+    margin-left: 170px; 
+  }
   
   a{
     padding-top: 40px;
-    padding-left: 100px;
+    padding-left: 149px;
     color:black;
   }
   .second{
+    font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
     .buy-content__attention{
       .y{
         padding-bottom: 50px;
@@ -188,6 +202,7 @@ img.hea{
         width: 700px;
         margin: 0 auto;
         display: block;
+        
         }
       }
       
@@ -220,6 +235,7 @@ img.hea{
           }
         }
         .buy-content__item{
+          font-size: 30px;
           
 
           .buy-form{
@@ -245,9 +261,8 @@ img.hea{
   }
 }
 
-img.head{
-  width: 200px;
-  height: 100px;
+i.fa-clock{
+  padding-left: 50px;
 }
 
 
@@ -272,5 +287,57 @@ img.head{
 .buy-item-name{
   padding-top: 20px;
   margin-right: 20px;
+  padding-left: 40px;
  
+}
+
+.se{
+  padding-top: 60px;
+  padding-left: 100px;
+  background-color: #EEEEEE;
+}
+
+.oo{
+  padding-right: 150px;
+  background-color: #EEEEEE;
+}
+
+
+.buy-item-namo{
+  font-size: 30px;
+}
+.buy-content__iteo{
+  font-size: 30px;
+}
+
+.buy-content__attention__title{
+  font-size: 30px;
+}
+.buy-content__user-info__submit__button{
+  font-size: 30px;
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+  padding: 0.25em 0.5em;
+  text-decoration: none;
+  color: #FFF;
+  background: #00bcd4;
+  transition: .4s;
+  margin-top: 50px;
+}
+a.buy-content__user-info__submit__button{
+  padding-top: 20px;
+  padding-left: 30px;
+  padding-bottom: 20px;
+  padding-right: 30px;
+  position: relative;
+  left: 90px;
+  bottom: 50px;
+  color: #FFF;
+}
+.second{
+  font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+}
+.buy-price-table__right{
+  padding-bottom: 50px;
 }

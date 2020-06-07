@@ -1,5 +1,5 @@
 .itemsShow {
-  display: flex;
+  padding: 10px 10px;
   background-color: rgb(226, 221, 221);
   &__container {
     position: relative;
@@ -142,6 +142,23 @@
       }
     }
   }
+  .itemsComment{
+    margin: 20px auto 20px;
+    width: 55%;
+    padding: 10px 20px;
+    background-color: white;
+    .erxplanation{
+      background-color: #fff6de;
+    }
+    .fillout {
+      padding-top: 10px;
+      input{
+        margin: auto;
+        width: 100%;
+        height: 100px;
+      }
+    }
+  }  
 }
 
 .moreList {
