@@ -3,6 +3,8 @@ class ItemsController < ApplicationController
   before_action :pay_confirmation, only: :pay
   def index
     @items = Item.includes(:user, :category).order("created_at DESC")
+    # @parents = Category.where(ancestry: nil)
+    @parents = Category.all
   end
   
   def myList   

@@ -1,7 +1,7 @@
 .header 
   .header__main-header 
     .header__main-header--icon 
-      = link_to root_path do
+      = link_to root_path do  
         %img{ src: "/images/logo.png"}
     .header__main-header--search-box 
       %li.header__main-header--search-box__input 
@@ -11,9 +11,36 @@
 
   .header__lists
     .header__lists--left
-      %li.header__lists--left__category
-        = link_to categories_path do
-          カテゴリー
+      .categories
+        %ul
+          %li
+            = link_to "#", class: "category__search search__btn" do
+              %i.fas.fa-bars.category__icon
+              カテゴリーから探す
+            %ul.category__parent.category__list
+              -# - @parents.each do |parent|  
+              - @parents.where(ancestry: nil).each do |parent|
+                %li
+                  = link_to category_path(parent.id), class: "category__parent--name" do
+                    = parent.name
+                  %ul.category__child.category__list
+                    - parent.children.each do |child|
+                      %li
+                        = link_to "#", class: "category__child--name" do
+                          = child.name
+                        %ul.category__grandchild.category__list
+                          - child.children.each do |grandchild|
+                            %li
+                              = link_to "#", class: " category__child--name" do
+                                = grandchild.name 
+                -# %ul.pc-header-nav-child-wrap{"data-mega" => "2"}
+                -#   - root_category.children.each do |children_category|
+                -#     %li.pc-header-nav-child
+                -#       %a{:href => "http://localhost:3000/category/#{children_category.id}/"}= children_category.name
+                -#       %ul.pc-header-nav-grand-child-wrap{"data-mega" => "3"}
+                -#         - children_category.children.each do |children_children_category|
+                -#           %li.pc-header-nav-grand-child
+                -#             %a{:href => "http://localhost:3000/category//119/"}= children_children_category.name
       %li.header__lists--left__brand
         = link_to "#" do
           ブランド
