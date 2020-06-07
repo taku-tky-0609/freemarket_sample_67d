@@ -1,9 +1,8 @@
-= render 'header'
-.oo 
+-# = render 'header'
+.purchaseScreen
   .first
-    .buy-item-headder
-      %img
-        = image_tag "/images/logo.png", class:"head"
+    .purchaseScreen__item
+      = image_tag "/images/logo.png", class:"headder-logo"
 
     .second
       %h1.buy-content__attention
@@ -17,10 +16,7 @@
             .buy-content__item__inner
               .buy-item-main
                 .buy-item-image
-                
-                  - @item.item_images.each_with_index do |image,i|
-                    .ProductImages__
-                      = image_tag image.src.url
+                  = image_tag @item.item_images[0].src.url
                 .buy-item-detail
                   .buy-item-name
                     = @item.item_name
@@ -36,7 +32,7 @@
                   支払金額
                 .buy-price-table__right
                   = "¥#{@item.price.to_s}"
-      .se
-        .buy-content__user-info__submit_btn
-          = link_to "トップページへ戻る", root_path, class: 'buy-content__user-info__submit__button'
+          .buy-content__user-info__submit
+            .buy-content__user-info__submit_btn
+              = link_to "トップページへ戻る", root_path, class: 'buy-content__user-info__submit__button'
 = render 'footer'
