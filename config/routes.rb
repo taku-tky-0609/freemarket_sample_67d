@@ -25,7 +25,7 @@ Rails.application.routes.draw do
       get 'myList', to: 'items#myList'
     end
   end
-
+  
   resources :purchases  do
     member do
       get "purchase_index"
