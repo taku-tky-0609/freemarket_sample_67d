@@ -13,5 +13,6 @@ class Item < ApplicationRecord
   belongs_to_active_hash :status
 
   validates_with MyValidator
+  validates_with PriceValidator
   validates :item_name, :status_id, :delivery_method_id, :delivery_fee_id, :prefecture_id, :estimated_delivery_id, :category_id, :item_images, presence: true
 end
