@@ -33,6 +33,7 @@ class User < ApplicationRecord
   has_one :address
   accepts_nested_attributes_for :address
   validates :email, uniqueness: true
+  validates :email, :email_format => {:message => '正しいメールアドレスを入力してください'}
   validates :phone_number, uniqueness: true
   validates :last_name_kana, presence: true, length: { maximum: 35 }, format: { with: /\A[\p{katakana}\p{blank}ー－]+\z/, message: 'の入力はカタカナで入力して下さい。'}
   validates :first_name_kana, presence: true, length: { maximum: 35 }, format: { with: /\A[\p{katakana}\p{blank}ー－]+\z/, message: 'の入力はカタカナで入力して下さい。'}
